@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<link rel="stylesheet" type="text/css" href="../../style.css"/>
+<title>Homepage of Aditya Krishna Menon</title>
+</head>
+
+<body>
+
+<div id="content">
+
+<h2>Code for <i> A log-linear model with latent features for dyadic prediction, ICDM '10</i></h2>
+
+A stochastic gradient implementation of the LFL model may be found <a href="code-lfl.zip">here</a>. The code assumes that there are structures <tt>Tr</tt> and <tt>Te</tt> for the train and test set, each comprising three 
+vectors <tt>u</tt>, <tt>m</tt>, and <tt>r</tt> for the "user", "movie", and "rating" respectively. (As noted in the paper, these may be replaced with more general dyadic entities.) The code handles both nominal and ordinal "ratings".
+
+<br>
+
+<h3>Example usage</h3>
+
+The following constructs a sample rating matrix for 5 users and 10 movies, where the possible ratings are { 1, ..., 5 }, with 0 denoting a missing value, which is then split into a train and test set with proportion 80-20%.
+<br>
+<br>
+<div class="codebox">
+	<code>
+	<tt>
+U = 5; M = 10; R = 5; X = floor((R + 1) * rand(U, M));<br>
+Data = [ ]; [Data.u, Data.m, Data.r] = find(X);<br>
+<br>
+I = randperm(length(Data.u)); nTe = ceil(0.2*length(I));<br>
+<br>
+Te = [ ]; Te.u = Data.u(I(1:nTe)); Te.m = Data.m(I(1:nTe)); Te.r = Data.r(I(1:nTe));<br>
+Tr = [ ]; Tr.u = Data.u(I(1+nTe:end)); Tr.m = Data.m(I(1+nTe:end)); Tr.r = Data.r(I(1+nTe:end));
+</tt>
+</code>
+</div>
+<br>
+
+With this, we could run the SGD optimiser as follows:
+<br>
+<br>
+<div class="codebox">
+	<code>
+
+<tt>
+k = 10; % # of latent features<br>
+eta0 = 0.01; % learning rate<br>
+lambda = 1e-6; % regularization parameter<br>
+epochs = 10; % # of sweeps over training set <br>
+loss = 'mse'; % loss function on training set <br><br>
+[w, trainErrors, testErrors] = lflSGDOptimizer(Tr, Te, k, eta0, lambda, epochs, loss); <br>
+</tt>
+
+</div>
+
+<br>
+
+</div>
+
+</body>
+
+</html>

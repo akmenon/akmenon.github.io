@@ -1,0 +1,91 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<link rel="stylesheet" type="text/css" href="../../style.css"/>
+<title>Homepage of Aditya Krishna Menon</title>
+</head>
+
+<body>
+
+<div id="content">
+
+<h2>Code for <i>Link Prediction via Matrix Factorization, ECML '11</i></h2>
+
+You can find MATLAB code for link prediction <a href=code-link-pred.zip>here</a>. The included functions are:
+<ul>
+	<li> <tt>link_prediction_test_script.m</tt>, a sample script that demonstrates usage on a synthetic network
+	<li> <tt>factorisationSGDOptimiser.m</tt>, for optimisation of the classification loss
+	<li> <tt>factorisationSGDRankingOptimiser.m</tt>, for optimisation of the ranking loss
+</ul>
+
+You can find MAT versions of the datasets used in the paper <a href="https://www.dropbox.com/s/dw8j8ba56lditva/link-pred-datasets.zip?dl=0">here</a>.
+
+<br>
+
+<h3>Example usage</h3>
+
+The script <tt>link_prediction_test_script.m</tt> illustrates the use of both the classification and ranking loss, and the presence and absence of side-information, on some synthetically generated data. You should observe output such as the following:
+<br>
+<br>
+
+<div class="codebox">
+	<code>
+>> link_prediction_test_script;<br>
+testing setting: standard loss, # node features = 0, # link features = 0<br>
+rmse of predicted vs true probabilities = 0.2205<br>
+optimal auc = 0.6959<br>
+predicted auc = 0.6524<br>
+<br>
+...<br>
+<br>
+testing setting: ranking loss, # node features = 4, # link features = 1<br>
+rmse of predicted vs true probabilities = 0.3257<br>
+optimal auc = 0.7260<br>
+predicted auc = 0.7126<br>
+	</code>
+</div>
+<br>
+
+<h3>Detailed description</h3>
+
+Regarding use of either of the functions: you may just pass in <tt>[]</tt> for <tt>convergenceScoreTr</tt> and <tt>convergenceScoreTe</tt>. Just setting the # of epochs for SGD as appropriate would work. Similarly for <tt>computeObjective</tt>. This was used for early debugging, and is not essential.
+<br>
+<br>
+Regarding the other arguments, <tt>weights</tt> is a structure that has the initial values for the parameters. Example initialization for the fields are as listed below.
+<br>
+<br>
+
+<div class="codebox">
+	<code>
+weights = [];<br>
+weights.U = randn(k, m); % for k latent features and m nodes<br>
+weights.UBias = randn(1, m);<br>
+weights.ULatentScaler = randn(k, k); % for asymmetric; for symmetric, use diag(randn(k)) instead<br>
+weights.WPair = randn(1, dPair); % for dPair features for each pair<br>
+weights.WBias = randn;<br>
+weights.WBilinear = randn(1, dBilinear); % for dBilinear features for each node
+	</code>
+</div>
+<br>
+<br>
+Similarly, <tt>lambda</tt> is a structure that has the regularization strengths for different parameters.
+<br>
+<br>
+<div class="codebox">
+	<code>
+lambda = [];<br>
+lambda.lambdaLatent = 0.1; % regularization for node's latent vector U<br>
+lambda.lambdaRowBias = 0; % regularization for node's bias UBias<br>
+lambda.lambdaLatentScaler = 0; % regularization for scaling factors Lambda (in paper)<br>
+lambda.lambdaPair = 0; % regularization for weights on pair features<br>
+lambda.lambdaBilinear = 0; % regularization for weights on node features<br>
+lambda.lambdaScaler = 1; % scaling factor for regularization, can be set to 1 by default
+</code>
+<br>
+<br>
+
+</div>
+
+</body>
+
+</html>

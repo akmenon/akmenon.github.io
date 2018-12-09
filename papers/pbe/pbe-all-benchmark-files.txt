@@ -1,0 +1,1961 @@
+====================
+
+"in":"17400 NE 40th St, Redmond, WA 98052\n10 West St, New York, NY 02134"
+"mock-in":"1731 126th AVE SE, Bellevue, WA 98005\nOne Microsoft Way, Redmond, WA 98052\n111 Main St, Bellevue, WA 98052"
+"mock-out":"Bellevue\nRedmond\nBellevue"
+"out":"Redmond\nNew York"
+
+====================
+
+"in":"Christinaxxxxx Berglund 475 22th Lane ,Redmond,WA,(443) 555-6774,844-35-6764,30146\nMartine Rance 688 93th Place NW,Kent,WA,(573) 555-3571,695-94-3479,22424\nJosexxxxx Pedro Freyre 222 68th Place NE,Seattle,WA,(361) 555-7381,798-14-7411,25222"
+"mock-in":"Antonio Moreno 515 93th Lane ,Renton,WA,(411) 555-2786,562-87-3127,28581\nAna Trujillo 357 21th Place SE,Redmond,WA,(757) 555-1634,140-37-6064,27171\nChristina Berglund 475 22th Lane ,Redmond,WA,(443) 555-6774,844-35-6764,30146\nJose Pedro Freyre 222 68th Place NE,Seattle,WA,(361) 555-7381,798-14-7411,25222"
+"mock-out":"515 93th Lane\n357 21th Place SE\n475 22th Lane\n222 68th Place NE"
+"out":"475 22th Lane\n688 93th Place NW\n222 68th Place"
+
+====================
+
+"in":"Mike Myers\\n333 Main St.\\nKirkland\\nMA\\n90114\nMike L Myers\\n332 Main St. station apt 42\\nJokesville\\nMA\\n90232"
+"mock-in":"John Smith\\n111 Main St.\\nBellevue\\nWA\\n90111\nFrank Thomas\\n222 Main St.\\nRedmond\\nCA\\n90112"
+"mock-out":"John Smith\nFrank Thomas"
+"out":"Mike Myers\nMike L Myers"
+
+====================
+
+"in":"Mike Myers\\n333 Main St.\\nKirkland\\nMA\\n90113"
+"mock-in":"John Smith\\n111 Main St.\\nBellevue\\nWA\\n90111\nFrank Thomas\\n222 Main St.\\nRedmond\\nCA\\n90112"
+"mock-out":"111 Main St.\n222 Main St."
+"out":"333 Main St."
+
+====================
+
+"in":"Mike Myers\\n333 Main St.\\nKirkland\\nWA\\n90113"
+"mock-in":"John Smith\\n111 Main St.\\nBellevue\\nWA\\n90111\nFrank Thomas\\n222 Main St.\\nRedmond\\nCA\\n90112"
+"mock-out":"Bellevue\nRedmond"
+"out":"Kirkland"
+
+====================
+
+"in":"Mike Myers\\n333 Main St.\\nKirkland\\nWA\\n90113"
+"mock-in":"John Smith\\n111 Main St.\\nBellevue\\nWA\\n90111\nFrank Thomas\\n222 Main St.\\nRedmond\\nCA\\n90112"
+"mock-out":"WA\nCA"
+"out":"WA"
+
+====================
+
+"in":"Mike Myers\\n111 Main St.\\nBellevue\\nMA\\n90113"
+"mock-in":"John Smith\\n111 Main St.\\nBellevue\\nWA\\n90111\nFrank Thomas\\n111 Main St.\\nBellevue\\nCA\\n90112"
+"mock-out":"90111\n90112"
+"out":"90113"
+
+====================
+
+"in":"Algeria\t213\nlatvia\t371\nSt Kitts & Nevia\t8969\nTurks & Caios Islands\t649\nSao Tome & Principe\t239\nAndorra\t376"
+"mock-in":"Albania\t355\nAlgeria\t213"
+"mock-out":"case 355: return Albania;\ncase 213: return Algeria;"
+"out":"case 213: return Algeria;\ncase 371: return latvia;\ncase 8969: return St Kitts & Nevia;\ncase 649: return Turks & Caios Islands;\ncase 239: return Sao Tome & Principe;\ncase 376: return Andorra;"
+
+====================
+
+"in":"9-8-2009"
+"mock-in":"8-7-2010"
+"mock-out":"8/7/2010"
+"out":"9/8/2009"
+
+====================
+
+"in":"17.5.2010\n332/144/2010"
+"mock-in":"3/27/2010\n4/15/2010\n27.3.2010\n15.11.2010\n12/23/2010\n332/144/2010"
+"mock-out":"3/27/2010\n4/15/2010\n3/27/2010\n11/15/2010\n12/23/2010\n332/144/2010"
+"out":"5/17/2010\n332/144/2010"
+
+====================
+
+"in":"5/4/2010 + 2"
+"mock-in":"24/5/2010 + 2\n24/5/2010 + 3"
+"mock-out":"26 May 2010\n27 May 2010"
+"out":"7 April 2010"
+
+====================
+
+"in":"4/2/2008 ** 21/3/2010 ** 6/2/2010 ** 1/8/2010 ** 16/4/2010"
+"mock-in":"6/8/2010 ** 5/8/2010 ** 16/4/2010 ** 14/7/2008 ** 12/3/2010"
+"mock-out":"6th August 2010 ** 5th August 2010 ** 16th April 2010 ** 14th July 2008 ** 12th March 2010"
+"out":"4th February 2008 ** 21st March 2010 ** 6th February 2010 ** 1st August 2010 ** 16th April 2010"
+
+====================
+
+"in":"I am trying to work when 4/2/2008, where we went on 21/3/2010. Its like 6/2/2010 as we are doing to 1/8/2010. Today is 16/4/2010, we are going to have fun on 14/7/2008, the time we are going to be there at 12/3/2010"
+"mock-in":"Today is 16/4/2010, we are going to have fun on 14/7/2008, the time we are going to be there at 12/3/2010. We can try to go there while 6/8/2010 as we are doing to 5/8/2010. Today is 16/4/2010, we are going to have fun on 14/7/2008, the time we are going to be there at 12/3/2010"
+"mock-out":"16/4/2010\n14/7/2008\n12/3/2010\n6/8/2010\n5/8/2010\n16/4/2010\n14/7/2008\n12/3/2010"
+"out":"4/2/2008\n21/3/2010\n6/2/2010\n1/8/2010\n16/4/2010\n14/7/2008\n12/3/2010"
+
+====================
+
+"in":"10.4"
+"mock-in":"26.2"
+"mock-out":"26.20"
+"out":"10.40"
+
+====================
+
+"in":"23/12/2010"
+"mock-in":"3/4/2010\n14/2/1885"
+"mock-out":"2010 3 4\n1885 14 2"
+"out":"2010 23 12"
+
+====================
+
+"in":"28/6/2010"
+"mock-in":"24/6/2010"
+"mock-out":"June the 24th 2010"
+"out":"June the 28th 2010"
+
+====================
+
+"in":"23 June 2010"
+"mock-in":"24 June 2010"
+"mock-out":"Thursday, 24th June 2010"
+"out":"Wednesday, 23rd June 2010"
+
+====================
+
+"in":"6/11/1988\n6/18/1988\n6/25/1988\n7/2/1988\n7/9/1988"
+"mock-in":"5/7/1988\n5/14/1988\n5/21/1988\n5/28/1988\n6/4/1988"
+"mock-out":"5 7 1988\n5 14 1988\n5 21 1988\n5 28 1988\n6 4 1988"
+"out":"6 11 1988\n6 18 1988\n6 25 1988\n7 2 1988\n7 9 1988"
+
+====================
+
+"in":"23/12/2010"
+"mock-in":"3/4/2010\n15/8/2010"
+"mock-out":"4/3/2010\n8/15/2010"
+"out":"12/23/2010"
+
+====================
+
+"in":"15 March 2008 + 1"
+"mock-in":"12 July 2010 + 2"
+"mock-out":"14 July 2010"
+"out":"16 March 2008"
+
+====================
+
+"in":"June, 9th 2010 + 3"
+"mock-in":"June, 6th 2010 + 1\nJune, 7th 2010 + 2"
+"mock-out":"June, 7th 2010\nJune, 9th 2010"
+"out":"June, 12th 2010"
+
+====================
+
+"in":"June 14 2008\tMonday"
+"mock-in":"June 26 2010\tMonday\n2010--6--25\tWednesday"
+"mock-out":"June 28 2010\nJune 30 2010"
+"out":"June 16 2008"
+
+====================
+
+"in":"19801003"
+"mock-in":"19700101\n19830302\n19800731"
+"mock-out":"1/1/1970\n3/2/1983\n7/31/1980"
+"out":"10/3/1980"
+
+====================
+
+"in":"ccc"
+"mock-in":"sumitg\nzorn"
+"mock-out":"sumitg@mirrorview.com\nzorn@mirrorview.com"
+"out":"ccc@mirrorview.com"
+
+====================
+
+"in":"venkie\nvenkie@hotmail.com"
+"mock-in":"sumitg\nzorn\nbabu@yahoo.com\nsumitmonika@hotmail.com"
+"mock-out":"sumitg@mirrorview.com\nzorn@mirrorview.com\nbabu@yahoo.com\nsumitmonika@hotmail.com"
+"out":"venkie@mirrorview.com\nvenkie@hotmail.com"
+
+====================
+
+"in":"cmbishop\t70931\n27666"
+"mock-in":"gbell\t126515\n31424\nsimonpj\t111328\n68902"
+"mock-out":"126515\ngbell@mirrorview.com\n111328\nsimonpj@mirrorview.com"
+"out":"70931\ncmbishop@mirrorview.com"
+
+====================
+
+"in":"2, Sumit"
+"mock-in":"1, Rishabh\n2, Bill"
+"mock-out":"Rishabh\nBill"
+"out":"Sumit"
+
+====================
+
+"in":"alpha 10 beta 20 charlie 40 delta 60 epsilon 4\nsumit 7 rico 12 wolfram 15 rick 19 trishul 20 steve 30"
+"mock-in":"10 apple 2 oranges 13 bananas 40 pears\nmilk 4, yoghurt 12, juice 2"
+"mock-out":"10+2+13+40\n4+12+2"
+"out":"10+20+40+60+4\n7+12+15+19+20+30"
+
+====================
+
+"in":"Kobe Bryant Lebron James Dwayne Wade Chris Bosch Kevin Garnett Paul Pierce Ray Allen Amare Stoudemiere\nRishabh Singh Sumit gaurav"
+"mock-in":"Bill Clinton Manmohan Singh Sonia Gandhi\nBen Zorn Bill Harris Rishabh Singh Sumit gaurav Trishul Chilimbi Wolfram Schulte\nVinnie Poo Mickey Mouse Minnie Mouse Donald Duck Daffy Duck"
+"mock-out":"Bill Clinton; Manmohan Singh; Sonia Gandhi\nBen Zorn; Bill Harris; Rishabh Singh; Sumit gaurav; Trishul Chilimbi; Wolfram Schulte\nVinnie Poo; Mickey Mouse; Minnie Mouse; Donald Duck; Daffy Duck"
+"out":"Kobe Bryant; Lebron James; Dwayne Wade; Chris Bosch; Kevin Garnett; Paul Pierce; Ray Allen; Amare Stoudemiere\nRishabh Singh; Sumit gaurav"
+
+====================
+
+"in":"Steve Balmer Rick Rashid Rico Malvar Barack Obama Manmohan Singh Alan Turing Graham Bell Rishabh Singh"
+"mock-in":"Sumit gaurav Rishabh Singh Bill Harris Bill Gates Ben Zorn\nShuvendu Lahiri Shaz Qadeer Wolfram Schulte Nikhil Swamy Trishul Chilimbi Ben Lishvits"
+"mock-out":"Sumit G., Rishabh S., Bill H., Bill G. and Ben Z.\nShuvendu L., Shaz Q., Wolfram S., Nikhil S., Trishul C. and Ben L."
+"out":"Steve B., Rick R., Rico M., Barack O., Manmohan S., Alan T., Graham B. and Rishabh S."
+
+====================
+
+"in":"a, b, c, d, e, f, g, h\na, b"
+"mock-in":"a, b, c, d\np, q, r, s, t"
+"mock-out":"a; b; c; d\np; q; r; s; t"
+"out":"a; b; c; d; e; f; g; h\na; b"
+
+====================
+
+"in":"Steve Balmer Rick Rashid Rico Malvar Barack Obama Manmohan Singh Alan Turing Graham Bell Rishabh Singh"
+"mock-in":"Sumit gaurav Rishabh Singh Bill Harris Bill Gates Ben Zorn\nShuvendu Lahiri Shaz Qadeer Wolfram Schulte Nikhil Swamy Trishul Chilimbi Ben Lishvits"
+"mock-out":"G,S,H,G and Z\nL,Q,S,S,C and L"
+"out":"B,R,M,O,S,T,B and S"
+
+====================
+
+"in":"Steve Balmer Rick Rashid Rico Malvar Barack Obama Manmohan Singh Alan Turing Graham Bell Rishabh Singh"
+"mock-in":"Sumit gaurav Rishabh Singh Bill Harris Bill Gates Ben Zorn\nShuvendu Lahiri Wolfram Schulte Shaz Qadeer Nikhil Swamy Trishul Chilimbi Ben Lishvits"
+"mock-out":"gaurav S., Singh R., Harris B., Gates B. and Zorn B.\nLahiri S., Schulte W., Qadeer S., Swamy N., Chilimbi T. and Lishvits B."
+"out":"Steve B., Rick R., Rico M., Barack O., Manmohan S., Alan T., Graham B. and Rishabh S."
+
+====================
+
+"in":"Steve Balmer Rick Rashid Rico Malvar Barack Obama Manmohan Singh Alan Turing Graham Bell Rishabh Singh"
+"mock-in":"Sumit gaurav Rishabh Singh Bill Harris Ben Zorn Bill Gates\nShuvendu Lahiri Wolfram Schulte Shaz Qadeer Nikhil Swamy Trishul Chilimbi Ben Lishvits"
+"mock-out":"S. gaurav, R. Singh, B. Harris, B. Zorn and B. Gates\nS. Lahiri, W. Schulte, S. Qadeer, N. Swamy, T. Chilimbi and B. Lishvits"
+"out":"S. Balmer, R. Rashid, R. Malvar, B. Obama, M. Singh, A. Turing, G. Bell and R. Singh"
+
+====================
+
+"in":"Steve Balmer Rick Rashid Rico Malvar Barack Obama Manmohan Singh Alan Turing Graham Bell Rishabh Singh"
+"mock-in":"Sumit gaurav Rishabh Singh Bill Harris Ben Zorn Bill Gates\nShuvendu Lahiri Wolfram Schulte Shaz Qadeer Nikhil Swamy Trishul Chilimbi Ben Lishvits"
+"mock-out":"S gaurav, R Singh, B Harris, B Zorn and B Gates\nS Lahiri, W Schulte, S Qadeer, N Swamy, T Chilimbi and B Lishvits"
+"out":"S Balmer, R Rashid, R Malvar, B Obama, M Singh, A Turing, G Bell and R Singh"
+
+====================
+
+"in":"Steve Balmer Rick Rashid Rico Malvar Barack Obama Manmohan Singh Alan Turing Graham Bell"
+"mock-in":"Rishabh Singh Sumit gaurav Bill Harris Ben Zorn Bill Gates\nShuvendu Lahiri Shaz Qadeer Wolfram Schulte Nikhil Swamy Trishul Chilimbi Ben Lishvits"
+"mock-out":"Rishabh Singh, Sumit gaurav, Bill Harris, Ben Zorn and Bill Gates\nShuvendu Lahiri, Shaz Qadeer, Wolfram Schulte, Nikhil Swamy, Trishul Chilimbi and Ben Lishvits"
+"out":"Steve Balmer, Rick Rashid, Rico Malvar, Barack Obama, Manmohan Singh, Alan Turing and Graham Bell"
+
+====================
+
+"in":"l m n o p q r t a b n i y"
+"mock-in":"a b c d e\nalpha beta gamma delta epsilon theta"
+"mock-out":"a, b, c, d and e\nalpha, beta, gamma, delta, epsilon and theta"
+"out":"l, m, n, o, p, q, r, t, a, b, n, i and y"
+
+====================
+
+"in":"1 2 3 4 5 6"
+"mock-in":"1 2 3 4"
+"mock-out":"1 + 2 + 3 + 4"
+"out":"1 + 2 + 3 + 4 + 5 + 6"
+
+====================
+
+"in":"Chuck Needham"
+"mock-in":"Darren Gehring"
+"mock-out":"Darren"
+"out":"Chuck"
+
+====================
+
+"in":"babu"
+"mock-in":"sumit\nmonika"
+"mock-out":"sumit\nmonika"
+"out":"babu"
+
+====================
+
+"in":"Rohit Singh"
+"mock-in":"Madhur Malik\nSumit gaurav\nFirst Last\nDarren Gehring"
+"mock-out":"Malik, Madhur\ngaurav, Sumit\nLast, First\nGehring, Darren"
+"out":"Singh, Rohit"
+
+====================
+
+"in":"John Suess"
+"mock-in":"Madhur Malik\nSumit gaurav\nFirst Last"
+"mock-out":"Malik\ngaurav\nLast"
+"out":"Suess"
+
+====================
+
+"in":"John Doe"
+"mock-in":"Sumit gaurav\nFirst Last\nMadhur Malik"
+"mock-out":"Sumit\nFirst\nMadhur"
+"out":"John"
+
+====================
+
+"in":"John Doe"
+"mock-in":"Madhur Malik\nSumit gaurav\nFirst Last"
+"mock-out":",\n,\n,"
+"out":","
+
+====================
+
+"in":"Female\nMale"
+"mock-in":"Male\nFemale"
+"mock-out":"Mr\nMrs"
+"out":"Mrs\nMr"
+
+====================
+
+"in":"Ben Zorn"
+"mock-in":"Mr. Frank Thomas, Jr.\nMark Smith\nPhil Harris, III\nSumit gaurav, Sr.\nDr. Ben Zorn"
+"mock-out":"Jr.\nNULL\nIII\nSr.\nNULL"
+"out":"NULL"
+
+====================
+
+"in":"Dr. Andrey Rybalchenko\nR. A. Tony Peck II\nJudith Smith-Lantz"
+"mock-in":"Dr. Rishabh Singh"
+"mock-out":"Singh"
+"out":"Rybalchenko\nPeck\nLantz"
+
+====================
+
+"in":"Mark Smith\nPhil Harris, III\nDr. Sumit gaurav, Jr.\nDr. Sumit gaurav, Sr.\nSumit gaurav, Sr.\nSumit gaurav, II.\nDr. Ben Zorn\nBen Zorn, Sr.\nMrs. Piali Choudhury\nMrs. Piali Choudhury, IV\nMrs. Piali Choudhury, Jr.\nMrs. Piali Choudhury, Sr.\nMrs. Piali Choudhury, II\nMrs. Piali Choudhury, III\nDr. Rico Malvar, Jr.\nDr. Rico Malvar, II\nRico Malvar, II\nRico Malvar, Jr.\nDr. Rico Malvar\nRico Malvar\nWilliam Watson\nThomas Edison, Sr.\nDr. Richard Dawkins\nMrs. Elizabeth Jones"
+"mock-in":"Mr. Frank Thomas, Jr.\nMr. Raymond Raytracer"
+"mock-out":"Jr.\nNULL"
+"out":"NULL\nIII\nJr.\nSr.\nSr.\nII\nNULL\nSr.\nNULL\nIV\nJr.\nSr.\nII\nIII\nJr.\nII\nII\nJr.\nNULL\nNULL\nNULL\nSr.\nNULL\nNULL"
+
+====================
+
+"in":"Harris, Phil"
+"mock-in":"Thomas, Frank\nSmith, Mark"
+"mock-out":"Thomas Frank\nSmith Mark"
+"out":"Harris Phil"
+
+====================
+
+"in":"Harris, Phil"
+"mock-in":"Thomas, Frank\nSmith, Mark"
+"mock-out":"Thomas\nSmith"
+"out":"Harris"
+
+====================
+
+"in":"Harris, Phil"
+"mock-in":"Thomas, Frank\nSmith, Mark"
+"mock-out":"Frank\nMark"
+"out":"Phil"
+
+====================
+
+"in":"5,Jim\n7,Justin"
+"mock-in":"4,Jones\n6,James"
+"mock-out":"Jones\nJames"
+"out":"Jim\nJustin"
+
+====================
+
+"in":"Sumit\tgaurav"
+"mock-in":"Alex\tAiken\nBen\tZorn"
+"mock-out":"Alex Aiken\nBen Zorn"
+"out":"Sumit gaurav"
+
+====================
+
+"in":"206-499-7186"
+"mock-in":"425-703-4986"
+"mock-out":"425-703-4986"
+"out":"206-499-7186"
+
+====================
+
+"in":"706-7710\n(325) 123 4567"
+"mock-in":"706-7709\n706.7709\n225-706-7709\n(225) 706 7709\n(425) 706 7709"
+"mock-out":"425-706-7709\n425-706-7709\n225-706-7709\n225-706-7709\n425-706-7709"
+"out":"425-706-7710\n325-123-4567"
+
+====================
+
+"in":"+49.99.21.76.44.54"
+"mock-in":"+49.89.31.76.44.54\n+31.20.500.11.31\n+31.40.600.51.781\n+49.82.32.74.45.49"
+"mock-out":"Germany\nNetherlands\nNetherlands\nGermany"
+"out":"Germany"
+
+====================
+
+"in":"+49 99 2222 3333"
+"mock-in":"+49 89 3176 3631"
+"mock-out":"Germany"
+"out":"Germany"
+
+====================
+
+"in":"+91-425-856-2214"
+"mock-in":"+91-617-955-3945"
+"mock-out":"India"
+"out":"India"
+
+====================
+
+"in":"812-526-8959\n812-474-4248\n812-473-2109\n219-484-5625"
+"mock-in":"812-526-0406\n812-334-2981"
+"mock-out":"812 526 0406\n812 334 2981"
+"out":"812 526 8959\n812 474 4248\n812 473 2109\n219 484 5625"
+
+====================
+
+"in":"425-233-1234\n233-1234\n233.1234\n(411) 233 1234"
+"mock-in":"425-829-5512\n829-5512\n829.5512\n(425) 829 5512\n425-777-3333\n777-3333\n777.3333\n(425) 777 3333"
+"mock-out":"425-829-5512\n425-829-5512\n425-829-5512\n425-829-5512\n425-777-3333\n425-777-3333\n425-777-3333\n425-777-3333"
+"out":"425-233-1234\n425-233-1234\n425-233-1234\n411-233-1234"
+
+====================
+
+"in":"425-233-1234\n233-1234\n(425) 233 1234"
+"mock-in":"425-829-5512\n829-5512\n(425) 829 5512\n425-777-3333\n777-3333\n(425) 777 3333"
+"mock-out":"425-829-5512\n425-829-5512\n425-829-5512\n425-777-3333\n425-777-3333\n425-777-3333"
+"out":"425-233-1234\n425-233-1234\n425-233-1234"
+
+====================
+
+"in":"425-233-1234\n(425) 233 1234"
+"mock-in":"425-829-5512\n(425) 829 3241\n425-777-3333\n(425) 777 6414"
+"mock-out":"425-829-5512\n425-829-3241\n425-777-3333\n425-777-6414"
+"out":"425-233-1234\n425-233-1234"
+
+====================
+
+"in":"425-233-1234\n617-955-3945"
+"mock-in":"425-829-5512\n425-777-3333\n226-3456"
+"mock-out":"425 829 5512\n425 777 3333\n226-3456"
+"out":"425 233 1234\n617 955 3945"
+
+====================
+
+"in":"707-505-1995"
+"mock-in":"614-841-9935\n661-307-8563"
+"mock-out":"(614)-841-9935\n(661)-307-8563"
+"out":"(707)-505-1995"
+
+====================
+
+"in":"812-334-2981\n812-843-4262\n812-526-8959\n812-473-2109\n219-484-5625\n219-485-2863\n812-294-1523"
+"mock-in":"812-526-0406"
+"mock-out":"526-0406"
+"out":"334-2981\n843-4262\n526-8959\n473-2109\n484-5625\n485-2863\n294-1523"
+
+====================
+
+"in":"425-856-2214\t1"
+"mock-in":"617-955-3945\t1"
+"mock-out":"+1 (617) 955 3945"
+"out":"+1 (425) 856 2214"
+
+====================
+
+"in":"345\t236\t4345"
+"mock-in":"425\t706\t7709"
+"mock-out":"(425)-706-7709"
+"out":"(345)-236-4345"
+
+====================
+
+"in":"The dog jumped high"
+"mock-in":"The cat jumped high"
+"mock-out":"cat"
+"out":"dog"
+
+====================
+
+"in":"1Z 191 901 66 1220 995 3\n1Z 252 620 16 6848 559 5\n1Z 179 888 77 2225 994 7"
+"mock-in":"1Z 083 8F5 70 6804 570 2\n1Z 865 597 04 6123 366 1"
+"mock-out":"083 70\n865 04"
+"out":"191 66\n252 16\n179 77"
+
+====================
+
+"in":"1Z 4E7 Y46 45 9061 641 1\n1Z 269 899 92 5919 455 9\n1Z 213 511 53 2739 816 9\n1Z W55 546 35 9383 735 3\n1Z 9A8 F30 21 8646 045 1\n1Z 334 888 97 5812 437 7"
+"mock-in":"1Z 083 8F5 70 6804 570 2\n1Z 865 597 04 6123 366 1\n1Z 9Y3 223 43 9933 089 4\n1Z W98 011 43 9868 466 1"
+"mock-out":"083 70\n865 04\n9Y3 43\nW98 43"
+"out":"4E7 45\n269 92\n213 53\nW55 35\n9A8 21\n334 97"
+
+====================
+
+"in":"1Z 191 901 66 1220 995 3\n1Z 252 620 16 6848 559 5\n1Z 179 888 77 2225 994 7\n1Z W98 011 43 9868 466 1\n1Z 4E7 Y46 45 9061 641 1\n1Z 269 899 92 5919 455 9\n1Z 213 511 53 2739 816 9\n1Z W55 546 35 9383 735 3\n1Z 9A8 F30 21 8646 045 1\n1Z 334 888 97 5812 437 7"
+"mock-in":"1Z 083 8F5 70 6804 570 2\n1Z 865 597 04 6123 366 1\n1Z 9Y3 223 43 9933 089 4\n1Z 191 901 66 1220 995 3\n1Z 252 620 16 6848 559 5\n1Z 179 888 77 2225 994 7"
+"mock-out":"083\n865\n9Y3\n191\n252\n179"
+"out":"191\n252\n179\nW98\n4E7\n269\n213\nW55\n9A8\n334"
+
+====================
+
+"in":"1Z 191 901 66 1220 995 3\n1Z 252 620 16 6848 559 5\n1Z 179 888 77 2225 994 7\n1Z W98 011 43 9868 466 1\n1Z 4E7 Y46 45 9061 641 1\n1Z 269 899 92 5919 455 9\n1Z 213 511 53 2739 816 9\n1Z W55 546 35 9383 735 3\n1Z 9A8 F30 21 8646 045 1\n1Z 334 888 97 5812 437 7"
+"mock-in":"1Z 083 8F5 70 6804 570 2\n1Z 865 597 04 6123 366 1\n1Z 9Y3 223 43 9933 089 4\n1Z 191 901 66 1220 995 3\n1Z 252 620 16 6848 559 5\n1Z 179 888 77 2225 994 7"
+"mock-out":"70\n04\n43\n66\n16\n77"
+"out":"66\n16\n77\n43\n45\n92\n53\n35\n21\n97"
+
+====================
+
+"in":"test.me.please\nsumit.and.monika"
+"mock-in":"alpha.bravo.charlie\n123.45.6789"
+"mock-out":"bravo\n45"
+"out":"me\nand"
+
+====================
+
+"in":"343 343 343454 2323 (44) 3435"
+"mock-in":"123 (11) 567\n(22) 345 3455\n345 452 (33)"
+"mock-out":"11\n22\n33"
+"out":"44"
+
+====================
+
+"in":"XJohn DOE Typing 3 Data [TS] 865-000-0000 - - 453442-00 06-23-2009\nXA FF MARILYN TITANIC 30'S 865-000-0030 4535871-00 07-07-2009\nXA GEDA-MARY oUTSIDE 100MG TAT 865-000-0000 - - 5941-00 06-23-2009"
+"mock-in":"John DOE Typing 3 Data [TS] 865-000-0000 - - 453442-00 06-23-2009\nA FF MARILYN TITANIC 30'S 865-000-0030 4535871-00 07-07-2009\nA GEDA-MARY oUTSIDE 100MG TAT 865-000-0000 - - 5941-00 06-23-2009"
+"mock-out":"865-000-0000\n865-000-0030\n865-000-0000"
+"out":"865-000-0000\n865-000-0030\n865-000-0000"
+
+====================
+
+"in":"04. Artist4 - Title4"
+"mock-in":"01. Artist1 - Title1\n02. Artist2 - Title2"
+"mock-out":"Artist1\nArtist2"
+"out":"Artist4"
+
+====================
+
+"in":"O F TOMATO PASTE 6 OZ"
+"mock-in":"BTR KRNL WK CORN 15Z\nCAMP DRY DBL NDL 3.6 OZ\nCHORE BOY HD SC SPNG 1 PK\nFRENCH WORCESTERSHIRE 5 Z"
+"mock-out":"15Z\n3.6 OZ\n1 PK\n5 Z"
+"out":"6 OZ"
+
+====================
+
+"in":"50 70"
+"mock-in":"15 20\n40 3.6"
+"mock-out":"20\n3.6"
+"out":"70"
+
+====================
+
+"in":"company\\Code\\java\\Hello.java"
+"mock-in":"Company\\Document\\SOP\\Designs\\design_updated.doc\nCompany\\Documents\\Spec\\specs.doc\nCompany\\Code\\index.html"
+"mock-out":"Company\\Document\\SOP\\Designs\\\nCompany\\Documents\\Spec\\\nCompany\\Code\\index.html"
+"out":"company\\Code\\java\\"
+
+====================
+
+"in":"[CPT-11536"
+"mock-in":"[CPT-00350\n[CPT-00340"
+"mock-out":"[CPT-00350]\n[CPT-00340]"
+"out":"[CPT-11536]"
+
+====================
+
+"in":"5,williams\n5,jameson"
+"mock-in":"2,spree\n4,james"
+"mock-out":"2\n4"
+"out":"5\n5"
+
+====================
+
+"in":"Office14\\Current\\Outlook\nOffice14\\Current\\TWC - Engineering\\Send A Smile\nOffice14\\Current\\Outlook"
+"mock-in":"Office14\\Current\\TWC - Engineering\\Send A Smile\nOffice14\\Current\\Excel"
+"mock-out":"Send A Smile\nExcel"
+"out":"Outlook\nSend A Smile\nOutlook"
+
+====================
+
+"in":"'gamma'"
+"mock-in":"'beta'\ncan't 'alpha'"
+"mock-out":"\"beta\"\n\"alpha\""
+"out":"\"gamma\""
+
+====================
+
+"in":"251245"
+"mock-in":"123456\n145678"
+"mock-out":"123-456\nBill"
+"out":"251-245"
+
+====================
+
+"in":"25"
+"mock-in":"1\n2"
+"mock-out":"one\ntwo"
+"out":"twenty five"
+
+====================
+
+"in":"125"
+"mock-in":"123\n145"
+"mock-out":"one hundred twenty three\none hundred forty five"
+"out":"one hundred twenty five"
+
+====================
+
+"in":"44,james"
+"mock-in":"2,spree"
+"mock-out":"2"
+"out":"44"
+
+====================
+
+"in":"This\nis\na\ntest\nof\nsorting."
+"mock-in":"a\nc\nb"
+"mock-out":"a\nb\nc"
+"out":"This\na\nis\nof\nsorting.\ntest"
+
+====================
+
+"in":">Emails with arrows\n>can be very\n>annoying to deal with."
+"mock-in":">a\n>b\n>c"
+"mock-out":"a\nb\nc"
+"out":"Emails with arrows\ncan be very\nannoying to deal with."
+
+====================
+
+"in":"This\nis\na\ntest\nof\nsorting."
+"mock-in":"a\nc\nb"
+"mock-out":"a\nb\nc"
+"out":"This\na\nis\nof\nsorting.\ntest"
+
+====================
+
+"in":"Every middle field;\nthat is how\nwe perfect ourselves"
+"mock-in":"a b c\nd e f\ng h i"
+"mock-out":"b\ne\nh"
+"out":"middle\nis\nperfect"
+
+====================
+
+"in":"1998 Adam,Bacher,Ali\n1999 Jason,Jones,Tom\n2000 Michael,Lyons,Louise"
+"mock-in":"0000 a,b,c,d\n0001 e,f,g\n0002 h,i"
+"mock-out":"a,b,c,d\ne,f,g\nh,i"
+"out":"Adam,Bacher,Ali\nJason,Jones,Tom\nMichael,Lyons,Louise"
+
+====================
+
+"in":"Adam,Bacher,Ali\nJason,Jones,Tom\nMichael,Lyons,Louise"
+"mock-in":"a,b,c,d\ne,f,g\nh,i"
+"mock-out":"a\nb\nc\nd\ne\nf\ng\nh\ni"
+"out":"Adam\nBacher\nAli\nJason\nJones\nTom\nMichael\nLyons\nLouise"
+
+====================
+
+"in":"Albert\nZomaya\nJoseph\nDavis"
+"mock-in":"a\nb\nc\nd\ne"
+"mock-out":"Dr a\nDr b\nDr c\nDr d\nDr e"
+"out":"Dr Albert\nDr Zomaya\nDr Joseph\nDr Davis"
+
+====================
+
+"in":"Every@middle@field;\nthat@is@how\nwe@perfect@ourselves"
+"mock-in":"a@b@c\nd@e@f\ng@h@i"
+"mock-out":"b\ne\nh"
+"out":"middle\nis\nperfect"
+
+====================
+
+"in":"kopeland,adam,jones,aditya\nrupert,murdoch,news"
+"mock-in":"c,b,a\nf,d,e"
+"mock-out":"a,b,c\nd,e,f"
+"out":"adam,aditya,jones,kopeland\nmurdoch,news,rupert"
+
+====================
+
+"mock-in":"a b c\nd e f\ngc h is"
+"mock-out":"b+\ne+\nh+"
+"in":"Every middle field;\nthat is how\nwe perfect ourselves"
+"out":"middle+\nis+\nperfect+"
+
+====================
+
+"mock-in":"This is a Test of uppercase"
+"mock-out":"THIS IS A TEST OF UPPERCASE"
+"in":"Try a two-step example, \na multi-step example, \nor Example 3.\n"
+"out":"TRY A TWO-STEP EXAMPLE, \nA MULTI-STEP EXAMPLE, \nOR EXAMPLE 3.\n"
+
+====================
+
+"mock-in":"This is a Test of Lowercase."
+"mock-out":"this is a test of lowercase."
+"in":"Try a two-step example, \na multi-step example, \nor Example 3.\n"
+"out":"try a two-step example, \na multi-step example, \nor example 3.\n"
+
+====================
+
+"mock-in":"425-283-2484\n847-283-2462"
+"mock-out":"(425)283-2484\n(847)283-2462"
+"in":"617-312-2885"
+"out":"(617)312-2885"
+
+====================
+
+"mock-in":"abcd e\nfghi j\nklmn o"
+"mock-out":"a e\nf j\nk o"
+"in":"aditya malhotra\nadam kopeland"
+"out":"a malhotra\na kopeland"
+
+====================
+
+"mock-in":"foo bar economics blah economics"
+"mock-out":"foo bar <i>economics</i> blah <i>economics</i>"
+"in":"the world revolves around economics nowadays. economics is no longer the dismal science."
+"out":"the world revolves around <i>economics</i> nowadays. <i>economics</i> is no longer the dismal science."
+
+====================
+
+"mock-in":"foo bar blah\ngoo gad glah"
+"mock-out":"foo b blah\ngoo g glah"
+"in":"aditya krishna malhotra\nadam tauman kopeland"
+"out":"aditya k malhotra\nadam t kopeland"
+
+====================
+
+"mock-in":"Mr Abba <a@b.com>, Mr Bccb <c@d.com>, Mr Cddc <e@f.org>"
+"mock-out":"a@b.com\nc@d.com\ne@f.org"
+"in":"Adam kopeland <axum@mirrorview.com>, Aditya malhotra <t-admeno@mirrorview.com>, Sumit gaurav <sumit@mirrorview.com>"
+"out":"axum@mirrorview.com\nt-admeno@mirrorview.com\nsumit@mirrorview.com"
+
+====================
+
+"mock-in":"0 Bob 1/2/2001\n1 Bob 2/3/2002\n2 Alice 4/3/2002\n3 Bob 5/4/2003\n4 Mike 7/5/2004\n5 James 8/6/2005"
+"mock-out":"0 Bob 1/2/2001\n2 Alice 4/3/2002\n4 Mike 7/5/2004\n5 James 8/6/2005"
+"in":"0 Bob 1/2/2001\n1 Alice 4/3/2002\n2 Bob 2/3/2002\n3 Bob 5/4/2003\n4 Mike 7/5/2004\n5 Mike 17/9/2004\n6 James 8/6/2005"
+"out":"0 Bob 1/2/2001\n1 Alice 4/3/2002\n4 Mike 7/5/2004\n6 James 8/6/2005"
+
+====================
+
+"mock-in":"lambda=0,eta=0,k=1:0.99 +- 0.15\nlambda=0,eta=1,k=1:0.99 +- 0.01"
+"mock-out":"0,0,1,0.99 +- 0.15\n0,1,1,0.95 +- 0.01"
+"in":"lambda=0,eta=0,k=1:0.99 +- 0.15\nlambda=0,eta=1,k=1:0.99 +- 0.01\nlambda=0,eta=1,k=5:0.19 +- 0.01\nlambda=1,eta=0,k=1:0.5 +- 0.00"
+"out":"0,0,1,0.99 +- 0.15\n0,1,1,0.95 +- 0.01\n0,1,5,0.19 +- 0.01\n1,0,1,0.5 +- 0.00"
+
+====================
+
+"mock-in":"lambda=0,eta=0,k=1\nlambda=0,eta=1,k=1\nlambda=2,eta=1,k=1"
+"mock-out":"0,0,1\n0,1,1\n2,1,1"
+"in":"lambda=0,eta=0,k=1\nlambda=0,eta=1,k=1\nlambda=0,eta=1,k=5\nlambda=1,eta=0,k=1"
+"out":"0,0,1\n0,1,1\n0,1,5\n1,0,1"
+
+====================
+
+"mock-in":"abba\nbeba\ngaga"
+"mock-out":"<abba>\n<beba>\n<gaga>"
+"in":"akmalhotra@ymail.com\nmonu@ymail.com\nrobert@aol.com"
+"out":"<akmalhotra@ymail.com>\n<monu@ymail.com>\n<robert@aol.com>"
+
+====================
+
+"mock-in":"<abba\n<beba>\ngaga>\nmama"
+"mock-out":"<abba>\n<beba>\n<gaga>\n<mama>"
+"in":"akmalhotra@ymail.com\nmonu@ymail.com>\n<robert@aol.com"
+"out":"<akmalhotra@ymail.com>\n<monu@ymail.com>\n<robert@aol.com>"
+
+====================
+
+"mock-in":"robert redford\njames dean\npeter grant"
+"mock-out":"Robert Redford\nJames Dean\nPeter Grant"
+"in":"aditya malhotra\nrobert carlisle\njimmy malhotra"
+"out":"Aditya malhotra\nRobert Carlisle\nJimmy Malhotra"
+
+====================
+
+"mock-in":"Coming Up\nTemporary Secretary\nOn The Way\nWaterfalls"
+"mock-out":"# '''[[xxx:Coming Up|Coming Up]]'''\n# '''[[xxx:Temporary Secretary|Temporary Secretary]]'''\n# '''[[xxx:On The Way|On The Way]]'''\n# '''[[xxx:Waterfalls|Waterfalls]]'''"
+"in":"Coming Up\nTemporary Secretary\nOn The Way\nWaterfalls\nNobody Knows\nFront Parlour\nSummer's Day Song\nFrozen Jap\nBogey Music\nDarkroom\nOne Of These Days\nCheck My Machine\nSecret Friend\nGoodnight Tonight"
+"out":"# '''[[xxx:Coming Up|Coming Up]]'''\n# '''[[xxx:Temporary Secretary|Temporary Secretary]]'''\n# '''[[xxx:On The Way|On The Way]]'''\n# '''[[xxx:Waterfalls|Waterfalls]]'''\n# '''[[xxx:Nobody Knows|Nobody Knows]]'''\n# '''[[xxx:Front Parlour|Front Parlour]]'''\n# '''[[xxx:Summer's Day Song|Summer's Day Song]]'''\n# '''[[xxx:Frozen Jap|Frozen Jap]]'''\n# '''[[xxx:Bogey Music|Bogey Music]]'''\n# '''[[xxx:Darkroom|Darkroom]]'''\n# '''[[xxx:One Of These Days|One Of These Days]]'''\n# '''[[xxx:Check My Machine|Check My Machine]]'''\n# '''[[xxx:Secret Friend|Secret Friend]]'''\n# '''[[xxx:Goodnight Tonight|Goodnight Tonight]]'''"
+
+====================
+
+"mock-in":"# '''[[Paul McCartney:Coming Up|Coming Up]]'''\n# '''[[Paul McCartney:Temporary Secretary|Temporary Secretary]]'''\n# '''[[Paul McCartney:On The Way|On The Way]]'''\n# '''[[Paul McCartney:Waterfalls|Waterfalls]]'''"
+"mock-out":"# '''[[xxx:Coming Up|Coming Up]]'''\n# '''[[xxx:Temporary Secretary|Temporary Secretary]]'''\n# '''[[xxx:On The Way|On The Way]]'''\n# '''[[xxx:Waterfalls|Waterfalls]]'''"
+"in":"# '''[[Paul McCartney:Coming Up|Coming Up]]'''\n# '''[[Paul McCartney:Temporary Secretary|Temporary Secretary]]'''\n# '''[[Paul McCartney:On The Way|On The Way]]'''\n# '''[[Paul McCartney:Waterfalls|Waterfalls]]'''\n# '''[[Paul McCartney:Nobody Knows|Nobody Knows]]'''\n# '''[[Paul McCartney:Front Parlour|Front Parlour]]'''\n# '''[[Paul McCartney:Summer's Day Song|Summer's Day Song]]'''\n# '''[[Paul McCartney:Frozen Jap|Frozen Jap]]'''\n# '''[[Paul McCartney:Bogey Music|Bogey Music]]'''\n# '''[[Paul McCartney:Darkroom|Darkroom]]'''\n# '''[[Paul McCartney:One Of These Days|One Of These Days]]'''\n# '''[[Paul McCartney:Check My Machine|Check My Machine]]'''\n# '''[[Paul McCartney:Secret Friend|Secret Friend]]'''\n# '''[[Paul McCartney:Goodnight Tonight|Goodnight Tonight]]'''"
+"out":"# '''[[xxx:Coming Up|Coming Up]]'''\n# '''[[xxx:Temporary Secretary|Temporary Secretary]]'''\n# '''[[xxx:On The Way|On The Way]]'''\n# '''[[xxx:Waterfalls|Waterfalls]]'''\n# '''[[xxx:Nobody Knows|Nobody Knows]]'''\n# '''[[xxx:Front Parlour|Front Parlour]]'''\n# '''[[xxx:Summer's Day Song|Summer's Day Song]]'''\n# '''[[xxx:Frozen Jap|Frozen Jap]]'''\n# '''[[xxx:Bogey Music|Bogey Music]]'''\n# '''[[xxx:Darkroom|Darkroom]]'''\n# '''[[xxx:One Of These Days|One Of These Days]]'''\n# '''[[xxx:Check My Machine|Check My Machine]]'''\n# '''[[xxx:Secret Friend|Secret Friend]]'''\n# '''[[xxx:Goodnight Tonight|Goodnight Tonight]]'''"
+
+====================
+
+"mock-in":"# '''[[xxx:Coming Up|Coming Up]]'''\n# '''[[xxx:Temporary Secretary|Temporary Secretary]]'''\n# '''[[xxx:On The Way|On The Way]]'''\n# '''[[xxx:Waterfalls|Waterfalls]]'''"
+"mock-out":"Coming Up\nTemporary Secretary\nOn The Way\nWaterfalls"
+"in":"# '''[[Paul McCartney:Coming Up|Coming Up]]'''\n# '''[[Paul McCartney:Temporary Secretary|Temporary Secretary]]'''\n# '''[[Paul McCartney:On The Way|On The Way]]'''\n# '''[[Paul McCartney:Waterfalls|Waterfalls]]'''\n# '''[[Paul McCartney:Nobody Knows|Nobody Knows]]'''\n# '''[[Paul McCartney:Front Parlour|Front Parlour]]'''\n# '''[[Paul McCartney:Summer's Day Song|Summer's Day Song]]'''\n# '''[[Paul McCartney:Frozen Jap|Frozen Jap]]'''\n# '''[[Paul McCartney:Bogey Music|Bogey Music]]'''\n# '''[[Paul McCartney:Darkroom|Darkroom]]'''\n# '''[[Paul McCartney:One Of These Days|One Of These Days]]'''\n# '''[[Paul McCartney:Check My Machine|Check My Machine]]'''\n# '''[[Paul McCartney:Secret Friend|Secret Friend]]'''\n# '''[[Paul McCartney:Goodnight Tonight|Goodnight Tonight]]'''"
+"out":"Coming Up\nTemporary Secretary\nOn The Way\nWaterfalls\nNobody Knows\nFront Parlour\nSummer's Day Song\nFrozen Jap\nBogey Music\nDarkroom\nOne Of These Days\nCheck My Machine\nSecret Friend\nGoodnight Tonight"
+
+====================
+
+"mock-in":"The album <b><i>Ram</i></b> was redone as an album of instrumental covers by <b><i>Paul and Linda McCartney</i></b> in 1977."
+"mock-out":"The album '''''Ram''''' was redone as an album of instrumental covers by '''''Paul and Linda McCartney''''' in 1977."
+"in":"Wiki formatting can be <b><i>very</i></b> weird!"
+"out":"Wiki formatting can be '''''very''''' weird!"
+
+====================
+
+"mock-in":"This is a ] test\nof how well ] we can spot\nthe patter with ] brackets\nwhen there are none, what do we do?\nwhen there are ] two ] what do we do?"
+"mock-out":"test\nwe can spot\nbrackets\n\nwhat do we do?"
+"in":"what ] about ] three] in a row!\nwhat about none?\nand three ]]] consecutive"
+"out":"in a row!\n\nconsecutive"
+
+====================
+
+"mock-in":"This is a ] test\nof how well ] we can spot\nthe patter with ] brackets\nhere we handle no-bracket lines differently\nwhen there are ] two ] what do we do?"
+"mock-out":"test\nwe can spot\nbrackets\nhere we handle no-bracket lines differently\nwhat do we do?"
+"in":"what ] about ] three] in a row!\nwhat about none NOW?\nand three ]]] consecutive"
+"out":"in a row!\nwhat about none NOW?\nconsecutive"
+
+====================
+
+"mock-in":"In the season of 1998-1999 the company was formed. In 2002 it went public. In 2003 it collapsed."
+"mock-out":"In the season of '98-'99 the company was formed. In '02 it went public. In '03 it collapsed."
+"in":"A classic result of [Johnson 1972] shows that any function on the hyper-simplex [Wood 1934] can be extended to the entire hyper-cube [Rose 2010]."
+"out":"A classic result of [Johnson '72] shows that any function on the hyper-simplex [Wood '34] can be extended to the entire hyper-cube [Rose '10]."
+
+====================
+
+"mock-in":"251 chances 24 successes\n1250 chances\nred 1000 chances\nBlue 30 chances\nWhite 222222 Black 21"
+"mock-out":"251 24\n1250\n1000\n30\n222222 21"
+"in":"test123 test128 test131\ntest124 test129 test132\ntest125 test130 test133\ntest126 test131 test134\ntest127 test132 test135\ntest128 test133 test136"
+"out":"123 128 131\n124 129 132\n125 130 133\n126 131 134\n127 132 135\n128 133 136"
+
+====================
+
+"mock-in":"ABC 123 123 ABC ABC 456 DEF\n31 DAX 247 246 247 DAX"
+"mock-out":"ABC 123 456 DEF\n31 DAX 247 246"
+"in":"ABC 123 123 ABC ABC 456 DEF\n31 DAX 247 246 247 DAX\n123 ABC 123 123 ABC ABC 456 DEF\nDAX dax DaX"
+"out":"ABC 123 456 DEF\n31 DAX 247 246\n123 ABC 456 DEF\nDAX dax DaX"
+
+====================
+
+"mock-in":"Today is Friday (1234)\n(We're not) The jet set (0234)"
+"mock-out":"1234\n0234"
+"in":"Today is Friday (1234)\nSunday comes afterwards (23322)\nFun fun fun (0989)\n(We're not) The jet set (0234)"
+"out":"1234\n23322\n0989\n0234"
+
+====================
+
+"mock-in":"Today is Friday (1234)\n(We're not) The jet set (0234)\nB2B is fun (203)"
+"mock-out":"1234\n0234\n203"
+"in":"Today is Friday (1234)\nSunday comes afterwards (23322)\nFun fun fun (0989)\n(We're not) The jet set (0234)\nB2B is fun (203)\nE3 is this year (932)"
+"out":"1234\n23322\n0989\n0234\n203\n932"
+
+====================
+
+"mock-in":"Absalom, Absalom * Book\nThe Scream * CD\nMusic of Chance * Book\nDreams of my Father * Book\nLow * CD\nDesire * CD"
+"mock-out":"The Scream * CD\nLow * CD\nDesire * CD"
+"in":"Absalom, Absalom * Book\nThe Scream * CD\nMusic of Chance * Book\nDreams of my Father * Book\nLow * CD\nDesire * CD\nTreeless Plain * CD\nOscar and Lucinda * Book"
+"out":"The Scream * CD\nLow * CD\nDesire * CD\nTreeless Plain * CD"
+
+====================
+
+"mock-in":"0.1 +- 0.01\n0.2 +- 0.2"
+"mock-out":"$0.1 \\pm 0.01$\n$0.2 \\pm 0.2$"
+"in":"0.1 +- 0.01\n0.2 +- 0.02\n0.3 +- 0.03\n0.44 +- 0.09"
+"out":"$0.1 \\pm 0.01$\n$0.2 \\pm 0.02$\n$0.3 \\pm 0.03$\n$0.44 \\pm 0.09$"
+
+====================
+
+"mock-in":"Da Capo (1966)\nSeven and Seven Is\nLost in the Clouds\n\nForever Changes (1967)\nAlone Again Or\nYou Set The Scene"
+"mock-out":"Seven and Seven Is\nLost in the Clouds\n\nAlone Again Or\nYou Set The Scene"
+"in":"Da Capo (1966)\nSeven and Seven Is\nLost in the Clouds\nMy Little Red Book\n\nForever Changes (1967)\nAlone Again Or\nAndmoreagain\nYou Set The Scene\n\nVillage Green (1967)\nVictoria\nWicked Annabella"
+"out":"Seven and Seven Is\nLost in the Clouds\nMy Little Red Book\n\nAlone Again Or\nAndmoreagain\nYou Set The Scene\n\nVictoria\nWicked Annabella"
+
+====================
+
+"mock-in":"001 Track01.mp3\n002 Track02.mp3\n003 Track03.mp3\n004 Acid Violet [Remix].mp3"
+"mock-out":"Track01\nTrack02\nTrack03\nAcid Violet [Remix]"
+"in":"001 Track01.mp3\n002 Track02.mp3\n003 Track03.mp3\n004 Mondays In Midtown.mp3\n005 Track05.mp3\n006 Track09.mp3"
+"out":"Track01\nTrack02\nTrack03\nMondays In Midtown\nTrack05\nTrack09"
+
+====================
+
+"mock-in":"Alabama\n\nAla.\n\nAL\n\nMontgomery\n\n\n\nAlaska\n\nAlaska\n\nAK\n\nJuneau\n\n\n\nArizona\n\nAriz.\n\nAZ\n\nPhoenix\n\n\n\nArkansas\n\nArk.\n\nAR\n\nLittle Rock"
+"mock-out":"Alabama, Ala., AL, Montgomery\nAlaska, Alaska, AK, Juneau\nArizona, Ariz., AZ, Phoenix\nArkansas, Ark., AR, Little Rock"
+"in":"Alabama\n\nAla.\n\nAL\n\nMontgomery\n\n\n\nAlaska\n\nAlaska\n\nAK\n\nJuneau\n\n\n\nArizona\n\nAriz.\n\nAZ\n\nPhoenix\n\n\n\nArkansas\n\nArk.\n\nAR\n\nLittle Rock\n\n\n\nCalifornia\n\nCalif.\n\nCA\n\nSacramento\n\n\n\nColorado\n\nColo.\n\nCO\n\nDenver\n\n\n\nConnecticut\n\nConn.\n\nCT\n\nHartford\n\n\n\nDelaware\n\nDel.\n\nDE\n\nDover\n\n\n\nFlorida\n\nFla.\n\nFL\n\nTallahassee\n\n\n\nGeorgia\n\nGa.\n\nGA\n\nAtlanta\n\n\n\nHawaii\n\nHawaii\n\nHI\n\nHonolulu\n\n\n\nIdaho\n\nIdaho\n\nID\n\nBoise"
+"out":"Alabama, Ala., AL, Montgomery\nAlaska, Alaska, AK, Juneau\nArizona, Ariz., AZ, Phoenix\nArkansas, Ark., AR, Little Rock\nCalifornia, Calif., CA, Sacramento\nColorado, Colo., CO, Denver\nConnecticut, Conn., CT, Hartford\nDelaware, Del., DE, Dover\nFlorida, Fla., FL, Tallahassee\nGeorgia, Ga., GA, Atlanta\nHawaii, Hawaii, HI, Honolulu\nIdaho, Idaho, ID, Boise"
+
+====================
+
+"mock-in":"Alabama, Ala., AL, Montgomery\nAlaska, Alaska, AK, Juneau\nArizona, Ariz., AZ, Phoenix\nArkansas, Ark., AR, Little Rock"
+"mock-out":"Alabama, AL\nAlaska, AK\nArizona, AZ\nArkansas, AR"
+"in":"Alabama, Ala., AL, Montgomery\nAlaska, Alaska, AK, Juneau\nArizona, Ariz., AZ, Phoenix\nArkansas, Ark., AR, Little Rock\nCalifornia, Calif., CA, Sacramento\nColorado, Colo., CO, Denver\nConnecticut, Conn., CT, Hartford\nDelaware, Del., DE, Dover\nFlorida, Fla., FL, Tallahassee\nGeorgia, Ga., GA, Atlanta\nHawaii, Hawaii, HI, Honolulu\nIdaho, Idaho, ID, Boise"
+"out":"Alabama, AL\nAlaska, AK\nArizona, AZ\nArkansas, AR\nCalifornia, CA\nColorado, CO\nConnecticut, CT\nDelaware, DE\nFlorida, FL\nGeorgia, GA\nHawaii, HI\nIdaho, ID"
+
+====================
+
+"mock-in":"Alabama, AL\nAlaska, AK\nArizona, AZ\nArkansas, AR"
+"mock-out":"Alabama AL\nAlaska AK\nArizona AZ\nArkansas AR"
+"in":"Alabama, AL\nAlaska, AK\nArizona, AZ\nArkansas, AR\nCalifornia, CA\nColorado, CO\nConnecticut, CT\nDelaware, DE\nFlorida, FL\nGeorgia, GA\nHawaii, HI\nIdaho, ID"
+"out":"Alabama AL\nAlaska AK\nArizona AZ\nArkansas AR\nCalifornia CA\nColorado CO\nConnecticut CT\nDelaware DE\nFlorida FL\nGeorgia GA\nHawaii HI\nIdaho ID"
+
+====================
+
+"mock-in":"Alabama, AL\nAlaska, AK\nArizona, AZ\nArkansas, AR"
+"mock-out":"Alabama       AL\nAlaska        AK\nArizona       AZ\nArkansas      AR"
+"in":"Alabama, AL\nAlaska, AK\nArizona, AZ\nArkansas, AR\nCalifornia, CA\nColorado, CO\nConnecticut, CT\nDelaware, DE\nFlorida, FL\nGeorgia, GA\nHawaii, HI\nIdaho, ID"
+"out":"Alabama       AL\nAlaska        AK\nArizona       AZ\nArkansas      AR\nCalifornia    CA\nColorado      CO\nConnecticut   CT\nDelaware      DE\nFlorida       FL\nGeorgia       GA\nHawaii        HI\nIdaho         ID"
+
+====================
+
+"mock-in":"Alabama AL\nAlaska AK\nArizona AZ\nArkansas AR"
+"mock-out":"Alabama       AL\nAlaska        AK\nArizona       AZ\nArkansas      AR"
+"in":"Alabama AL\nAlaska AK\nArizona AZ\nArkansas AR\nCalifornia CA\nColorado CO\nConnecticut CT\nDelaware DE\nFlorida FL\nGeorgia GA\nHawaii HI\nIdaho ID"
+"out":"Alabama       AL\nAlaska        AK\nArizona       AZ\nArkansas      AR\nCalifornia    CA\nColorado      CO\nConnecticut   CT\nDelaware      DE\nFlorida       FL\nGeorgia       GA\nHawaii        HI\nIdaho         ID"
+
+====================
+
+"mock-in":"Alabama       AL\nAlaska        AK\nArizona       AZ\nArkansas      AR"
+"mock-out":"Alabama AL\nAlaska AK\nArizona AZ\nArkansas AR"
+"in":"Alabama       AL\nAlaska        AK\nArizona       AZ\nArkansas      AR\nCalifornia    CA\nColorado      CO\nConnecticut   CT\nDelaware      DE\nFlorida       FL\nGeorgia       GA\nHawaii        HI\nIdaho         ID"
+"out":"Alabama AL\nAlaska AK\nArizona AZ\nArkansas AR\nCalifornia CA\nColorado CO\nConnecticut CT\nDelaware DE\nFlorida FL\nGeorgia GA\nHawaii HI\nIdaho ID"
+
+====================
+
+"mock-in":"Alabama\n\nAla.\n\nAL\n\nMontgomery\n\n\n\nAlaska\n\nAlaska\n\nAK\n\nJuneau\n\n\n\nArizona\n\nAriz.\n\nAZ\n\nPhoenix\n\n\n\nArkansas\n\nArk.\n\nAR\n\nLittle Rock"
+"mock-out":"Alabama Ala. AL Montgomery\nAlaska Alaska AK Juneau\nArizona Ariz. AZ Phoenix\nArkansas Ark. AR Little Rock"
+"in":"Alabama\n\nAla.\n\nAL\n\nMontgomery\n\n\n\nAlaska\n\nAlaska\n\nAK\n\nJuneau\n\n\n\nArizona\n\nAriz.\n\nAZ\n\nPhoenix\n\n\n\nArkansas\n\nArk.\n\nAR\n\nLittle Rock\n\n\n\nCalifornia\n\nCalif.\n\nCA\n\nSacramento\n\n\n\nColorado\n\nColo.\n\nCO\n\nDenver\n\n\n\nConnecticut\n\nConn.\n\nCT\n\nHartford\n\n\n\nDelaware\n\nDel.\n\nDE\n\nDover\n\n\n\nFlorida\n\nFla.\n\nFL\n\nTallahassee\n\n\n\nGeorgia\n\nGa.\n\nGA\n\nAtlanta\n\n\n\nHawaii\n\nHawaii\n\nHI\n\nHonolulu\n\n\n\nIdaho\n\nIdaho\n\nID\n\nBoise"
+"out":"Alabama Ala. AL Montgomery\nAlaska Alaska AK Juneau\nArizona Ariz. AZ Phoenix\nArkansas Ark. AR Little Rock\nCalifornia Calif. CA Sacramento\nColorado Colo. CO Denver\nConnecticut Conn. CT Hartford\nDelaware Del. DE Dover\nFlorida Fla. FL Tallahassee\nGeorgia Ga. GA Atlanta\nHawaii Hawaii HI Honolulu\nIdaho Idaho ID Boise"
+
+====================
+
+"mock-in":"Alabama\n \nAL\n \nAla.\n \nAla.\n \n\n01\n \n\n\nAlaska\n \nAK\n \nAlaska\n \nAlaska\n \nAlas.\n \n02\n \n\n\nArizona\n \nAZ\n \nAriz.\n \nAriz.\n \nAz.\n \n04"
+"mock-out":"Alabama AL Ala. Ala. 01\nAlaska AK Alaska Alaska Alas. 02\nArizona AZ Ariz. Ariz. Az. 04"
+"in":"Alabama\n \nAL\n \nAla.\n \nAla.\n \n\n01\n \n\n\nAlaska\n \nAK\n \nAlaska\n \nAlaska\n \nAlas.\n \n02\n \n\n\nArizona\n \nAZ\n \nAriz.\n \nAriz.\n \nAz.\n \n04\n \n\n\nArkansas\n \nAR\n \nArk.\n \nArk.\n \n\n05\n \n\n\nCalifornia\n \nCA\n \nCalif.\n \nCalif.\n \nCa. or Cal. or Cali., CFUSCG\n \n06\n \n\n\nColorado\n \nCO\n \nColo.\n \nColo.\n \nCol., CLUSCG\n \n08\n \n\n\nConnecticut\n \nCT\n \nConn.\n \nConn.\n \nCt.\n \n09\n \n\n\nDelaware\n \nDE\n \nDel.\n \nDel.\n \nDe., DLUSCG\n \n10\n \n\n\nDistrict of Columbia\n \nDC\n \nD.C.\n \nD.C.\n \nDC or Wash., D.C. (Federal district)\n \n11"
+"out":"Alabama AL Ala. Ala. 01\nAlaska AK Alaska Alaska Alas. 02\nArizona AZ Ariz. Ariz. Az. 04\nArkansas AR Ark. Ark. 05\nCalifornia CA Calif. Calif. Ca. or Cal. or Cali., CFUSCG 06\nColorado CO Colo. Colo. Col., CLUSCG 08\nConnecticut CT Conn. Conn. Ct. 09\nDelaware DE Del. Del. De., DLUSCG 10\nDistrict of Columbia DC D.C. D.C. DC or Wash., D.C. (Federal district) 11"
+
+====================
+
+"mock-in":"Alabama\n \nAL\n \nAla.\n \nAla.\n \n\n01\n \n\n\nAlaska\n \nAK\n \nAlaska\n \nAlaska\n \nAlas.\n \n02\n \n\n\nArizona\n \nAZ\n \nAriz.\n \nAriz.\n \nAz.\n \n04\n\n\n\nNew York\n \nNY\n \nN.Y.\n \nN.Y.\n \nN. York\n \n36"
+"mock-out":"Alabama AL Ala. Ala. 01\nAlaska AK Alaska Alaska Alas. 02\nArizona AZ Ariz. Ariz. Az. 04\nNew York NY N.Y. N.Y. N. York 36"
+"in":"Alabama\n \nAL\n \nAla.\n \nAla.\n \n\n01\n \n\n\nAlaska\n \nAK\n \nAlaska\n \nAlaska\n \nAlas.\n \n02\n \n\n\nArizona\n \nAZ\n \nAriz.\n \nAriz.\n \nAz.\n \n04\n \n\n\nArkansas\n \nAR\n \nArk.\n \nArk.\n \n\n05\n \n\n\nCalifornia\n \nCA\n \nCalif.\n \nCalif.\n \nCa. or Cal. or Cali., CFUSCG\n \n06\n \n\n\nColorado\n \nCO\n \nColo.\n \nColo.\n \nCol., CLUSCG\n \n08\n \n\n\nConnecticut\n \nCT\n \nConn.\n \nConn.\n \nCt.\n \n09\n \n\n\nDelaware\n \nDE\n \nDel.\n \nDel.\n \nDe., DLUSCG\n \n10\n \n\n\nDistrict of Columbia\n \nDC\n \nD.C.\n \nD.C.\n \nDC or Wash., D.C. (Federal district)\n \n11\n\n\n\nNew Jersey\n \nNJ\n \nN.J.\n \nN.J.\n \n\n34\n \n\n\nNew Mexico\n \nNM\n \nN. Mex.\n \nN.M.\n \nNew M.\n \n35\n \n\n\nNew York\n \nNY\n \nN.Y.\n \nN.Y.\n \nN. York\n \n36"
+"out":"Alabama AL Ala. Ala. 01\nAlaska AK Alaska Alaska Alas. 02\nArizona AZ Ariz. Ariz. Az. 04\nArkansas AR Ark. Ark. 05\nCalifornia CA Calif. Calif. Ca. or Cal. or Cali., CFUSCG 06\nColorado CO Colo. Colo. Col., CLUSCG 08\nConnecticut CT Conn. Conn. Ct. 09\nDelaware DE Del. Del. De., DLUSCG 10\nDistrict of Columbia DC D.C. D.C. DC or Wash., D.C. (Federal district) 11\nNew Jersey NJ N.J. N.J. 34\nNew Mexico NM N. Mex. N.M. New M. 35\nNew York NY N.Y. N.Y. N. York 36"
+
+====================
+
+"mock-in":"Alabama AL Ala. Ala. 01\nAlaska AK Alaska Alaska Alas. 02\nArizona AZ Ariz. Ariz. Az. 04\nArkansas AR Ark. Ark. 05\nDistrict of Columbia DC D.C. D.C. DC or Wash., D.C. (Federal district) 11\nNew York NY N.Y. N.Y. N. York 36"
+"mock-out":"Alabama AL\nAlaska AK\nArizona AZ\nArkansas AR\nDistrict of Columbia DC\nNew York NY"
+"in":"Alabama AL Ala. Ala. 01\nAlaska AK Alaska Alaska Alas. 02\nArizona AZ Ariz. Ariz. Az. 04\nArkansas AR Ark. Ark. 05\nCalifornia CA Calif. Calif. Ca. or Cal. or Cali., CFUSCG 06\nColorado CO Colo. Colo. Col., CLUSCG 08\nConnecticut CT Conn. Conn. Ct. 09\nDelaware DE Del. Del. De., DLUSCG 10\nDistrict of Columbia DC D.C. D.C. DC or Wash., D.C. (Federal district) 11\nNew Jersey NJ N.J. N.J. 34\nNew Mexico NM N. Mex. N.M. New M. 35\nNew York NY N.Y. N.Y. N. York 36"
+"out":"Alabama AL\nAlaska AK\nArizona AZ\nArkansas AR\nCalifornia CA\nColorado CO\nConnecticut CT\nDelaware DE\nDistrict of Columbia DC\nNew Jersey NJ\nNew Mexico NM\nNew York NY"
+
+====================
+
+"mock-in":"Alabama\tAL\tAla.\tAla.\t\t01\nAlaska\tAK\tAlaska\tAlaska\tAlas.\t02\nArizona\tAZ\tAriz.\tAriz.\tAz.\t04\nArkansas\tAR\tArk.\tArk.\t\t05\nCalifornia\tCA\tCalif.\tCalif.\tCa. or Cal. or Cali., CFUSCG\t06\nColorado\tCO\tColo.\tColo.\tCol., CLUSCG\t08\nConnecticut\tCT\tConn.\tConn.\tCt.\t09\nDelaware\tDE\tDel.\tDel.\tDe., DLUSCG\t10\nDistrict of Columbia\tDC\tD.C.\tD.C.\tDC or Wash., D.C. (Federal district)\t11"
+"mock-out":"Alabama AL\nAlaska AK\nArizona AZ\nArkansas AR\nCalifornia CA\nColorado CO\nConnecticut CT\nDelaware DE\nDistrict of Columbia DC"
+"in":"Alabama\tAL\tAla.\tAla.\t\t01\nAlaska\tAK\tAlaska\tAlaska\tAlas.\t02\nArizona\tAZ\tAriz.\tAriz.\tAz.\t04\nArkansas\tAR\tArk.\tArk.\t\t05\nCalifornia\tCA\tCalif.\tCalif.\tCa. or Cal. or Cali., CFUSCG\t06\nColorado\tCO\tColo.\tColo.\tCol., CLUSCG\t08\nConnecticut\tCT\tConn.\tConn.\tCt.\t09\nDelaware\tDE\tDel.\tDel.\tDe., DLUSCG\t10\nDistrict of Columbia\tDC\tD.C.\tD.C.\tDC or Wash., D.C. (Federal district)\t11\nFlorida\tFL\tFla.\tFla.\tFl. or Flor.\t12\nGeorgia\tGA\tGa.\tGa.\t\t13\nHawaii\tHI\tHawaii\tHawaii\tH.I., HAUSCG\t15\nIdaho\tID\tIdaho\tIdaho\tId. or Ida.\t16\nIllinois\tIL\tIll.\tIll.\tIl. or Ills.\t17\nIndiana\tIN\tInd.\tInd.\tIn.\t18\nIowa\tIA\tIowa\tIowa\tIa.\t19\nKansas\tKS\tKans.\tKan.\tKs. or Ka., KAUSCG\t20"
+"out":"Alabama AL\nAlaska AK\nArizona AZ\nArkansas AR\nCalifornia CA\nColorado CO\nConnecticut CT\nDelaware DE\nDistrict of Columbia DC\nFlorida FL\nGeorgia GA\nHawaii HI\nIdaho ID\nIllinois IL\nIndiana IN\nIowa IA\nKansas KS"
+
+====================
+
+"mock-in":"Alabama AL\nAlaska AK\nDelaware DE\nDistrict of Columbia DC\nGeorgia GA"
+"mock-out":"Alaska AK\nAlabama AL\nDistrict of Columbia DC\nDelaware DE\nGeorgia GA"
+"in":"Alabama AL\nAlaska AK\nArizona AZ\nArkansas AR\nCalifornia CA\nColorado CO\nConnecticut CT\nDelaware DE\nDistrict of Columbia DC\nFlorida FL\nGeorgia GA\nHawaii HI\nIdaho ID\nIllinois IL\nIndiana IN\nIowa IA\nKansas KS\nsort by last word AA"
+"out":"sort by last word AA\nAlaska AK\nAlabama AL\nArkansas AR\nArizona AZ\nCalifornia CA\nColorado CO\nConnecticut CT\nDistrict of Columbia DC\nDelaware DE\nFlorida FL\nGeorgia GA\nHawaii HI\nIowa IA\nIdaho ID\nIllinois IL\nIndiana IN\nKansas KS"
+
+====================
+
+"mock-in":"G\nf\nC\nd\nA\nb\nE"
+"mock-out":"A\nb\nC\nd\nE\nf\nG"
+"in":"Alabama AL\nAlaska AK\nArizona AZ\nArkansas AR\nCalifornia CA\nGeorgia GA\nColorado CO\nConnecticut CT\nDelaware DE\nDistrict of Columbia DC\nFlorida FL\nHawaii HI\nIdaho ID\nIllinois IL\nIndiana IN\nIowa IA\nKansas KS\nbe careful -- this is a case insensitive sort\ncee what I mean?!"
+"out":"Alabama AL\nAlaska AK\nArizona AZ\nArkansas AR\nbe careful -- this is a case insensitive sort\nCalifornia CA\ncee what I mean?!\nColorado CO\nConnecticut CT\nDelaware DE\nDistrict of Columbia DC\nFlorida FL\nGeorgia GA\nHawaii HI\nIdaho ID\nIllinois IL\nIndiana IN\nIowa IA\nKansas KS"
+
+====================
+
+"mock-in":"2\n3"
+"mock-out":"5"
+"in":"3\n2\n19"
+"out":"24"
+
+====================
+
+"mock-in":"Hi\nThis\nIs "
+"mock-out":"1 Hi\n2 This\n3 Is "
+"in":"Hi\nThis\nIs \nA\nTest\nof\nline\nnumbers"
+"out":"1 Hi\n2 This\n3 Is \n4 A\n5 Test\n6 of\n7 line\n8 numbers"
+
+====================
+
+"mock-in":"11,252,1310,10,Mr Scuff,0.373199476211,729,2006,0.jpg,http://kittenwar.com/c_images/2006/10/11/100000.2.jpg,http://kittenwar.com/kittens/100000\n11,222,1310,10,Mr Scuff,0.369844789357,723,2006,1.jpg,http://kittenwar.com/c_images/2006/10/11/100001.2.jpg,http://kittenwar.com/kittens/100001\n11,235,813,10,Tobby,0.578004535147,1157,2006,2.jpg,http://kittenwar.com/c_images/2006/10/11/100003.2.jpg,http://kittenwar.com/kittens/100003"
+"mock-out":"0.jpg\n1.jpg\n2.jpg"
+"in":"11,252,1310,10,Mr Scuff,0.373199476211,729,2006,0.jpg,http://kittenwar.com/c_images/2006/10/11/100000.2.jpg,http://kittenwar.com/kittens/100000\n11,222,1310,10,Mr Scuff,0.369844789357,723,2006,1.jpg,http://kittenwar.com/c_images/2006/10/11/100001.2.jpg,http://kittenwar.com/kittens/100001\n11,235,813,10,Tobby,0.578004535147,1157,2006,2.jpg,http://kittenwar.com/c_images/2006/10/11/100003.2.jpg,http://kittenwar.com/kittens/100003\n11,229,917,10,Caden,0.548972452995,1141,2006,3.jpg,http://kittenwar.com/c_images/2006/10/11/100007.2.jpg,http://kittenwar.com/kittens/100007\n11,230,1046,10,Hobbes And Goose Ii,0.486283185841,984,2006,4.jpg,http://kittenwar.com/c_images/2006/10/11/100009.2.jpg,http://kittenwar.com/kittens/100009\n11,239,989,10,Hrh Jc Fluff,0.497961956522,980,2006,5.jpg,http://kittenwar.com/c_images/2006/10/11/100010.2.jpg,http://kittenwar.com/kittens/100010\n11,210,1115,10,Rio Monster,0.452669358457,904,2006,6.jpg,http://kittenwar.com/c_images/2006/10/11/100016.2.jpg,http://kittenwar.com/kittens/100016\n11,209,489,10,Scooter,0.739235500879,1578,2006,7.jpg,http://kittenwar.com/c_images/2006/10/11/100017.2.jpg,http://kittenwar.com/kittens/100017"
+"out":"0.jpg\n1.jpg\n2.jpg\n3.jpg\n4.jpg\n5.jpg\n6.jpg\n7.jpg"
+
+====================
+
+"mock-in":"Adam Tauman kopeland\nJason Ipswitch Hartline\nRachel Blumburg Rudich"
+"mock-out":"kopeland, Adam T.\nHartline, Jason I.\nRudich, Rachel B."
+"in":"Casey Stevens Jones\nIndiana Eats Meat"
+"out":"Jones, Casey S.\nMeat, Indiana E."
+
+====================
+
+"mock-in":"4\n2\n0.000001\n0\n-0.000001\n-2\n-4"
+"mock-out":"positive\npositive\npositive\nzero\nnegative\nnegative\nnegative"
+"in":"84\n22\n0.300001\n0\n-0.000001\n-24\n-4"
+"out":"positive\npositive\npositive\nzero\nnegative\nnegative\nnegative"
+
+====================
+
+"mock-in":"\"IBM\",176.63,\"7/7/2011\",\"2:34pm\",-1.08,176.78,177.23,176.15,3790122\n\"MSFT\",26.82,\"7/7/2011\",\"2:34pm\",+0.49,26.50,26.84,26.36,35695160\n\"HOLL\",1.61,\"7/7/2011\",\"1:55pm\",+0.05,1.56,1.62,1.56,20900"
+"mock-out":"IBM\nMSFT\nHOLL"
+"in":"\"WE\",476.63,\"7/7/2011\",\"2:34pm\",-1.08,176.78,177.23,176.15,3790122\n\"IMPROVE\",26.82,\"7/7/2011\",\"2:34pm\",+0.49,26.50,26.84,26.36,35695160\n\"SURELY\",1.61,\"7/7/2011\",\"1:55pm\",+0.05,1.56,1.62,1.56,20900"
+"out":"WE\nIMPROVE\nSURELY"
+
+====================
+
+"mock-in":"\"IBM\",176.63,\"7/7/2011\",\"2:34pm\",-1.08,176.78,177.23,176.15,3790122\n\"MSFT\",26.82,\"7/7/2011\",\"2:34pm\",+0.49,26.50,26.82,26.36,35695160\n\"HOLL\",1.61,\"7/7/2011\",\"1:55pm\",+0.05,1.56,-1.61,1.56,20900"
+"mock-out":"177.23\n26.82\n-1.61"
+"in":"\"WE\",476.63,\"7/7/2011\",\"2:34pm\",-1.08,176.78,277.23,176.15,3790122\n\"IMPROVE\",26.82,\"7/7/2011\",\"2:34pm\",+0.49,26.50,26.84,26.36,35695160\n\"SURELY\",1.61,\"7/7/2011\",\"1:55pm\",+0.05,1.56,1.62,1.56,20900"
+"out":"277.23\n26.84\n1.62"
+
+====================
+
+"mock-in":"\"IBM\",176.63,\"7/7/2011\",\"2:34pm\",-1.08,176.78,177.23,176.15,3790122\n\"MSFT\",26.82,\"7/7/2011\",\"2:34pm\",+0.49,26.50,26.82,26.36,35695160\n\"HOLL\",1.61,\"7/7/2011\",\"1:55pm\",+0.05,1.56,-1.61,1.56,20900"
+"mock-out":"-1.08\n+0.49\n+0.05"
+"in":"\"WE\",476.63,\"7/7/2011\",\"2:34pm\",-.08,176.78,277.23,176.15,3790122\n\"IMPROVE\",26.82,\"7/7/2011\",\"2:34pm\",+0.222,26.50,26.84,26.36,35695160\n\"SURELY\",1.61,\"7/7/2011\",\"1:55pm\",+0,1.56,1.62,1.56,20900"
+"out":"-.08\n+0.222\n+0"
+
+====================
+
+"mock-in":"birds\ndogs\ncats\nbirds\ncats\ncats\ncats\ncats"
+"mock-out":"birds 2\ndogs 1\ncats 5"
+"in":"this\nis\nwhere\nwe\nwill\nwill"
+"out":"this 1\nis 1\nwhere 1\nwe 1\nwill 2"
+
+====================
+
+"mock-in":"24 June 2010\n25 June 2010"
+"mock-out":"Thursday\nFriday"
+"in":"23 June 2010"
+"out":"Wednesday"
+
+====================
+
+"mock-in":"24 June 2010\n22 June 2010"
+"mock-out":"24th June 2010\n22nd June 2010"
+"in":"23 June 2010"
+"out":"23rd June 2010"
+
+====================
+
+"mock-in":"June 24\nJune 22"
+"mock-out":"24th of June\n22nd of June"
+"in":"June 23"
+"out":"23rd of June"
+
+====================
+
+"mock-in":"www.google.com\nwww.mirrorview.com"
+"mock-out":"http://www.google.com\nhttp://www.mirrorview.com"
+"in":"www.movies.com"
+"out":"http://www.movies.com"
+
+====================
+
+"mock-in":"Aditya malhotra\nRobert Foster"
+"mock-out":"malhotra, A\nFoster, R"
+"in":"Aditya malhotra\nPeter Rosenheim\nAdam kopeland\nSumit gaurav"
+"out":"malhotra, A\nRosenheim, P\nkopeland, A\ngaurav, S"
+
+====================
+
+"mock-in":"Aditya Krishna malhotra\nRicky Thomas Ponting"
+"mock-out":"A K malhotra\nR T Ponting"
+"in":"Aditya Krishna malhotra\nRicky Thomas Ponting\nSachin Ramesh Tendulkar"
+"out":"A K malhotra\nR T Ponting\nS R Tendulkar"
+
+====================
+
+"mock-in":"Antonio Moreno 515 93th Lane ,Renton,WA,(411) 555-2786,562-87-3127,28581\nAna Trujillo 357 21th Place SE,Redmond,WA,(757) 555-1634,140-37-6064,27171\nChristina Berglund 475 22th Lane ,Redmond,WA,(443) 555-6774,844-35-6764,30146\nJose Pedro Freyre 222 68th Place NE,Seattle,WA,(361) 555-7381,798-14-7411,25222"
+"mock-out":"515 93th Lane ,Renton,WA,(411) 555-2786,562-87-3127,28581\n357 21th Place SE,Redmond,WA,(757) 555-1634,140-37-6064,27171\n475 22th Lane ,Redmond,WA,(443) 555-6774,844-35-6764,30146\n222 68th Place NE,Seattle,WA,(361) 555-7381,798-14-7411,25222"
+"in":"Christinaxxxxx Berglund 475 22th Lane ,Redmond,WA,(443) 555-6774,844-35-6764,30146\nMartine Rance 688 93th Place NW,Kent,WA,(573) 555-3571,695-94-3479,22424\nJosexxxxx Pedro Freyre 222 68th Place NE,Seattle,WA,(361) 555-7381,798-14-7411,25222"
+"out":"475 22th Lane ,Redmond,WA,(443) 555-6774,844-35-6764,30146\n688 93th Place NW,Kent,WA,(573) 555-3571,695-94-3479,22424\n222 68th Place NE,Seattle,WA,(361) 555-7381,798-14-7411,25222"
+
+====================
+
+"mock-in":"Antonio Moreno 515 93th Lane ,Renton,WA,(411) 555-2786,562-87-3127,28581\nAna Trujillo 357 21th Place SE,Redmond,WA,(757) 555-1634,140-37-6064,27171\nChristina Berglund 475 22th Lane ,Redmond,WA,(443) 555-6774,844-35-6764,30146\nJose Pedro Freyre 222 68th Place NE,Seattle,WA,(361) 555-7381,798-14-7411,25222"
+"mock-out":"Antonio Moreno\nAna Trujillo\nChristina Berglund\nJose Pedro Freyre"
+"in":"Christinaxxxxx Berglund 475 22th Lane ,Redmond,WA,(443) 555-6774,844-35-6764,30146\nMartine Rance 688 93th Place NW,Kent,WA,(573) 555-3571,695-94-3479,22424\nJosexxxxx Pedro Freyre 222 68th Place NE,Seattle,WA,(361) 555-7381,798-14-7411,25222"
+"out":"Christinaxxxxx Berglund\nMartine Rance\nJosexxxxx Pedro Freyre"
+
+====================
+
+"mock-in":"blah0blah0blah\nblah0foo0bar\ncats0dogs0mean"
+"mock-out":"0\n1\n2"
+"in":"C:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips.out"
+"out":"0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15"
+
+====================
+
+"mock-in":"0\n...\n5"
+"mock-out":"0\n1\n2\n3\n4\n5"
+"in":"0\n...\n4"
+"out":"0\n1\n2\n3\n4"
+
+====================
+
+"mock-in":"C:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips.out\n...\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\2.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\2.trips.out"
+"mock-out":"C:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\1.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\1.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\2.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\2.trips.out"
+"in":"C:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips.out\n...\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\15.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\15.trips.out"
+"out":"C:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\0.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\1.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\1.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\2.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\2.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\3.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\3.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\4.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\4.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\5.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\5.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\6.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\6.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\7.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\7.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\8.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\8.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\9.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\9.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\10.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\10.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\11.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\11.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\12.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\12.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\13.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\13.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\14.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\14.trips.out\nC:\\Users\\axum>c:\\users\\axum\\simexp\\py\\runtrips_multiple_times.py  C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\kittens.config C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\15.trips C:\\Users\\axum\\dropbox\\axum\\papers\\atts\\simexps\\kittens\\halfspaces\\15.trips.out"
+
+====================
+
+"mock-in":"2\n3\n...\n6"
+"mock-out":"2\n3\n4\n5\n6"
+"in":"4\n5\n...\n8"
+"out":"4\n5\n6\n7\n8"
+
+====================
+
+"mock-in":"you can call me at 349-312-4950.\nif that doesn't work, please try (858)-600-4014"
+"mock-out":"349-312-4950\n(858)-600-4014"
+"in":"XJohn DOE Typing 3 Data [TS] (865)-000-0000 - - 453442-00 06-23-2009\nXA FF MARILYN TITANIC 30'S 865-000-0030 4535871-00 07-07-2009\nXA GEDA-MARY oUTSIDE 100MG TAT 865-000-0000 - - 5941-00 06-23-2009"
+"out":"(865)-000-0000\n865-000-0030\n865-000-0000"
+
+====================
+
+"mock-in":"04.\nfunction formatPhone(phonenum) {\n05.\nvar regexObj = 'stuff';\n06.\nif (regexObj.test(phonenum)) {\n07.\nvar parts = phonenum.match(regexObj);"
+"mock-out":"function formatPhone(phonenum) {\nvar regexObj = 'stuff';\nif (regexObj.test(phonenum)) {\nvar parts = phonenum.match(regexObj);"
+"in":"04.\nfunction formatPhone(phonenum) {\n05.\nvar regexObj = /^(?:\\+?1[-. ]?)?(?:\\(?([0-9]{3})\\)?[-. ]?)?([0-9]{3})[-. ]?([0-9]{4})$/;\n06.\nif (regexObj.test(phonenum)) {\n07.\nvar parts = phonenum.match(regexObj);\n08.\nvar phone = \"\";\n09.\nif (parts[1]) { phone += \"+1 (\" + parts[1] + \") \"; }\n10.\nphone += parts[2] + \"-\" + parts[3];\n11.\nreturn phone;\n12.\n}\n13.\nelse {\n14.\n//invalid phone number\n15.\nreturn phonenum;\n16.\n}\n17.\n}\n18."
+"out":"function formatPhone(phonenum) {\nvar regexObj = /^(?:\\+?1[-. ]?)?(?:\\(?([0-9]{3})\\)?[-. ]?)?([0-9]{3})[-. ]?([0-9]{4})$/;\nif (regexObj.test(phonenum)) {\nvar parts = phonenum.match(regexObj);\nvar phone = \"\";\nif (parts[1]) { phone += \"+1 (\" + parts[1] + \") \"; }\nphone += parts[2] + \"-\" + parts[3];\nreturn phone;\n}\nelse {\n//invalid phone number\nreturn phonenum;\n}\n}"
+
+====================
+
+"mock-in":"8632096110\n9187765315"
+"mock-out":"(863)-209-6110\n(918)-776-5315"
+"in":"8632096110\n9187765315\n4518712495"
+"out":"(863)-209-6110\n(918)-776-5315\n(451)-871-2495"
+
+====================
+
+"mock-in":"8632096110\n9187765315"
+"mock-out":"863-209-6110\n918-776-5315"
+"in":"8632096110\n9187765315\n4518712495"
+"out":"863-209-6110\n918-776-5315\n451-871-2495"
+
+====================
+
+"mock-in":"24/06/2010\n01/01/2011"
+"mock-out":"June 24 2010\nJanuary 1 2011"
+"in":"07/12/1984"
+"out":"December 7 1984"
+
+====================
+
+"mock-in":"19700101\n19830302\n19800731"
+"mock-out":"01/01/1970\n03/02/1983\n07/31/1980"
+"in":"19801003"
+"out":"10/03/1980"
+
+====================
+
+"mock-out":"This is our first\ntest using more than one input."
+"out":"Let's see if it works.\nIt does!"
+"mock-in0":"This is\ntest using","in0":"Let's see if it\nIt"
+"mock-in1":"our first\nmore than one input.","in1":"works.\ndoes!"
+
+====================
+
+"mock-out":"A. malhotra\nR. Foster"
+"out":"A. malhotra\nP. Rosenheim\nA. kopeland\nS. gaurav"
+"mock-in":"Aditya malhotra\nRobert Foster"
+"in":"Aditya malhotra\nPeter Rosenheim\nAdam kopeland\nSumit gaurav"
+
+====================
+
+"mock-out":"A. K. malhotra\nR. T. Ponting"
+"out":"A. K. malhotra\nR. T. Ponting\nS. R. Tendulkar"
+"mock-in":"Aditya Krishna malhotra\nRicky Thomas Ponting"
+"in":"Aditya Krishna malhotra\nRicky Thomas Ponting\nSachin Ramesh Tendulkar"
+
+====================
+
+"mock-out":"148 martin 20/07/2010\n199 jan 20/07/2010\n718 martin 20/07/2010"
+"out":"148 martin 20/07/2010\n256 scezy 20/05/2006\n199 jan 20/07/2010\n718 martin 20/07/2010"
+"mock-in0":"148 martin 20/07/2010\n158 martin 20/07/2010\n178 martin 20/07/2010\n148 pavel 20/07/2010\n199 jan 20/07/2010\n718 martin 20/07/2010","in0":"148 martin 20/07/2010\n158 martin 20/07/2010\n178 martin 20/07/2010\n256 scezy 20/05/2006\n148 pavel 20/07/2010\n199 jan 20/07/2010\n718 martin 20/07/2010"
+"mock-in1":"108 mdartin 20/07/2010\n198 martin 20/07/2010\n1778 sad 20/07/2010\n199 jan 20/07/2010\n148 martin 20/07/2010\n718 martin 20/07/2010","in1":"108 mdartin 20/07/2010\n198 martin 20/07/2010\n1778 sad 20/07/2010\n199 jan 20/07/2010\n148 martin 20/07/2010\n718 martin 20/07/2010\n256 scezy 20/05/2006"
+
+====================
+
+"mock-out":"148 martin 20/07/2010\n158 martin 20/07/2010\n178 martin 20/07/2010\n148 pavel 20/07/2010\n199 jan 20/07/2010\n718 martin 20/07/2010\n108 mdartin 20/07/2010\n198 martin 20/07/2010\n1778 sad 20/07/2010"
+"out":"148 martin 20/07/2010\n158 martin 20/07/2010\n178 martin 20/07/2010\n148 pavel 20/07/2010\n199 jan 20/07/2010\n718 martin 20/07/2010\n255 scezy 20/05/2006\n108 mdartin 20/07/2010\n198 martin 20/07/2010\n1778 sad 20/07/2010\n256 scezy 20/05/2006"
+"mock-in0":"148 martin 20/07/2010\n158 martin 20/07/2010\n178 martin 20/07/2010\n148 pavel 20/07/2010\n199 jan 20/07/2010\n718 martin 20/07/2010","in0":"148 martin 20/07/2010\n158 martin 20/07/2010\n178 martin 20/07/2010\n148 pavel 20/07/2010\n199 jan 20/07/2010\n718 martin 20/07/2010\n255 scezy 20/05/2006"
+"mock-in1":"108 mdartin 20/07/2010\n198 martin 20/07/2010\n1778 sad 20/07/2010\n199 jan 20/07/2010\n148 martin 20/07/2010\n718 martin 20/07/2010","in1":"108 mdartin 20/07/2010\n198 martin 20/07/2010\n1778 sad 20/07/2010\n199 jan 20/07/2010\n148 martin 20/07/2010\n718 martin 20/07/2010\n256 scezy 20/05/2006"
+
+====================
+
+"mock-out":"07/09/2011\tAT THE KNEES\n\n07/18/2011\tFARLEYSHELONWHEEL\n\n07/11/2011\tFARLEYSHELONWHEEL\n\n07/09/2011\tGOLDISPRETTY\n07/09/2011\tJ B THREE\n07/09/2011\tKWAME"
+"out":"07/09/2011\tAT THE KNEES\n\n07/18/2011\tFARLEYSHELONWHEELS\n\n07/11/2011\tFARLEYSHELONWHEELS\n\n07/09/2011\tGOLDISPRETTY\n07/09/2011\tJ B THREE\n07/09/2011\tKWAME"
+"mock-in":"07/09/2011\tAT THE KNEES\n07/18/2011\tFARLEYSHELONWHEEL\n07/11/2011\tFARLEYSHELONWHEEL\n07/09/2011\tGOLDISPRETTY\n07/09/2011\tJ B THREE\n07/09/2011\tKWAME"
+"in":"07/09/2011\tAT THE KNEES\n07/18/2011\tFARLEYSHELONWHEELS\n07/11/2011\tFARLEYSHELONWHEELS\n07/09/2011\tGOLDISPRETTY\n07/09/2011\tJ B THREE\n07/09/2011\tKWAME"
+
+====================
+
+"mock-out":"12\n300\n24"
+"out":"12\n300\n24\n1255"
+"mock-in":"Delgany Blaze 12 P\nAlright My Son 300\n24 Finders 14 Keepers"
+"in":"Delgany Blaze 12 P\nAlright My Son 300\n24 Finders 14 Keepers\n1255 Crescent Cross"
+
+====================
+
+"mock-out":"7056\n7059"
+"out":"7056\n7059\n7062\n7063\n7065"
+"mock-in0":"7855\n7056\n7059\n7842","in0":"7855\n7056\n7059\n7062\n7063\n7864\n7065"
+"mock-in1":"7050, 7052, 7053, 7059, 7060\n7029, 7045, 7011, 7062, 7051\n7001, 7004, 7065, 7077, 7080\n7044, 7035, 7055, 7010, 7099\n7019, 7063, 7002, 7064, 7056","in1":"7050, 7052, 7053, 7059, 7060\n7029, 7045, 7011, 7062, 7051\n7001, 7004, 7065, 7077, 7080\n7044, 7035, 7055, 7010, 7099\n7019, 7063, 7002, 7064, 7056"
+
+====================
+
+"mock-out":"158 martin 20/07/2010\n178 martin 20/07/2010\n148 pavel 20/07/2010"
+"out":"158 martin 20/07/2010\n178 martin 20/07/2010\n148 pavel 20/07/2010\n255 scezy 20/05/2006"
+"mock-in0":"148 martin 20/07/2010\n158 martin 20/07/2010\n178 martin 20/07/2010\n148 pavel 20/07/2010\n199 jan 20/07/2010\n718 martin 20/07/2010","in0":"148 martin 20/07/2010\n158 martin 20/07/2010\n178 martin 20/07/2010\n148 pavel 20/07/2010\n199 jan 20/07/2010\n718 martin 20/07/2010\n255 scezy 20/05/2006"
+"mock-in1":"108 mdartin 20/07/2010\n198 martin 20/07/2010\n1778 sad 20/07/2010\n199 jan 20/07/2010\n148 martin 20/07/2010\n718 martin 20/07/2010","in1":"108 mdartin 20/07/2010\n198 martin 20/07/2010\n1778 sad 20/07/2010\n199 jan 20/07/2010\n148 martin 20/07/2010\n718 martin 20/07/2010\n256 scezy 20/05/2006"
+
+====================
+
+"mock-out":"158 martin 20/07/2010\n178 martin 20/07/2010\n148 pavel 20/07/2010\n108 mdartin 20/07/2010\n198 martin 20/07/2010\n1778 sad 20/07/2010"
+"out":"158 martin 20/07/2010\n178 martin 20/07/2010\n148 pavel 20/07/2010\n255 scezy 20/05/2006\n108 mdartin 20/07/2010\n198 martin 20/07/2010\n1778 sad 20/07/2010\n256 scezy 20/05/2006"
+"mock-in0":"148 martin 20/07/2010\n158 martin 20/07/2010\n178 martin 20/07/2010\n148 pavel 20/07/2010\n199 jan 20/07/2010\n718 martin 20/07/2010","in0":"148 martin 20/07/2010\n158 martin 20/07/2010\n178 martin 20/07/2010\n148 pavel 20/07/2010\n199 jan 20/07/2010\n718 martin 20/07/2010\n255 scezy 20/05/2006"
+"mock-in1":"108 mdartin 20/07/2010\n198 martin 20/07/2010\n1778 sad 20/07/2010\n199 jan 20/07/2010\n148 martin 20/07/2010\n718 martin 20/07/2010","in1":"108 mdartin 20/07/2010\n198 martin 20/07/2010\n1778 sad 20/07/2010\n199 jan 20/07/2010\n148 martin 20/07/2010\n718 martin 20/07/2010\n256 scezy 20/05/2006"
+
+====================
+
+"mock-out":"2\n1\n5"
+"out":"1\n1\n1\n1\n2"
+"mock-in0":"birds\ndogs\ncats\nbirds\ncats\ncats\ncats\ncats","in0":"this\nis\nwhere\nwe\nwill\nwill"
+"mock-in1":"birds\ndogs\ncats","in1":"this\nis\nwhere\nwe\nwill"
+
+====================
+
+"mock-out":"01-01-2001\n02-01-2001\n03-01-2001\n04-01-2001\n05-01-2001"
+"out":"01-01-2001\n02-01-2001\n03-01-2001\n04-01-2001\n05-01-2001\n06-01-2001\n07-01-2001\n08-01-2001\n09-01-2001\n10-01-2001\n11-01-2001\n12-01-2001"
+"mock-in":"01-01-2001\n...\n05-01-2001"
+"in":"01-01-2001\n...\n12-01-2001"
+
+====================
+
+"mock-out":"11-01-2001\n12-01-2001\n01-01-2002\n02-01-2002"
+"out":"01-01-2001\n02-01-2001\n03-01-2001\n04-01-2001\n05-01-2001\n06-01-2001\n07-01-2001\n08-01-2001\n09-01-2001\n10-01-2001\n11-01-2001\n12-01-2001\n01-01-2002\n02-01-2002"
+"mock-in":"11-01-2001\n...\n02-01-2002"
+"in":"01-01-2001\n...\n02-01-2002"
+
+====================
+
+"mock-out":"SELECT * FROM MYTABLE WHERE MYTABLE.DATE='11-01-2001' GROUP BY MYTABLE.DATE\nSELECT * FROM MYTABLE WHERE MYTABLE.DATE='12-01-2001' GROUP BY MYTABLE.DATE"
+"out":"SELECT * FROM MYTABLE WHERE MYTABLE.DATE='11-01-2001' GROUP BY MYTABLE.DATE\nSELECT * FROM MYTABLE WHERE MYTABLE.DATE='12-01-2001' GROUP BY MYTABLE.DATE\nSELECT * FROM MYTABLE WHERE MYTABLE.DATE='01-01-2002' GROUP BY MYTABLE.DATE\nSELECT * FROM MYTABLE WHERE MYTABLE.DATE='02-01-2002' GROUP BY MYTABLE.DATE\nSELECT * FROM MYTABLE WHERE MYTABLE.DATE='03-01-2002' GROUP BY MYTABLE.DATE\nSELECT * FROM MYTABLE WHERE MYTABLE.DATE='04-01-2002' GROUP BY MYTABLE.DATE\nSELECT * FROM MYTABLE WHERE MYTABLE.DATE='05-01-2002' GROUP BY MYTABLE.DATE"
+"mock-in0":"SELECT * FROM MYTABLE WHERE MYTABLE.DATE='","in0":"SELECT * FROM MYTABLE WHERE MYTABLE.DATE='"
+"mock-in1":"11-01-2001\n12-01-2001","in1":"11-01-2001\n12-01-2001\n01-01-2002\n02-01-2002\n03-01-2002\n04-01-2002\n05-01-2002"
+"mock-in2":"' GROUP BY MYTABLE.DATE","in2":"' GROUP BY MYTABLE.DATE"
+
+====================
+
+"mock-out":"SELECT * FROM MYTABLE\nWHERE MYTABLE.DATE='11-01-2001'\nGROUP BY MYTABLE.DATE\nSELECT * FROM MYTABLE\nWHERE MYTABLE.DATE='12-01-2001'\nGROUP BY MYTABLE.DATE"
+"out":"SELECT * FROM MYTABLE\nWHERE MYTABLE.DATE='11-01-2001'\nGROUP BY MYTABLE.DATE\nSELECT * FROM MYTABLE\nWHERE MYTABLE.DATE='12-01-2001'\nGROUP BY MYTABLE.DATE\nSELECT * FROM MYTABLE\nWHERE MYTABLE.DATE='01-01-2002'\nGROUP BY MYTABLE.DATE\nSELECT * FROM MYTABLE\nWHERE MYTABLE.DATE='02-01-2002'\nGROUP BY MYTABLE.DATE\nSELECT * FROM MYTABLE\nWHERE MYTABLE.DATE='03-01-2002'\nGROUP BY MYTABLE.DATE\nSELECT * FROM MYTABLE\nWHERE MYTABLE.DATE='04-01-2002'\nGROUP BY MYTABLE.DATE\nSELECT * FROM MYTABLE\nWHERE MYTABLE.DATE='05-01-2002'\nGROUP BY MYTABLE.DATE"
+"mock-in0":"SELECT * FROM MYTABLE\nWHERE MYTABLE.DATE='","in0":"SELECT * FROM MYTABLE\nWHERE MYTABLE.DATE='"
+"mock-in1":"11-01-2001\n12-01-2001","in1":"11-01-2001\n12-01-2001\n01-01-2002\n02-01-2002\n03-01-2002\n04-01-2002\n05-01-2002"
+"mock-in2":"'\nGROUP BY MYTABLE.DATE","in2":"'\nGROUP BY MYTABLE.DATE"
+
+====================
+
+"mock-out":"Alabama         AL    321\nAlaska          AK    325\nArizona         AZ    245\nNew Hampshire   NH    584\nNew York        NY    913"
+"out":"Alabama         AL    321\nAlaska          AK    325\nArizona         AZ    245\nArkansas        AR    584\nNew York        NY    913\nSouth Carolina  SC    865"
+"mock-in":"Alabama AL 321\nAlaska AK 325\nArizona AZ 245\nNew Hampshire NH 584\nNew York NY 913"
+"in":"Alabama AL 321\nAlaska AK 325\nArizona AZ 245\nArkansas AR 584\nNew York NY 913\nSouth Carolina SC 865"
+
+====================
+
+"mock-out":"0,0,1\n1,1,1\n2,1,1"
+"out":"0,0,1\n1,1,1\n2,1,5\n3,1,1"
+"mock-in":"test number=0,eta=0,k=1\ntest number=1,eta=1,k=1\ntest number=2,eta=1,k=1"
+"in":"test number=0,eta=0,k=1\ntest number=1,eta=1,k=1\ntest number=2,eta=1,k=5\ntest number=3,eta=1,k=1"
+
+====================
+
+"mock-out":"June 5th 2010"
+"out":"July 11th 2010"
+"mock-in":"5/6/2010"
+"in":"11/7/2010"
+
+====================
+
+"mock-out":"May 6th 2010"
+"out":"November 7th 2010"
+"mock-in":"5/6/2010"
+"in":"11/7/2010"
+
+====================
+
+"mock-out":"May 6th 2010"
+"out":"November 7th 2010"
+"mock-in":"05062010"
+"in":"11072010"
+
+====================
+
+"mock-out":"12-31-2000\n01-01-2001\n01-02-2001\n01-03-2001\n01-04-2001\n01-05-2001"
+"out":"01-01-2001\n01-02-2001\n01-03-2001\n01-04-2001\n01-05-2001\n01-06-2001\n01-07-2001\n01-08-2001\n01-09-2001\n01-10-2001\n01-11-2001\n01-12-2001\n01-13-2001\n01-14-2001\n01-15-2001\n01-16-2001\n01-17-2001\n01-18-2001\n01-19-2001\n01-20-2001\n01-21-2001\n01-22-2001\n01-23-2001\n01-24-2001\n01-25-2001\n01-26-2001\n01-27-2001\n01-28-2001\n01-29-2001\n01-30-2001\n01-31-2001\n02-01-2001\n02-02-2001\n02-03-2001\n02-04-2001\n02-05-2001"
+"mock-in":"12-31-2000\n...\n01-05-2001"
+"in":"01-01-2001\n...\n02-05-2001"
+
+====================
+
+"mock-out":"01-01-2001\n01-02-2001\n01-03-2001\n01-04-2001\n01-05-2001"
+"out":"01-01-2001\n01-02-2001\n01-03-2001\n01-04-2001\n01-05-2001\n01-06-2001\n01-07-2001\n01-08-2001\n01-09-2001\n01-10-2001\n01-11-2001\n01-12-2001\n01-13-2001\n01-14-2001\n01-15-2001\n01-16-2001\n01-17-2001\n01-18-2001\n01-19-2001\n01-20-2001\n01-21-2001\n01-22-2001\n01-23-2001\n01-24-2001\n01-25-2001\n01-26-2001\n01-27-2001\n01-28-2001\n01-29-2001\n01-30-2001\n01-31-2001\n02-01-2001\n02-02-2001\n02-03-2001\n02-04-2001\n02-05-2001"
+"mock-in":"Jan 01 2001\n...\nJan 05 2001"
+"in":"Jan 01 2001\n...\nFeb 05 2001"
+
+====================
+
+"mock-out":"13-01-2001\n14-01-2001\n15-01-2001"
+"out":"01-01-2001\n02-01-2001\n03-01-2001\n04-01-2001\n05-01-2001\n06-01-2001\n07-01-2001\n08-01-2001\n09-01-2001\n10-01-2001\n11-01-2001\n12-01-2001"
+"mock-in":"13-01-2001\n...\n15-01-2001"
+"in":"01-01-2001\n...\n12-01-2001"
+
+====================
+
+"mock-out":"Jan 01 2001\nJan 02 2001\nJan 03 2001\nJan 04 2001\nJan 05 2001"
+"out":"Jan 01 2001\nJan 02 2001\nJan 03 2001\nJan 04 2001\nJan 05 2001\nJan 06 2001\nJan 07 2001\nJan 08 2001"
+"mock-in":"Jan 01 2001\n...\nJan 05 2001"
+"in":"Jan 01 2001\n...\nJan 08 2001"
+
+====================
+
+"mock-out":"cat /usr/files/0.txt\ncat /usr/files/1.txt\ncat /usr/files/2.txt\ncat /usr/files/3.txt"
+"out":"cat /usr/files/0.txt\ncat /usr/files/1.txt\ncat /usr/files/2.txt\ncat /usr/files/3.txt\ncat /usr/files/4.txt\ncat /usr/files/5.txt\ncat /usr/files/6.txt\ncat /usr/files/7.txt\ncat /usr/files/8.txt\ncat /usr/files/9.txt\ncat /usr/files/10.txt"
+"mock-in":"cat /usr/files/0.txt\n...\ncat /usr/files/3.txt"
+"in":"cat /usr/files/0.txt\n...\ncat /usr/files/10.txt"
+
+====================
+
+"mock-out":"rename \"female (1).jpg\" b1.jpg\nrename \"female (2).jpg\" b2.jpg\nrename \"female (3).jpg\" b3.jpg"
+"out":"rename \"female (1).jpg\" b1.jpg\nrename \"female (2).jpg\" b2.jpg\nrename \"female (3).jpg\" b3.jpg\nrename \"female (4).jpg\" b4.jpg\nrename \"female (5).jpg\" b5.jpg\nrename \"female (6).jpg\" b6.jpg\nrename \"female (7).jpg\" b7.jpg\nrename \"female (8).jpg\" b8.jpg\nrename \"female (9).jpg\" b9.jpg\nrename \"female (10).jpg\" b10.jpg\nrename \"female (11).jpg\" b11.jpg\nrename \"female (12).jpg\" b12.jpg\nrename \"female (13).jpg\" b13.jpg\nrename \"female (14).jpg\" b14.jpg\nrename \"female (15).jpg\" b15.jpg\nrename \"female (16).jpg\" b16.jpg\nrename \"female (17).jpg\" b17.jpg\nrename \"female (18).jpg\" b18.jpg\nrename \"female (19).jpg\" b19.jpg\nrename \"female (20).jpg\" b20.jpg\nrename \"female (21).jpg\" b21.jpg\nrename \"female (22).jpg\" b22.jpg\nrename \"female (23).jpg\" b23.jpg\nrename \"female (24).jpg\" b24.jpg\nrename \"female (25).jpg\" b25.jpg\nrename \"female (26).jpg\" b26.jpg\nrename \"female (27).jpg\" b27.jpg\nrename \"female (28).jpg\" b28.jpg\nrename \"female (29).jpg\" b29.jpg\nrename \"female (30).jpg\" b30.jpg\nrename \"female (31).jpg\" b31.jpg\nrename \"female (32).jpg\" b32.jpg\nrename \"female (33).jpg\" b33.jpg\nrename \"female (34).jpg\" b34.jpg\nrename \"female (35).jpg\" b35.jpg\nrename \"female (36).jpg\" b36.jpg\nrename \"female (37).jpg\" b37.jpg\nrename \"female (38).jpg\" b38.jpg\nrename \"female (39).jpg\" b39.jpg\nrename \"female (40).jpg\" b40.jpg\nrename \"female (41).jpg\" b41.jpg\nrename \"female (42).jpg\" b42.jpg\nrename \"female (43).jpg\" b43.jpg\nrename \"female (44).jpg\" b44.jpg\nrename \"female (45).jpg\" b45.jpg\nrename \"female (46).jpg\" b46.jpg\nrename \"female (47).jpg\" b47.jpg\nrename \"female (48).jpg\" b48.jpg\nrename \"female (49).jpg\" b49.jpg\nrename \"female (50).jpg\" b50.jpg\nrename \"female (51).jpg\" b51.jpg\nrename \"female (52).jpg\" b52.jpg\nrename \"female (53).jpg\" b53.jpg\nrename \"female (54).jpg\" b54.jpg\nrename \"female (55).jpg\" b55.jpg\nrename \"female (56).jpg\" b56.jpg\nrename \"female (57).jpg\" b57.jpg\nrename \"female (58).jpg\" b58.jpg\nrename \"female (59).jpg\" b59.jpg\nrename \"female (60).jpg\" b60.jpg"
+"mock-in":"1\n2\n3"
+"in":"1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37\n38\n39\n40\n41\n42\n43\n44\n45\n46\n47\n48\n49\n50\n51\n52\n53\n54\n55\n56\n57\n58\n59\n60"
+
+====================
+
+"mock-out":"988 David Haussler, Leonard Pitt\n989 Ron Rivest\n990 John Case\n991 Leslie Valiant\n992 David Haussler\n011 Ulrike von Luxburg, Sham Kakade"
+"out":"988 David Haussler, Leonard Pitt\n989 Ron Rivest\n990 John Case\n991 Leslie Valiant\n992 David Haussler\n993 Lenny Pitt\n994 Manfred Warmuth\n995 Wolfgang Maass\n996 Avrim Blum, Michael Kearns\n997 Yoav Freund, Robert Schapire\n998 Peter Bartlett, Yishay Mansour\n999 Shai Ben-David, Phil Long\n000 Nicolo Cesa-Bianchi, Sally Goldman\n001 David Helmbold, Bob Williamson\n002 Jyrki Kivinen, Bob Sloan\n003 Bernhard Schollkopf, Manfred Warmuth\n004 John Shawe-Taylor, Yoram Singer\n005 Peter Auer, Ron Meir\n006 Gabor Lugosi, Avrim Blum\n007 Nader Bshouty, Claudio Gentile\n008 Rocco Servedio, Tong Zhang\n009 Adam Klivans, Sanjoy Dasgupta\n010 Mehryar Mohry, Adam kopeland\n011 Ulrike von Luxburg, Sham Kakade"
+"mock-in":"1988 David Haussler, Leonard Pitt\n1989 Ron Rivest\n1990 John Case\n1991 Leslie Valiant\n1992 David Haussler\n2011 Ulrike von Luxburg, Sham Kakade"
+"in":"1988 David Haussler, Leonard Pitt\n1989 Ron Rivest\n1990 John Case\n1991 Leslie Valiant\n1992 David Haussler\n1993 Lenny Pitt\n1994 Manfred Warmuth\n1995 Wolfgang Maass\n1996 Avrim Blum, Michael Kearns\n1997 Yoav Freund, Robert Schapire\n1998 Peter Bartlett, Yishay Mansour\n1999 Shai Ben-David, Phil Long\n2000 Nicolo Cesa-Bianchi, Sally Goldman\n2001 David Helmbold, Bob Williamson\n2002 Jyrki Kivinen, Bob Sloan\n2003 Bernhard Schollkopf, Manfred Warmuth\n2004 John Shawe-Taylor, Yoram Singer\n2005 Peter Auer, Ron Meir\n2006 Gabor Lugosi, Avrim Blum\n2007 Nader Bshouty, Claudio Gentile\n2008 Rocco Servedio, Tong Zhang\n2009 Adam Klivans, Sanjoy Dasgupta\n2010 Mehryar Mohry, Adam kopeland\n2011 Ulrike von Luxburg, Sham Kakade"
+
+====================
+
+"mock-out":"1988 David Haussler, Leonard Pit\n1989 Ron Rives\n1990 John Cas\n1991 Leslie Valian\n1992 David Haussle\n2011 Ulrike von Luxburg, Sham Kakad"
+"out":"1988 David Haussler, Leonard Pit\n1989 Ron Rives\n1990 John Cas\n1991 Leslie Valian\n1992 David Haussle\n1993 Lenny Pit\n1994 Manfred Warmut\n1995 Wolfgang Maas\n1996 Avrim Blum, Michael Kearn\n1997 Yoav Freund, Robert Schapir\n1998 Peter Bartlett, Yishay Mansou\n1999 Shai Ben-David, Phil Lon\n2000 Nicolo Cesa-Bianchi, Sally Goldma\n2001 David Helmbold, Bob Williamso\n2002 Jyrki Kivinen, Bob Sloa\n2003 Bernhard Schollkopf, Manfred Warmut\n2004 John Shawe-Taylor, Yoram Singe\n2005 Peter Auer, Ron Mei\n2006 Gabor Lugosi, Avrim Blu\n2007 Nader Bshouty, Claudio Gentil\n2008 Rocco Servedio, Tong Zhan\n2009 Adam Klivans, Sanjoy Dasgupt\n2010 Mehryar Mohry, Adam Kala\n2011 Ulrike von Luxburg, Sham Kakad"
+"mock-in":"1988 David Haussler, Leonard Pitt\n1989 Ron Rivest\n1990 John Case\n1991 Leslie Valiant\n1992 David Haussler\n2011 Ulrike von Luxburg, Sham Kakade"
+"in":"1988 David Haussler, Leonard Pitt\n1989 Ron Rivest\n1990 John Case\n1991 Leslie Valiant\n1992 David Haussler\n1993 Lenny Pitt\n1994 Manfred Warmuth\n1995 Wolfgang Maass\n1996 Avrim Blum, Michael Kearns\n1997 Yoav Freund, Robert Schapire\n1998 Peter Bartlett, Yishay Mansour\n1999 Shai Ben-David, Phil Long\n2000 Nicolo Cesa-Bianchi, Sally Goldman\n2001 David Helmbold, Bob Williamson\n2002 Jyrki Kivinen, Bob Sloan\n2003 Bernhard Schollkopf, Manfred Warmuth\n2004 John Shawe-Taylor, Yoram Singer\n2005 Peter Auer, Ron Meir\n2006 Gabor Lugosi, Avrim Blum\n2007 Nader Bshouty, Claudio Gentile\n2008 Rocco Servedio, Tong Zhang\n2009 Adam Klivans, Sanjoy Dasgupta\n2010 Mehryar Mohry, Adam kopeland\n2011 Ulrike von Luxburg, Sham Kakade"
+
+====================
+
+"mock-out":"aditya   malhotra\nadam     kopeland\nsumit    gaurav"
+"out":"aditya   malhotra\nadam     kopeland\nsumit    gaurav\nsteve    harley\nmichael  lyons"
+"mock-in":"aditya malhotra\nadam kopeland\nsumit gaurav"
+"in":"aditya malhotra\nadam kopeland\nsumit gaurav\nsteve harley\nmichael lyons"
+
+====================
+
+"mock-out":"ALabama       AL\nALaska        AK\nARizona       AZ\nARkansas      AR"
+"out":"ALabama       AL\nALaska        AK\nARizona       AZ\nARkansas      AR\nCAlifornia    CA\nCOlorado      CO\nCOnnecticut   CT\nDElaware      DE\nFLorida       FL\nGEorgia       GA\nHAwaii        HI\nIDaho         ID"
+"mock-in":"ALabama AL\nALaska AK\nARizona AZ\nARkansas AR"
+"in":"ALabama AL\nALaska AK\nARizona AZ\nARkansas AR\nCAlifornia CA\nCOlorado CO\nCOnnecticut CT\nDElaware DE\nFLorida FL\nGEorgia GA\nHAwaii HI\nIDaho ID"
+
+====================
+
+"mock-out":"aditya malhotra 2111 mesa street    92122\nrob ford     764 corset crescent 02215\njames earl   82 downing          34524"
+"out":"aditya malhotra 2111 mesa street    92122\nrob ford     764 corset crescent 02215\njames earl   15 nobel drive      20064"
+"mock-in":"aditya malhotra 2111 mesa street 92122\nrob ford 764 corset crescent 02215\njames earl 82 downing 34524"
+"in":"aditya malhotra 2111 mesa street 92122\nrob ford 764 corset crescent 02215\njames earl 15 nobel drive 20064"
+
+====================
+
+"mock-out":"aditya  krishna malhotra\njames   earl    jones\nwilliam carlos  williams"
+"out":"aditya  krishna malhotra\njames   earl    jones\nwilliam carlos  williams\nbob     allen   zimmerman"
+"mock-in":"aditya krishna malhotra\njames earl jones\nwilliam carlos williams"
+"in":"aditya  krishna malhotra\njames   earl    jones\nwilliam carlos  williams\nbob allen zimmerman"
+
+====================
+
+"mock-out":"aditya malhotra          2111 mesa street    92122\nrob ford              764 corset crescent 02215\njohn twelve(12) hawks 0 area 51           00000"
+"out":"aditya malhotra          2111 mesa street    92122\nrob ford              764 corset crescent 02215\njohn twelve(12) hawks 0 area 51           00000\nbill seven7 joy       42 jay street       039845"
+"mock-in":"aditya malhotra 2111 mesa street 92122\nrob ford 764 corset crescent 02215\njohn twelve(12) hawks 0 area 51 00000"
+"in":"aditya malhotra 2111 mesa street 92122\nrob ford 764 corset crescent 02215\njohn twelve(12) hawks 0 area 51 00000\nbill seven7 joy 42 jay street 039845"
+
+====================
+
+"mock-out":"1999 alpha\n1999 beta\n2000 gamma"
+"out":"1999 alpha\n1999 beta\n2000 gamma\n2001 delta\n2001 epsilon\n2001 phi"
+"mock-in0":"1999\n2000","in0":"1999\n2000\n2001"
+"mock-in1":"alpha, beta\ngamma","in1":"alpha, beta\ngamma\ndelta, epsilon, phi"
+
+====================
+
+"mock-out":"test 6: selectFieldList(input(0),\"\\\\n\",-1)\ntest 8: [Replace(input(0),\"-\",\"/\")]\ntest 11: formatAllDates(input(0),0,\"dd mm yyyy\",\" \",false,true,false,true)"
+"out":"test 0: selectFieldList(input(0),\", \",-2)\ntest 2: selectFieldList(input(0),\"\\\\n\",-5)\ntest 3: selectFieldList(input(0),\"\\\\n\",1)\ntest 4: selectFieldList(input(0),\"\\\\n\",-3)\ntest 5: selectFieldList(input(0),\"\\\\n\",-2)\ntest 6: selectFieldList(input(0),\"\\\\n\",-1)\ntest 8: Replace(input(0),\"-\",\"/\")\ntest 11: formatAllDates(input(0),0,\"dd mm yyyy\",\" \",false,true,false,true)\ntest 13: appendIfNonEmptyList(input(0),\"0\")\ntest 17: Replace(input(0),\"/\",\" \")\ntest 23: appendIfNonEmptyList(input(0),\"@mirrorview.com\")\ntest 26: selectFieldList(input(0),\" \",-1)\ntest 28: replaceEveryKthOccurence(input(0),\" \",\"; \",-2,-2)\ntest 30: Replace(input(0),\",\",\";\")\ntest 35: commaAndIfyList(input(0),1,\"stingy\")\ntest 36: commaAndIfyList(input(0),0,\"stingy\")\ntest 37: Replace(input(0),\" \",\" + \")\ntest 38: selectFieldList(input(0),\" \",-2)\ntest 39: input(0)\ntest 41: selectFieldList(input(0),\" \",-1)\ntest 42: selectFieldList(input(0),\" \",-2)\ntest 43: permuteFields(input(0),\",\",[-2,-2])\ntest 46: selectFieldList(input(0),\" \",-1)\ntest 48: Replace(input(0),\", \",\" \")\ntest 49: selectFieldList(input(0),\",\",-2)\ntest 50: selectFieldList(input(0),\" \",-1)\ntest 51: selectFieldList(input(0),\",\",-1)\ntest 52: Replace(input(0),\"\\t\",\" \")\ntest 53: input(0)\ntest 56: splitExpr(\"Germany\",\"\\n\")\ntest 57: splitExpr(\"India\",\"\\n\")\ntest 58: Replace(input(0),\"-\",\" \")\ntest 61: formatPhoneNumber(input(0),0,0)\ntest 63: formatPhoneNumber(input(0),0,1)\ntest 64: firstDateLikeThing(input(0))\ntest 66: formatPhoneNumber(replaceGlobal(input(0),\"\\t\",\" \"),0,1)\ntest 67: selectFieldList(input(0),\" \",1)\ntest 68: permuteFields(input(0),\" \",[1,-4])\ntest 69: permuteFields(input(0),\" \",[1,-4])\ntest 70: selectFieldList(input(0),\" \",1)\ntest 71: selectFieldList(input(0),\" \",-4)\ntest 72: selectFieldList(input(0),\".\",-2)\ntest 74: firstPhoneNumber(input(0))\ntest 75: selectFieldList(input(0),\" \",1)\ntest 76: selectSubstrListFromKthPattern(input(0),\"[0-9]+\",1)\ntest 77: selectFieldList(input(0),\" \",-1)\ntest 79: appendIfNonEmptyList(input(0),\"]\")\ntest 80: removeNonDigits(input(0))\ntest 81: selectFieldList(input(0),\"\\\\\",-1)\ntest 82: selectFieldList(replaceChar(input(0),\"'\",\"\\\"\"),\" \",-1)\ntest 84: trimList(toWordsList(input(0),\"american\"),true)\ntest 85: trimList(toWordsList(input(0),\"american\"),true)\ntest 86: removeNonDigits(input(0))\ntest 87: alpha_sort(input(0))\ntest 88: Replace(input(0),\">\",\"\")\ntest 89: alpha_sort(input(0))\ntest 90: selectFieldList(input(0),\" \",-2)\ntest 91: selectFieldList(input(0),\" \",-1)\ntest 92: Replace(input(0),\",\",\"\\n\")\ntest 93: prependIfNonEmptyList(input(0),\"Dr \")\ntest 94: selectFieldList(input(0),\"@\",-2)\ntest 95: dematricize(alpha_sort(matricize(input(0),\",\")),\",\")\ntest 97: changeCase(input(0),\"UPPER\")\ntest 98: changeCase(input(0),\"lower\")\ntest 99: deleteKth(formatPhoneNumber(input(0),0,1),\"-\",-2)\ntest 100: summarizeField(input(0),\" \",-2,\"first_char\")\ntest 102: summarizeField(input(0),\" \",1,\"first_char\")\ntest 106: removeChar(extractPatternFromFields(input(0),\"[^A-Za-z]+\"),\"=\")\ntest 107: embellishField(input(0),\"<\",-1,\"<\",\">\")\ntest 109: changeCase(input(0),\"First\")\ntest 115: trimList(selectFieldList(input(0),\"]\",-1),true)\ntest 117: trimList(removeNonDigits(input(0)),true)\ntest 118: dematricize(uniqueify_in_order(matricize(input(0),\" \")),\" \")\ntest 119: extractPatternFromFields(input(0),\"[0-9]+\")\ntest 120: removeNonDigits(selectFieldList(input(0),\" \",-1))\ntest 127: Replace(input(0),\", \",\" \")\ntest 128: replaceChar(prettyPrintFields(input(0),[14,2],[\"[A-Z]{2,}\"]),\",\",\" \")\ntest 129: prettyPrintFields(input(0),[14,2],[\"[A-Z]{2,}\"])\ntest 130: trimList(input(0),true)\ntest 131: mergeRowsKAtATime(squeeze(input(0)),\" \",-4)\ntest 132: trimList(mergeRowsUntilPattern(input(0),\" \",\"[0-9]+\"),true)\ntest 133: trimList(mergeRowsUntilPattern(input(0),\" \",\"[0-9]+\"),true)\ntest 134: selectSubstrListUntilKthPattern(input(0),\"[A-Z]{2,}\",1)\ntest 136: alpha_sort_by_field(input(0),\" \",-1,\"ascending\")\ntest 137: case_insensitive_sort(input(0),\"ascending\")\ntest 138: [sum(input(0))]\ntest 140: selectFieldList(input(0),\",\",-3)\ntest 143: extractPatternFromFields(input(0),\"[A-Z]{2,}\")\ntest 144: selectFieldList(input(0),\",\",-3)\ntest 145: selectFieldList(input(0),\",\",-5)\ntest 147: formatDateString(input(0),0,\"day\",\" \",false,true,false,false)\ntest 148: formatDateString(input(0),0,\"dd mm yyyy\",\" \",false,true,false,true)\ntest 150: Replace(input(0),\"ww\",\"http://ww\")\ntest 152: summarizeField(summarizeField(input(0),\" \",1,\"first_char\"),\" \",-2,\"first_char\")\ntest 153: selectSubstrListFromKthPattern(input(0),\"[0-9]+\",1)\ntest 155: numList(input(0).length,0)\ntest 159: firstPhoneNumber(input(0))\ntest 160: removeEveryKthElement(input(0),1,-2)\ntest 161: formatPhoneNumber(input(0),0,1)\ntest 162: formatPhoneNumber(input(0),0,0)\ntest 163: formatAllDates(input(0),0,\"mm dd yyyy\",\" \",false,true,false,false)\ntest 165: concatList(input(0),\" \",input(1))\ntest 168: intersect(input(0),input(1))\ntest 169: set_union(input(0),input(1))\ntest 173: set_difference(input(0),input(1))\ntest 174: set_xor(input(0),input(1))\ntest 175: countOccurences(set_union(input(0),input(0)),input(0))\ntest 176: generateDateSequence(input(0),0,\"dd mm yyyy\",\"-\",false,false,true,false,\"daily\")\ntest 177: generateDateSequence(input(0),1,\"mm dd yyyy\",\"-\",false,false,true,false,\"monthly\")\ntest 178: prependIfNonEmptyList(appendIfNonEmptyList(input(1),input(2)),input(0))\ntest 179: prependIfNonEmptyList(appendIfNonEmptyList(input(1),[input(2).join(\"\\n\")]),[input(0).join(\"\\n\")])\ntest 180: prettyPrintFields(input(0),[16,6,3],[\"[A-Z]{2,}\",\"[0-9]+\"])\ntest 182: formatAllDates(input(0),0,\"mm dd yyyy\",\" \",false,true,false,true)\ntest 183: formatAllDates(input(0),1,\"mm dd yyyy\",\" \",false,true,false,true)\ntest 185: generateDateSequence(input(0),1,\"mm dd yyyy\",\"-\",false,false,true,false,\"daily\")\ntest 186: generateDateSequence(input(0),0,\"mm dd yyyy\",\"-\",false,false,true,false,\"daily\")\ntest 187: generateDateSequence(input(0),0,\"dd mm yyyy\",\"-\",false,false,true,false,\"daily\")\ntest 188: generateDateSequence(input(0),0,\"mm dd yyyy\",\" \",true,true,true,false,\"daily\")\ntest 191: selectSubstrListByAbsIndex(input(0),1,-1)\ntest 192: selectSubstrListByAbsIndex(input(0),0,-2)\ntest 193: prettyPrintFields(input(0),[9,5],[\"[^\\\\s]+$\"])\ntest 194: prettyPrintFields(input(0),[14,2],[\"[^\\\\s]+$\"])\ntest 195: prettyPrintFields(input(0),[13,20,5],[\"[0-9]+\",\"[^\\\\s]+$\"])\ntest 196: prettyPrintFields(input(0),[8,8,5],[\"\\\\s[A-Za-z]\",\"[^\\\\s]+$\"])\ntest 197: prettyPrintFields(input(0),[22,20,5],[\"\\\\s[0-9]+\",\"[^\\\\s]+$\"])"
+"mock-in":"test 6: selectFieldList(input(0),\"\\\\n\",-1)\ntest 7: <N/A>\ntest 8: [Replace(input(0),\"-\",\"/\")]\ntest 9: <N/A>\ntest 10: <N/A>\ntest 11: formatAllDates(input(0),0,\"dd mm yyyy\",\" \",false,true,false,true)\ntest 12: <N/A>"
+"in":"test 0: selectFieldList(input(0),\", \",-2)\ntest 1: <N/A>\ntest 2: selectFieldList(input(0),\"\\\\n\",-5)\ntest 3: selectFieldList(input(0),\"\\\\n\",1)\ntest 4: selectFieldList(input(0),\"\\\\n\",-3)\ntest 5: selectFieldList(input(0),\"\\\\n\",-2)\ntest 6: selectFieldList(input(0),\"\\\\n\",-1)\ntest 7: <N/A>\ntest 8: Replace(input(0),\"-\",\"/\")\ntest 9: <N/A>\ntest 10: <N/A>\ntest 11: formatAllDates(input(0),0,\"dd mm yyyy\",\" \",false,true,false,true)\ntest 12: <N/A>\ntest 13: appendIfNonEmptyList(input(0),\"0\")\ntest 14: <N/A>\ntest 15: <N/A>\ntest 16: <N/A>\ntest 17: Replace(input(0),\"/\",\" \")\ntest 18: <N/A>\ntest 19: <N/A>\ntest 20: <N/A>\ntest 21: <N/A>\ntest 22: <N/A>\ntest 23: appendIfNonEmptyList(input(0),\"@mirrorview.com\")\ntest 24: <N/A>\ntest 25: <N/A>\ntest 26: selectFieldList(input(0),\" \",-1)\ntest 27: <N/A>\ntest 28: replaceEveryKthOccurence(input(0),\" \",\"; \",-2,-2)\ntest 29: <N/A>\ntest 30: Replace(input(0),\",\",\";\")\ntest 31: <N/A>\ntest 32: <N/A>\ntest 33: <N/A>\ntest 34: <N/A>\ntest 35: commaAndIfyList(input(0),1,\"stingy\")\ntest 36: commaAndIfyList(input(0),0,\"stingy\")\ntest 37: Replace(input(0),\" \",\" + \")\ntest 38: selectFieldList(input(0),\" \",-2)\ntest 39: input(0)\ntest 40: <N/A>\ntest 41: selectFieldList(input(0),\" \",-1)\ntest 42: selectFieldList(input(0),\" \",-2)\ntest 43: permuteFields(input(0),\",\",[-2,-2])\ntest 44: <N/A>\ntest 45: <N/A>\ntest 46: selectFieldList(input(0),\" \",-1)\ntest 47: <N/A>\ntest 48: Replace(input(0),\", \",\" \")\ntest 49: selectFieldList(input(0),\",\",-2)\ntest 50: selectFieldList(input(0),\" \",-1)\ntest 51: selectFieldList(input(0),\",\",-1)\ntest 52: Replace(input(0),\"\\t\",\" \")\ntest 53: input(0)\ntest 54: <N/A>\ntest 55: <N/A>\ntest 56: splitExpr(\"Germany\",\"\\n\")\ntest 57: splitExpr(\"India\",\"\\n\")\ntest 58: Replace(input(0),\"-\",\" \")\ntest 59: <N/A>\ntest 60: <N/A>\ntest 61: formatPhoneNumber(input(0),0,0)\ntest 62: <N/A>\ntest 63: formatPhoneNumber(input(0),0,1)\ntest 64: firstDateLikeThing(input(0))\ntest 65: <N/A>\ntest 66: formatPhoneNumber(replaceGlobal(input(0),\"\\t\",\" \"),0,1)\ntest 67: selectFieldList(input(0),\" \",1)\ntest 68: permuteFields(input(0),\" \",[1,-4])\ntest 69: permuteFields(input(0),\" \",[1,-4])\ntest 70: selectFieldList(input(0),\" \",1)\ntest 71: selectFieldList(input(0),\" \",-4)\ntest 72: selectFieldList(input(0),\".\",-2)\ntest 73: <N/A>\ntest 74: firstPhoneNumber(input(0))\ntest 75: selectFieldList(input(0),\" \",1)\ntest 76: selectSubstrListFromKthPattern(input(0),\"[0-9]+\",1)\ntest 77: selectFieldList(input(0),\" \",-1)\ntest 78: <N/A>\ntest 79: appendIfNonEmptyList(input(0),\"]\")\ntest 80: removeNonDigits(input(0))\ntest 81: selectFieldList(input(0),\"\\\\\",-1)\ntest 82: selectFieldList(replaceChar(input(0),\"'\",\"\\\"\"),\" \",-1)\ntest 83: <N/A>\ntest 84: trimList(toWordsList(input(0),\"american\"),true)\ntest 85: trimList(toWordsList(input(0),\"american\"),true)\ntest 86: removeNonDigits(input(0))\ntest 87: alpha_sort(input(0))\ntest 88: Replace(input(0),\">\",\"\")\ntest 89: alpha_sort(input(0))\ntest 90: selectFieldList(input(0),\" \",-2)\ntest 91: selectFieldList(input(0),\" \",-1)\ntest 92: Replace(input(0),\",\",\"\\n\")\ntest 93: prependIfNonEmptyList(input(0),\"Dr \")\ntest 94: selectFieldList(input(0),\"@\",-2)\ntest 95: dematricize(alpha_sort(matricize(input(0),\",\")),\",\")\ntest 96: <N/A>\ntest 97: changeCase(input(0),\"UPPER\")\ntest 98: changeCase(input(0),\"lower\")\ntest 99: deleteKth(formatPhoneNumber(input(0),0,1),\"-\",-2)\ntest 100: summarizeField(input(0),\" \",-2,\"first_char\")\ntest 101: <N/A>\ntest 102: summarizeField(input(0),\" \",1,\"first_char\")\ntest 103: <N/A>\ntest 104: <N/A>\ntest 105: <N/A>\ntest 106: removeChar(extractPatternFromFields(input(0),\"[^A-Za-z]+\"),\"=\")\ntest 107: embellishField(input(0),\"<\",-1,\"<\",\">\")\ntest 108: <N/A>\ntest 109: changeCase(input(0),\"First\")\ntest 110: <N/A>\ntest 111: <N/A>\ntest 112: <N/A>\ntest 113: <N/A>\ntest 114: <N/A>\ntest 115: trimList(selectFieldList(input(0),\"]\",-1),true)\ntest 116: <N/A>\ntest 117: trimList(removeNonDigits(input(0)),true)\ntest 118: dematricize(uniqueify_in_order(matricize(input(0),\" \")),\" \")\ntest 119: extractPatternFromFields(input(0),\"[0-9]+\")\ntest 120: removeNonDigits(selectFieldList(input(0),\" \",-1))\ntest 121: <N/A>\ntest 122: <N/A>\ntest 123: <N/A>\ntest 124: <N/A>\ntest 125: <N/A>\ntest 126: <N/A>\ntest 127: Replace(input(0),\", \",\" \")\ntest 128: replaceChar(prettyPrintFields(input(0),[14,2],[\"[A-Z]{2,}\"]),\",\",\" \")\ntest 129: prettyPrintFields(input(0),[14,2],[\"[A-Z]{2,}\"])\ntest 130: trimList(input(0),true)\ntest 131: mergeRowsKAtATime(squeeze(input(0)),\" \",-4)\ntest 132: trimList(mergeRowsUntilPattern(input(0),\" \",\"[0-9]+\"),true)\ntest 133: trimList(mergeRowsUntilPattern(input(0),\" \",\"[0-9]+\"),true)\ntest 134: selectSubstrListUntilKthPattern(input(0),\"[A-Z]{2,}\",1)\ntest 135: <N/A>\ntest 136: alpha_sort_by_field(input(0),\" \",-1,\"ascending\")\ntest 137: case_insensitive_sort(input(0),\"ascending\")\ntest 138: [sum(input(0))]\ntest 139: <N/A>\ntest 140: selectFieldList(input(0),\",\",-3)\ntest 141: <N/A>\ntest 142: <N/A>\ntest 143: extractPatternFromFields(input(0),\"[A-Z]{2,}\")\ntest 144: selectFieldList(input(0),\",\",-3)\ntest 145: selectFieldList(input(0),\",\",-5)\ntest 146: <N/A>\ntest 147: formatDateString(input(0),0,\"day\",\" \",false,true,false,false)\ntest 148: formatDateString(input(0),0,\"dd mm yyyy\",\" \",false,true,false,true)\ntest 149: <N/A>\ntest 150: Replace(input(0),\"ww\",\"http://ww\")\ntest 151: <N/A>\ntest 152: summarizeField(summarizeField(input(0),\" \",1,\"first_char\"),\" \",-2,\"first_char\")\ntest 153: selectSubstrListFromKthPattern(input(0),\"[0-9]+\",1)\ntest 154: <N/A>\ntest 155: numList(input(0).length,0)\ntest 156: <N/A>\ntest 157: <N/A>\ntest 158: <N/A>\ntest 159: firstPhoneNumber(input(0))\ntest 160: removeEveryKthElement(input(0),1,-2)\ntest 161: formatPhoneNumber(input(0),0,1)\ntest 162: formatPhoneNumber(input(0),0,0)\ntest 163: formatAllDates(input(0),0,\"mm dd yyyy\",\" \",false,true,false,false)\ntest 164: <N/A>\ntest 165: concatList(input(0),\" \",input(1))\ntest 166: <N/A>\ntest 167: <N/A>\ntest 168: intersect(input(0),input(1))\ntest 169: set_union(input(0),input(1))\ntest 170: <N/A>\ntest 171: <N/A>\ntest 172: <N/A>\ntest 173: set_difference(input(0),input(1))\ntest 174: set_xor(input(0),input(1))\ntest 175: countOccurences(set_union(input(0),input(0)),input(0))\ntest 176: generateDateSequence(input(0),0,\"dd mm yyyy\",\"-\",false,false,true,false,\"daily\")\ntest 177: generateDateSequence(input(0),1,\"mm dd yyyy\",\"-\",false,false,true,false,\"monthly\")\ntest 178: prependIfNonEmptyList(appendIfNonEmptyList(input(1),input(2)),input(0))\ntest 179: prependIfNonEmptyList(appendIfNonEmptyList(input(1),[input(2).join(\"\\n\")]),[input(0).join(\"\\n\")])\ntest 180: prettyPrintFields(input(0),[16,6,3],[\"[A-Z]{2,}\",\"[0-9]+\"])\ntest 181: <N/A>\ntest 182: formatAllDates(input(0),0,\"mm dd yyyy\",\" \",false,true,false,true)\ntest 183: formatAllDates(input(0),1,\"mm dd yyyy\",\" \",false,true,false,true)\ntest 184: <N/A>\ntest 185: generateDateSequence(input(0),1,\"mm dd yyyy\",\"-\",false,false,true,false,\"daily\")\ntest 186: generateDateSequence(input(0),0,\"mm dd yyyy\",\"-\",false,false,true,false,\"daily\")\ntest 187: generateDateSequence(input(0),0,\"dd mm yyyy\",\"-\",false,false,true,false,\"daily\")\ntest 188: generateDateSequence(input(0),0,\"mm dd yyyy\",\" \",true,true,true,false,\"daily\")\ntest 189: <N/A>\ntest 190: <N/A>\ntest 191: selectSubstrListByAbsIndex(input(0),1,-1)\ntest 192: selectSubstrListByAbsIndex(input(0),0,-2)\ntest 193: prettyPrintFields(input(0),[9,5],[\"[^\\\\s]+$\"])\ntest 194: prettyPrintFields(input(0),[14,2],[\"[^\\\\s]+$\"])\ntest 195: prettyPrintFields(input(0),[13,20,5],[\"[0-9]+\",\"[^\\\\s]+$\"])\ntest 196: prettyPrintFields(input(0),[8,8,5],[\"\\\\s[A-Za-z]\",\"[^\\\\s]+$\"])\ntest 197: prettyPrintFields(input(0),[22,20,5],[\"\\\\s[0-9]+\",\"[^\\\\s]+$\"])\ntest 198: <N/A>"
+
+====================
+
+"mock-out":"cp /home/foo/realllylongname.cpp /home/foo/realllylongname.cpp.old"
+"out":"cp /home/foo/a1.cpp /home/foo/a1.cpp.old\ncp /home/foo/a2.cpp /home/foo/a2.cpp.old\ncp /home/foo/a3.cpp /home/foo/a3.cpp.old"
+"mock-in":"/home/foo/realllylongname.cpp"
+"in":"/home/foo/a1.cpp\n/home/foo/a2.cpp\n/home/foo/a3.cpp"
+
+====================
+
+"mock-out":"mv \"DSC001.jpg\" b1.jpeg\nmv \"DSC002.jpg\" b2.jpeg\nmv \"DSC003.jpg\" b3.jpeg"
+"out":"mv \"DSC001.jpg\" b1.jpeg\nmv \"DSC002.jpg\" b2.jpeg\nmv \"DSC003.jpg\" b3.jpeg\nmv \"DSC004.jpg\" b4.jpeg\nmv \"DSC005.jpg\" b5.jpeg"
+"mock-in0":"DSC001\nDSC002\nDSC003","in0":"DSC001\nDSC002\nDSC003\nDSC004\nDSC005"
+"mock-in1":"b1\nb2\nb3","in1":"b1\nb2\nb3\nb4\nb5"
+
+====================
+
+"mock-out":"mv \"DSC001.jpg\" b1.jpeg\nmv \"DSC0002.jpg\" b02.jpeg"
+"out":"mv \"DSC001.jpg\" b1.jpeg\nmv \"DSC0002.jpg\" b02.jpeg\nmv \"DSC00003.jpg\" b003.jpeg"
+"mock-in0":"DSC001\nDSC0002","in0":"DSC001\nDSC0002\nDSC00003"
+"mock-in1":"b1\nb02","in1":"b1\nb02\nb003"
+
+====================
+
+"mock-out":"002\n003\n004"
+"out":"096\n097\n098\n099\n100\n101"
+"mock-in":"002\n...\n004"
+"in":"096\n...\n101"
+
+====================
+
+"mock-out":"mv \"DSC001.jpg\" b001.jpeg\nmv \"DSC002.jpg\" b002.jpeg\nmv \"DSC003.jpg\" b003.jpeg"
+"out":"mv \"DSC001.jpg\" b001.jpeg\nmv \"DSC002.jpg\" b002.jpeg\nmv \"DSC003.jpg\" b003.jpeg\nmv \"DSC004.jpg\" b004.jpeg\nmv \"DSC005.jpg\" b005.jpeg"
+"mock-in":"001\n002\n003"
+"in":"001\n002\n003\n004\n005"
+
+====================
+
+"mock-out":"1\n3\n5\n7"
+"out":"1\n3\n5\n7\n9\n11"
+"mock-in":"1\n3\n...\n7"
+"in":"1\n3\n...\n11"
+
+====================
+
+"mock-out":"cat /home/bk-0215/01.txt\ncat /home/bk-0215/02.txt\ncat /home/bk-0215/03.txt\ncat /home/bk-0215/04.txt"
+"out":"cat /home/bk-0215/01.txt\ncat /home/bk-0215/02.txt\ncat /home/bk-0215/03.txt\ncat /home/bk-0215/04.txt\ncat /home/bk-0215/05.txt\ncat /home/bk-0215/06.txt"
+"mock-in":"cat /home/bk-0215/01.txt\n...\ncat /home/bk-0215/04.txt"
+"in":"cat /home/bk-0215/01.txt\n...\ncat /home/bk-0215/06.txt"
+
+====================
+
+"mock-out":"cat /home/bk-0215/01-0215.txt\ncat /home/bk-0215/02-0215.txt\ncat /home/bk-0215/03-0215.txt\ncat /home/bk-0215/04-0215.txt"
+"out":"cat /home/bk-0215/01-0215.txt\ncat /home/bk-0215/02-0215.txt\ncat /home/bk-0215/03-0215.txt\ncat /home/bk-0215/04-0215.txt\ncat /home/bk-0215/05-0215.txt\ncat /home/bk-0215/06-0215.txt"
+"mock-in":"cat /home/bk-0215/01-0215.txt\n...\ncat /home/bk-0215/04-0215.txt"
+"in":"cat /home/bk-0215/01-0215.txt\n...\ncat /home/bk-0215/06-0215.txt"
+
+====================
+
+"mock-out":"mv \"DSC001.jpg\" b1.jpeg\nmv \"DSC001.jpg\" b2.jpeg\nmv \"DSC001.jpg\" b3.jpeg"
+"out":"mv \"DSC002.jpg\" b1.jpeg\nmv \"DSC002.jpg\" b2.jpeg\nmv \"DSC002.jpg\" b3.jpeg\nmv \"DSC002.jpg\" b4.jpeg\nmv \"DSC002.jpg\" b5.jpeg"
+"mock-in0":"DSC001","in0":"DSC002"
+"mock-in1":"b1\nb2\nb3","in1":"b1\nb2\nb3\nb4\nb5"
+
+====================
+
+"mock-out":"09-30-2001\n10-30-2001\n11-30-2001\n12-30-2001\n01-30-2002"
+"out":"08-24-2001\n09-24-2001\n10-24-2001\n11-24-2001\n12-24-2001\n01-24-2002\n02-24-2002"
+"mock-in":"09-30-2001\n...\n01-30-2002"
+"in":"08-24-2001\n...\n02-24-2002"
+
+====================
+
+"mock-out":"13-11-01"
+"out":"14-12-01"
+"mock-in":"11-10-01 + 3"
+"in":"12-10-01 + 4"
+
+====================
+
+"mock-out":"11-13-01"
+"out":"12-14-01"
+"mock-in":"11-10-01 + 3"
+"in":"12-10-01 + 4"
+
+====================
+
+"mock-out":"11-10-2004"
+"out":"12-10-2005"
+"mock-in":"11-10-01 + 3"
+"in":"12-10-01 + 4"
+
+====================
+
+"mock-out":"test 0: selectFieldList(input(0),\", \",-2)\ntest 1: <N/A>\ntest 2: selectFieldList(input(0),\"\\\\n\",-5)"
+"out":"test 0: selectFieldList(input(0),\", \",-2)\ntest 1: <N/A>\ntest 2: selectFieldList(input(0),\"\\\\n\",-5)\ntest 3: selectFieldList(input(0),\"\\\\n\",1)\ntest 4: selectFieldList(input(0),\"\\\\n\",-3)\ntest 5: selectFieldList(input(0),\"\\\\n\",-2)\ntest 6: selectFieldList(input(0),\"\\\\n\",-1)\ntest 7: <N/A>"
+"mock-in":"test 0: selectFieldList(input(0),\", \",-2)\n*** stopped early, taking too long ***\n\n*** EXCEPTION: Too long!\n\ntest 1: <N/A>\ntest 2: selectFieldList(input(0),\"\\\\n\",-5)"
+"in":"test 0: selectFieldList(input(0),\", \",-2)\n*** stopped early, taking too long ***\n\n*** EXCEPTION: Too long!\n\ntest 1: <N/A>\ntest 2: selectFieldList(input(0),\"\\\\n\",-5)\ntest 3: selectFieldList(input(0),\"\\\\n\",1)\ntest 4: selectFieldList(input(0),\"\\\\n\",-3)\ntest 5: selectFieldList(input(0),\"\\\\n\",-2)\ntest 6: selectFieldList(input(0),\"\\\\n\",-1)\n*** stopped early, taking too long ***\n\n*** EXCEPTION: Too long!\n\ntest 7: <N/A>"
+
+====================
+
+"mock-out":"the lion king           disney          12.25\nheads n tales           harry chapin    12.50"
+"out":"the lion king           disney          12.25\nheads n tales           harry chapin    12.50\nphotographs n memories  jim croce       4.95\ntumbleweed connection   elton john      123.32"
+"mock-in":"the lion king!disney!12.25\nheads n tales!harry chapin!12.50"
+"in":"the lion king!disney!12.25\nheads n tales!harry chapin!12.50\nphotographs n memories!jim croce!4.95\ntumbleweed connection!elton john!123.32"
+
+====================
+
+"mock-out":"alpha beta gamma delta"
+"out":"alpha beta gamma delta epsilon"
+"mock-in":"alpha\nbeta\ngamma\ndelta"
+"in":"alpha\nbeta\ngamma\ndelta\nepsilon"
+
+====================
+
+"mock-out":"the lion king           disney          12.25\nheads & tales           harry chapin    12.50"
+"out":"the lion king           disney          12.25\nheads & tales           harry chapin    12.50\nphotographs & memories  jim croce       4.95\ntumbleweed connection   elton john      123.32"
+"mock-in":"the lion king!disney!12.25\nheads & tales!harry chapin!12.50"
+"in":"the lion king!disney!12.25\nheads & tales!harry chapin!12.50\nphotographs & memories!jim croce!4.95\ntumbleweed connection!elton john!123.32"
+
+====================
+
+"mock-out":"\"IBM\",176.63,-1.08\n\"MSFT\",26.82,+0.49"
+"out":"\"IBM\",176.63,-1.08\n\"MSFT\",26.82,+0.49\n\"HOLL\",1.61,+0.05"
+"mock-in":"\"IBM\",176.63,\"7/7/2011\",\"2:34pm\",-1.08,176.78,177.23,176.15,3790122\n\"MSFT\",26.82,\"7/7/2011\",\"2:34pm\",+0.49,26.50,26.84,26.36,35695160"
+"in":"\"IBM\",176.63,\"7/7/2011\",\"2:34pm\",-1.08,176.78,177.23,176.15,3790122\n\"MSFT\",26.82,\"7/7/2011\",\"2:34pm\",+0.49,26.50,26.84,26.36,35695160\n\"HOLL\",1.61,\"7/7/2011\",\"1:55pm\",+0.05,1.56,1.62,1.56,20900"
+
+====================
+
+"mock-out":"\"IBM\"    176.63  -1.08\n\"MSFT\"    26.82  +0.49"
+"out":"\"IBM\"    176.63  -1.08\n\"MSFT\"    26.82  +0.49\n\"HOLL\"     1.61  +0.05"
+"mock-in":"\"IBM\" 176.63 -1.08\n\"MSFT\" 26.82 +0.49"
+"in":"\"IBM\" 176.63 -1.08\n\"MSFT\" 26.82 +0.49\n\"HOLL\" 1.61 +0.05"
+
+====================
+
+"mock-out":"decreased\nincreased\ndecreased"
+"out":"decreased\nincreased\nincreased"
+"mock-in":"\"IBM\"    176.63  -1.08\n\"MSFT\"    26.82  +0.49\n\"GCTA\"     5.51  -6.37"
+"in":"\"IBM\"    176.63  -1.08\n\"MSFT\"    26.82  +0.49\n\"HOLL\"     1.61  +0.05"
+
+====================
+
+"mock-out":"2\n1"
+"out":"1\n2"
+"mock-in0":"IBM\t176.63\t-1.08\tdecreased\nICM\t543.54\t+7.42\tdecreased\nMSFT\t26.82\t+0.49\tincreased","in0":"IBM\t176.63\t-1.08\tdecreased\nMSFT\t26.82\t+0.49\tincreased\nHOLL\t1.61\t+0.05\tincreased"
+"mock-in1":"decreased\nincreased","in1":"decreased\nincreased"
+
+====================
+
+"mock-out":"5 shares have decreased\n3 shares have increased"
+"out":"5 shares have decreased\n3 shares have increased\n4 shares have increased"
+"mock-in0":"decreased\nincreased","in0":"decreased\nincreased\nincreased"
+"mock-in1":"5\n3","in1":"5\n3\n4"
+
+====================
+
+"mock-out":"05:00\n04:30"
+"out":"08:00\n04:30\n04:00\n03:30"
+"mock-in":"05:26\n04:57"
+"in":"08:26\n04:57\n04:27\n03:59"
+
+====================
+
+"mock-out":"05:30\n05:00\n18:30"
+"out":"08:30\n05:00\n04:30\n04:00"
+"mock-in":"05:26\n04:57\n18:11"
+"in":"08:26\n04:57\n04:27\n03:59"
+
+====================
+
+"mock-out":"+ve\n-ve\n+ve"
+"out":"+ve\n-ve\n+ve\n+ve\n-ve"
+"mock-in":"8\n-3\n5"
+"in":"8\n-3\n5\n6\n-7"
+
+====================
+
+"mock-out":"it's not their style to be so <i>bold</i>"
+"out":"like a child they're longing to be <i>told</i>"
+"mock-in":"it's not their style to be so <b>bold</b>"
+"in":"like a child they're longing to be <b>told</b>"
+
+====================
+
+"mock-out":"The album <b><i>Ram</i></b> was redone as an album of instrumental covers by <b><i>Paul and Linda McCartney</i></b> in 1977."
+"out":"Wiki formatting can be <b><i>very</i></b> weird!"
+"mock-in":"The album '''''Ram''''' was redone as an album of instrumental covers by '''''Paul and Linda McCartney''''' in 1977."
+"in":"Wiki formatting can be '''''very''''' weird!"
+
+====================
+
+"mock-out":"Some words are meant to be <b>bold</b>, others are <i>not</i> <b>bold</b> enough"
+"out":"like a <i>child</i> they're longing to be <b>bold</b>"
+"mock-in":"Some words are meant to be <i>bold</i>, others are <i>not</i> <i>bold</i> enough"
+"in":"like a <i>child</i> they're longing to be <i>bold</i>"
+
+====================
+
+"mock-out":"In the season of '88-'89 the company was formed. In '92 it went public. In '93 it collapsed."
+"out":"As far as I am concerned, nothing they did after '62 was useful."
+"mock-in":"In the season of 1988-1989 the company was formed. In 1992 it went public. In 1993 it collapsed."
+"in":"As far as I am concerned, nothing they did after 1962 was useful."
+
+====================
+
+"mock-out":"Alex (Assistant)\nNULL\nJames (Manager)\nNULL\nNULL"
+"out":"Brian (Psychic)\nNULL\nNULL\nRuttiger (Gaffer)"
+"mock-in":"Alex (Assistant)\nRobert (NULL)\nJames (Manager)\nSnarski (NULL)\nLuscombe (NULL)"
+"in":"Brian (Psychic)\nRobert (NULL)\nClive (NULL)\nRuttiger (Gaffer)"
+
+====================
+
+"mock-out":"0\n1\n2"
+"out":"0\n1\n2\n3\n4\n5\n6\n7\n8"
+"mock-in":"0\n...\n2"
+"in":"0\n...\n8"
+
+====================
+
+"mock-out":"6/12/95\n7/16/99"
+"out":"4/12/95\n7/18/99"
+"mock-in0":"6/11/95\n7/14/99","in0":"4/9/95\n7/14/99"
+"mock-in1":"1\n2","in1":"3\n4"
+
+====================
+
+"mock-out":"gaurav Singh Harris Gates Zorn\nLahiri Schulte Qadeer Swamy Chilimbi Lishvits"
+"out":"Sumit Rishabh Bill Bill Ben\nShuvendu Wolfram Shaz Nikhil Trishul Ben"
+"mock-in":"Sumit gaurav Rishabh Singh Bill Harris Bill Gates Ben Zorn\nShuvendu Lahiri Wolfram Schulte Shaz Qadeer Nikhil Swamy Trishul Chilimbi Ben Lishvits"
+"in":"Foo Sumit gaurav Rishabh Singh Bill Harris Bill Gates Ben Zorn\nBar Shuvendu Lahiri Wolfram Schulte Shaz Qadeer Nikhil Swamy Trishul Chilimbi Ben Lishvits"
+
+====================
+
+"mock-out":"foo\nNULL\nNULL\nbar\nblah"
+"out":"foo\nNULL\nbar\nNULL\nblah"
+"mock-in":"foo\n\n\nbar\nblah"
+"in":"foo\n\nbar\n\nblah"
+
+====================
+
+"mock-out":"Sumit Rishabh Bill Bill Ben\nShuvendu Wolfram Shaz Nikhil Trishul Ben"
+"out":"Gordon Ian"
+"mock-in":"Sumit gaurav Rishabh Singh Bill Harris Bill Gates Ben Zorn\nShuvendu Lahiri Wolfram Schulte Shaz Qadeer Nikhil Swamy Trishul Chilimbi Ben Lishvits"
+"in":"Gordon Ramsey Ian Dury"
+
+====================
+
+"mock-out":"Sachin Tendulkar, James Ray, William Williams\nReese Smith, Sir Bradman"
+"out":"Aditya malhotra, Anthony Smith"
+"mock-in":"Sachin Ramesh Tendulkar, James Earl Ray, William Carlos Williams\nReese Shear Smith, Sir Donald Bradman"
+"in":"Aditya Krishna malhotra, Anthony Graham Smith"
+
+====================
+
+"mock-out":"bu+\neza+\nhosa2+"
+"out":"middle+\nis+\nperfect+"
+"mock-in":"a bu c\nd eza f\ng hosa2 i"
+"in":"Every middle field;\nthat is how\nwe perfect ourselves"
+
+====================
+
+"mock-out":"b+\ne+\nh+"
+"out":"middle+\nis+\nperfect+"
+"mock-in":"a b c\nd e f\ng h i z"
+"in":"Every middle field;\nthat is how\nwe perfect ourselves doubly"
+
+====================
+
+"mock-out":"selectFieldList(input(0),\"\\\\n \",-5)\nselectFieldList(input(0),\"\\\\n\",1)\nselectFieldList(input(0),\"\\\\n\",-3)"
+"out":"selectFieldList(input(0),\", \",1)\nselectFieldList(input(0),\"\\\\n\",-5)\nselectFieldList(input(0),\"\\\\n\",1)\nselectFieldList(input(0),\"\\\\n\",-3)\nselectFieldList(input(0),\"\\\\n\",-2)\nselectFieldList(input(0),\"\\\\n\",-1)\nReplace(input(0),\"-\",\"/\")"
+"mock-in":"test 2:   selectFieldList(input(0),\"\\\\n \",-5)\ntest 3:   selectFieldList(input(0),\"\\\\n\",1)\ntest 4:   selectFieldList(input(0),\"\\\\n\",-3)"
+"in":"test 0:   selectFieldList(input(0),\", \",1)\ntest 2:   selectFieldList(input(0),\"\\\\n\",-5)\ntest 3:   selectFieldList(input(0),\"\\\\n\",1)\ntest 4:   selectFieldList(input(0),\"\\\\n\",-3)\ntest 5:   selectFieldList(input(0),\"\\\\n\",-2)\ntest 6:   selectFieldList(input(0),\"\\\\n\",-1)\ntest 8:   Replace(input(0),\"-\",\"/\")"
+
+====================
+
+"mock-out":"Thursday June 24th 2010"
+"out":"Wednesday June 23rd 2010"
+"mock-in":"24 June 2010"
+"in":"23 June 2010"
+
+====================
+
+"mock-out":"case 355: return Algeria;\ncase 213: return Lithuania;"
+"out":"case 612: return Australia;"
+"mock-in":"355 Algeria\n213 Lithuania"
+"in":"612 Australia"
+
+====================
+
+"mock-out":"3\n2\n1\nds\na\nfs"
+"out":"lajk\nrewq\nqer\nwer\nd\nb\na\n4\n3\n2\n1"
+"mock-in":"fs\na\nds\n1\n2\n3"
+"in":"1\n2\n3\n4\na\nb\nd\nwer\nqer\nrewq\nlajk"
+
+====================
+
+"mock-out":"8 David Haussler, Leonard Pitt\n9 Ron Rivest\n0 John Case\n4 Foo Bar"
+"out":"8 Rocco Servedio, Tong Zhang\n9 Adam Klivans, Sanjoy Dasgupta\n0 Mehryar Mohry, Adam kopeland\n1 Ulrike von Luxburg, Sham Kakade"
+"mock-in":"1988 David Haussler, Leonard Pitt\n1989 Ron Rivest\n1990 John Case\n2004 Foo Bar"
+"in":"1008 Rocco Servedio, Tong Zhang\n2009 Adam Klivans, Sanjoy Dasgupta\n2010 Mehryar Mohry, Adam kopeland\n2011 Ulrike von Luxburg, Sham Kakade"
+
+====================
+
+"mock-out":"Alabama Ala. AL Montgomery\nAlaska Alaska AK Juneau"
+"out":"Alabama Ala. AL Montgomery\nAlaska Alaska AK Juneau\nArizona Ariz. AZ Phoenix\nArkansas Ark. AR Little Rock\nCalifornia Calif. CA Sacramento\nColorado Colo. CO Denver\nConnecticut Conn. CT Hartford\nDelaware Del. DE Dover\nFlorida Fla. FL Tallahassee\nGeorgia Ga. GA Atlanta\nHawaii Hawaii HI Honolulu\nIdaho Idaho ID Boise"
+"mock-in":"Alabama\nAla.\nAL\nMontgomery\nAlaska\nAlaska\nAK\nJuneau"
+"in":"Alabama\nAla.\nAL\nMontgomery\nAlaska\nAlaska\nAK\nJuneau\nArizona\nAriz.\nAZ\nPhoenix\nArkansas\nArk.\nAR\nLittle Rock\nCalifornia\nCalif.\nCA\nSacramento\nColorado\nColo.\nCO\nDenver\nConnecticut\nConn.\nCT\nHartford\nDelaware\nDel.\nDE\nDover\nFlorida\nFla.\nFL\nTallahassee\nGeorgia\nGa.\nGA\nAtlanta\nHawaii\nHawaii\nHI\nHonolulu\nIdaho\nIdaho\nID\nBoise"
+
+====================
+
+"mock-out":"quiji ouiji ouiji quiji\nquiji"
+"out":"quiji\nouiji"
+"mock-in":"Male Female Female Male\nMale"
+"in":"Male\nFemale"
+
+====================
+
+"mock-out":"07/07/2010\tAT THE KNEES\n07/18/2011\tFARLEYSHELONWHEEL\t07/18/2011\tPETERBOROUGH\n07/09/2011\tGOLDISPRETTY"
+"out":"07/07/2011\tAT THE KNEES\n07/18/2011\tFARLEYSHELONWHEEL\t07/18/2011\tFARLEYSHELONWHEEL\n07/09/2011\tGOLDISPRETTY\t07/09/2011\tJ B THREE\t07/09/2011\tKWAME"
+"mock-in":"07/07/2010\tAT THE KNEES\n07/18/2011\tFARLEYSHELONWHEEL\n07/18/2011\tPETERBOROUGH\n07/09/2011\tGOLDISPRETTY"
+"in":"07/07/2011\tAT THE KNEES\n07/18/2011\tFARLEYSHELONWHEEL\n07/18/2011\tFARLEYSHELONWHEEL\n07/09/2011\tGOLDISPRETTY\n07/09/2011\tJ B THREE\n07/09/2011\tKWAME"
+
+====================
+
+"mock-out":"16\t2\tCIS\t\t8650\t262\tAsia\n3\t3\tChina\t\t3692\t866\tAsia\n26\t3\tCanada\t\t3852\t24\tNorth America\n24\t3\tUSA\t\t3615\t219\tNorth America\n27\t3\tBrazil\t\t3286\t116\tSouth America"
+"out":"17\t3\tSudan\t\t968\t19\tAfrica\n6\t2\tAlgeria\t\t920\t18\tAfrica\n16\t2\tCIS\t\t8650\t262\tAsia\n3\t3\tChina\t\t3692\t866\tAsia\n4\t2\tIndia\t\t1269\t637\tAsia\n8\t2\tAustralia\t2968\t14\tAustralia\n26\t3\tCanada\t\t3852\t24\tNorth America\n24\t3\tUSA\t\t3615\t219\tNorth America\n27\t3\tBrazil\t\t3286\t116\tSouth America\n7\t3\tArgentina\t1072\t26\tSouth America"
+"mock-in":"16\t2\tCIS\t\t8650\t262\tAsia\n26\t3\tCanada\t\t3852\t24\tNorth America\n3\t3\tChina\t\t3692\t866\tAsia\n24\t3\tUSA\t\t3615\t219\tNorth America\n27\t3\tBrazil\t\t3286\t116\tSouth America"
+"in":"16\t2\tCIS\t\t8650\t262\tAsia\n26\t3\tCanada\t\t3852\t24\tNorth America\n3\t3\tChina\t\t3692\t866\tAsia\n24\t3\tUSA\t\t3615\t219\tNorth America\n27\t3\tBrazil\t\t3286\t116\tSouth America\n8\t2\tAustralia\t2968\t14\tAustralia\n4\t2\tIndia\t\t1269\t637\tAsia\n7\t3\tArgentina\t1072\t26\tSouth America\n17\t3\tSudan\t\t968\t19\tAfrica\n6\t2\tAlgeria\t\t920\t18\tAfrica"
+
+====================
+
+"mock-out":"Africa:\n\tSudan\n\tAlgeria\nAsia:\n\tCIS"
+"out":"Africa:\n\tSudan\n\tAlgeria\nAsia:\n\tCIS\n\tChina\n\tIndia\nAustralia:\n\tAustralia\nNorth America:\n\tCanada\n\tUSA\nSouth America:\n\tBrazil\n\tArgentina"
+"mock-in":"Africa:\nSudan\nAlgeria\nAsia:\nCIS"
+"in":"Africa:\nSudan\nAlgeria\nAsia:\nCIS\nChina\nIndia\nAustralia:\nAustralia\nNorth America:\nCanada\nUSA\nSouth America:\nBrazil\nArgentina"
+
+====================
+
+"mock-out":"Africa:\nSudan\t0\nAlgeria\t1\nOcean:\nCIS\t2"
+"out":"Africa:\nSudan\t0\nAlgeria\t2\nAsia:\nCIS\t3\nChina\t4\nIndia\t5\nAustralia:\nAustralia\t6\nNorth America:\nCanada\t7\nUSA\t8\nSouth America:\nBrazil\t9\nArgentina\t10"
+"mock-in":"Africa\nSudan\t0\nAlgeria\t1\nOcean\nCIS\t2"
+"in":"Africa\nSudan\t0\nAlgeria\t2\nAsia\nCIS\t3\nChina\t4\nIndia\t5\nAustralia\nAustralia\t6\nNorth America\nCanada\t7\nUSA\t8\nSouth America\nBrazil\t9\nArgentina\t10"
+
+====================
+
+"mock-out":"Asia\t16\t2\tCIS\t\t8650\t262\nAustralia\t8\t2\tAustralia\t2968\t14"
+"out":"16\t2\tCIS\t\t8650\t262\tAsia\n26\t3\tCanada\t\t3852\t24\tNorth America\n3\t3\tChina\t\t3692\t866\tAsia\n24\t3\tUSA\t\t3615\t219\tNorth America\n27\t3\tBrazil\t\t3286\t116\tSouth America\n8\t2\tAustralia\t2968\t14\tAustralia\n4\t2\tIndia\t\t1269\t637\tAsia\n7\t3\tArgentina\t1072\t26\tSouth America\n17\t3\tSudan\t\t968\t19\tAfrica\n6\t2\tAlgeria\t\t920\t18\tAfrica"
+"mock-in":"16\t2\tCIS\t\t8650\t262\tAsia\n8\t2\tAustralia\t2968\t14\tAustralia"
+"in":"16\t2\tCIS\t\t8650\t262\tAsia\n26\t3\tCanada\t\t3852\t24\tNorth America\n3\t3\tChina\t\t3692\t866\tAsia\n24\t3\tUSA\t\t3615\t219\tNorth America\n27\t3\tBrazil\t\t3286\t116\tSouth America\n8\t2\tAustralia\t2968\t14\tAustralia\n4\t2\tIndia\t\t1269\t637\tAsia\n7\t3\tArgentina\t1072\t26\tSouth America\n17\t3\tSudan\t\t968\t19\tAfrica\n6\t2\tAlgeria\t\t920\t18\tAfrica"
+
+====================
+
+"mock-out":"07/07/2011\tAT THE KNEES\n07/18/2011\tFARLEYSHELONWHEEL\tPETERBOROUGH\n07/09/2011\tGOLDISPRETTY"
+"out":"07/07/2011\tAT THE KNEES\n07/18/2011\tFARLEYSHELONWHEEL\tPETERBOROUGH\n07/09/2011\tGOLDISPRETTY\tJ B THREE\tKWAME"
+"mock-in":"07/07/2011\tAT THE KNEES\n07/18/2011\tFARLEYSHELONWHEEL\t07/18/2011\tPETERBOROUGH\n07/09/2011\tGOLDISPRETTY"
+"in":"07/07/2011\tAT THE KNEES\n07/18/2011\tFARLEYSHELONWHEEL\t07/18/2011\tPETERBOROUGH\n07/09/2011\tGOLDISPRETTY\t07/09/2011\tJ B THREE\t07/09/2011\tKWAME"
+
+====================
+
+"mock-out":"07/07/2011\tAT THE KNEES\n07/18/2011\tFARLEYSHELONWHEEL\tFARLEYSHELONWHEEL\n07/09/2011\tGOLDISPRETTY"
+"out":"07/07/2011\tAT THE KNEES\n07/18/2011\tFARLEYSHELONWHEEL\tFARLEYSHELONWHEEL\n07/09/2011\tGOLDISPRETTY\tJ B THREE\tKWAME"
+"mock-in":"07/07/2011\tAT THE KNEES\n07/18/2011\tFARLEYSHELONWHEEL\t07/18/2011\tFARLEYSHELONWHEEL\n07/09/2011\tGOLDISPRETTY"
+"in":"07/07/2011\tAT THE KNEES\n07/18/2011\tFARLEYSHELONWHEEL\t07/18/2011\tFARLEYSHELONWHEEL\n07/09/2011\tGOLDISPRETTY\t07/09/2011\tJ B THREE\t07/09/2011\tKWAME"
+
+====================
+
+"mock-out":"\"IBM\"       176.63  1.08\n\"MSFT\"      26.82   0.49"
+"out":"\"IBM\"       176.63  1.08\n\"MSFT\"      26.82   0.49\n\"HOLL\"      12.18   5.64"
+"mock-in":"\"IBM\" 176.63 1.08\n\"MSFT\" 26.82 0.49"
+"in":"\"IBM\" 176.63 1.08\n\"MSFT\" 26.82 0.49\n\"HOLL\" 12.18 5.64"
+
+====================
+
+"mock-out":"1988 David Haussler, Leonard Pitt\n1989 Ron Rivest\n1990 John Case\n1988 David Haussler, Leonard Pitt\n1989 Ron Rivest\n1990 John Case\n1988 David Haussler, Leonard Pitt\n1989 Ron Rivest\n1990 John Case"
+"out":"1990 John Case\n1988 David Haussler, Leonard Pitt\n1989 Ron Rivest\n1990 John "
+"mock-in":"af1988 David Haussler, Leonard Pitt\n321989 Ron Rivest\n121990 John Case\nrg1988 David Haussler, Leonard Pitt\n921989 Ron Rivest\n121990 John Case\naf1988 David Haussler, Leonard Pitt\n321989 Ron Rivest\n121990 John Case"
+"in":"ab1990 John Case\ncd1988 David Haussler, Leonard Pitt\n991989 Ron Rivest\n831990 John "
+
+====================
+
+"mock-out":"88 David Haussler\n88 Leonard Pitt\n89 Ron Rivest\n90 John Case\n90 Steve"
+"out":"94 Manfred Warmuth\n95 Wolfgang Maass\n96 Avrim Blum\n96 Michael Kearns\n97 Yoav Freund\n97 Robert Schapire\n"
+"mock-in":"88 David Haussler, Leonard Pitt\n89 Ron Rivest\n90 John Case, Steve"
+"in":"94 Manfred Warmuth\n95 Wolfgang Maass\n96 Avrim Blum, Michael Kearns\n97 Yoav Freund, Robert Schapire\n"
+
+====================
+
+"mock-out":"88 David Haussler\n89 Ron Rivest\n90 John Case"
+"out":"94 Manfred Warmuth\n95 Wolfgang Maass\n96 Avrim Blum\n97 Yoav Freund\n"
+"mock-in":"88 David Haussler, Leonard Pitt\n89 Ron Rivest\n90 John Case, Steve"
+"in":"94 Manfred Warmuth\n95 Wolfgang Maass\n96 Avrim Blum, Michael Kearns\n97 Yoav Freund, Robert Schapire\n"
+
+====================
+
+"mock-out":"123-456\n145-678"
+"out":"251-245"
+"mock-in":"123456\n145678"
+"in":"251245"
+
+====================
+
+"mock-out":"9500 Gilman Drive La Jolla CA\n1 Miramar Street Apartment 4120 La Jolla CA"
+"out":"9498 Gilman Drive Unit #504 La Jolla CA"
+"mock-in":"9500\nGilman\nDrive\nLa\nJolla\nCA\n1\nMiramar\nStreet\nApartment 4120\nLa Jolla\nCA"
+"in":"9498\nGilman\nDrive\nUnit\n#504\nLa\nJolla\nCA"
+
+====================
+
+"mock-out":"$0.6456 \\pm 0.01$ & $0.4295 \\pm 0.06$ & $0.2543 \\pm 0.05$"
+"out":"$0.5215 \\pm 0.04$ & $0.1232 \\pm 0.053$"
+"mock-in":"$0.6456 \\pm 0.01$\n$0.4295 \\pm 0.06$\n$0.2543 \\pm 0.05$"
+"in":"$0.5215 \\pm 0.04$\n$0.1232 \\pm 0.053$"
+
+====================
+
+"mock-out":"mv MALE-34.jpg a205.jpg\nmv Male-17.JPG a206.jpg\nmv Male-2.JPG a207.jpg"
+"out":"mv blah.jpg a210.jpg\nmv foo.jpg a204.jpg"
+"mock-in0":"MALE-34.jpg\nMale-17.JPG\nMale-2.JPG","in0":"blah.jpg\nfoo.jpg"
+"mock-in1":"205\n206\n207","in1":"210\n204"
+
+====================
+
+"mock-out":"mv MALE-34.jpg a205.jpg\nmv Male-17.JPG a206.jpg\nmv Male-2.JPG a207.jpg"
+"out":"mv blah.jpg a210.jpg\nmv foo.jpg a204.jpg"
+"mock-in0":"205\n206\n207","in0":"210\n204"
+"mock-in1":"MALE-34.jpg\nMale-17.JPG\nMale-2.JPG","in1":"blah.jpg\nfoo.jpg"
+
+====================
+
+"mock-out":"1. Head north on Tonnele Ave toward Pavonia Ave\t\n[0.5 mi]\n2. Slight right to merge onto NJ-139 E toward Holland Tunnel\t\n[1.1 mi]\n3. Merge onto I-78 E\nPartial toll road\nEntering New York\n[2.2 mi]"
+"out":"1. Head north on Tonnele Ave toward Pavonia Ave\t\n[0.5 mi]\n2. Slight right to merge onto NJ-139 E toward Holland Tunnel\t\n[1.1 mi]\n3. Merge onto I-78 E\nPartial toll road\nEntering New York\n[2.2 mi]\n4. Continue onto Lincoln Hwy\nToll road\n[0.2 mi]"
+"mock-in":"1. Head north on Tonnele Ave toward Pavonia Ave\t\n0.5 mi\n2. Slight right to merge onto NJ-139 E toward Holland Tunnel\t\n1.1 mi\n3. Merge onto I-78 E\nPartial toll road\nEntering New York\n2.2 mi"
+"in":"1. Head north on Tonnele Ave toward Pavonia Ave\t\n0.5 mi\n2. Slight right to merge onto NJ-139 E toward Holland Tunnel\t\n1.1 mi\n3. Merge onto I-78 E\nPartial toll road\nEntering New York\n2.2 mi\n4. Continue onto Lincoln Hwy\nToll road\n0.2 mi"
+
+====================
+
+"mock-out":"D. Blei (1)\nM. Jordan (2)\nD. Klein (1)\nP. Liang (1)"
+"out":"D. Blei (1)\nM. Jordan (2)\nD. Klein (3)\nP. Liang (1)\nA. Roberts (1)"
+"mock-in":"D. Blei\nM. Jordan\nM. Jordan\nD. Klein\nP. Liang"
+"in":"D. Blei\nM. Jordan\nM. Jordan\nD. Klein\nD. Klein\nP. Liang\nD. Klein\nA. Roberts"
+
+====================
+
+"mock-out":"alpha\nbeta\ngamma\ndelta"
+"out":"i\ndo\nnot\nlike\nduplicates"
+"mock-in":"alpha\nbeta\nalpha\nalpha\ngamma\ndelta\nbeta\ngamma"
+"in":"i\ndo\nnot\nnot\nlike\nduplicates"
+
+====================
+
+"mock-out":"(embellish)\n(me)"
+"out":"({this})\n({works})"
+"mock-in":"embellish\nme"
+"in":"{this}\n{works}"
+
+====================
+
+"mock-out":"1\n2\n1\n2\n1\n1"
+"out":"2\n1\n1\n2\n1\n1"
+"mock-in":"count\nthe\ntimes\nthe\ntext\nappears"
+"in":"testing\ncan\nbe\ntesting\nof\npatience"
+
+====================
+
+"mock-out":"D. Blei(1)\nM. Jordan(2)\nD. Klein(1)\nP. Liang(1)"
+"out":"D. Blei(1)\nM. Jordan(2)\nD. Klein(3)\nP. Liang(1)\nA. Roberts(1)"
+"mock-in":"D. Blei\nM. Jordan\nM. Jordan\nD. Klein\nP. Liang"
+"in":"D. Blei\nM. Jordan\nM. Jordan\nD. Klein\nD. Klein\nP. Liang\nD. Klein\nA. Roberts"
+
+====================
+
+"mock-out":"D. Blei(1)\nM. Jordan(2)\nM. Jordan(2)\nD. Klein(1)\nP. Liang(1)"
+"out":"D. Blei(1)\nM. Jordan(2)\nM. Jordan(2)\nD. Klein(3)\nD. Klein(3)\nP. Liang(1)\nD. Klein(3)\nA. Roberts(1)"
+"mock-in":"D. Blei\nM. Jordan\nM. Jordan\nD. Klein\nP. Liang"
+"in":"D. Blei\nM. Jordan\nM. Jordan\nD. Klein\nD. Klein\nP. Liang\nD. Klein\nA. Roberts"
+
+====================
+
+"mock-out":"i don't know or can t xetermine if this isn't a thing others wouldn t do"
+"out":"a'one a'two a'three"
+"mock-in":"i don't know or can't xetermine if this isn't a thing others wouldn't do"
+"in":"a'one'a'two'a'three"
+
+====================
+
+"mock-out":"this a life\nmovies o demand\nsink o swim"
+"out":"lost i space"
+"mock-in":"this american life\nmovies on demand\nsink or swim"
+"in":"lost in space"
+
+====================
+
+"mock-out":"t american life\nm on demand\ns or swim"
+"out":"l in space"
+"mock-in":"this american life\nmovies on demand\nsink or swim"
+"in":"lost in space"
+
+====================
+
+"mock-out":"Thursday 24th June 2010"
+"out":"Wednesday 23rd June 2010"
+"mock-in":"24 June 2010"
+"in":"23 June 2010"
+
+====================
+
+"mock-out":"b+\ne+\nah+"
+"out":"middle+\nis+\nperfect+"
+"mock-in":"acs3 b cdd\nd e f\ng ah i"
+"in":"Every middle field;\nthat is how\nwe perfect ourselves"
+
+====================
+
+"mock-out":"function formatPhone(phonenum) {\nvar regexObj = 'stuff';\nif (regexObj.test(phonenum)) {\nvar parts = phonenum.match(regexObj);"
+"out":"function formatPhone(phonenum) {\nvar regexObj = /^(?:\\+?1[-. ]?)?(?:\\(?([0-9]{3})\\)?[-. ]?)?([0-9]{3})[-. ]?([0-9]{4})$/;\nif (regexObj.test(phonenum)) {\nvar parts = phonenum.match(regexObj);\nvar phone = \"\";\nif (parts[1]) { phone += \"+1 (\" + parts[1] + \") \"; }\nphone += parts[2] + \"-\" + parts[3];\nreturn phone;\n}\nelse {\n//invalid phone number\nreturn phonenum;\n}\n}"
+"mock-in":"84.\nfunction formatPhone(phonenum) {\n05.\nvar regexObj = 'stuff';\n06.\nif (regexObj.test(phonenum)) {\n07.\nvar parts = phonenum.match(regexObj);"
+"in":"04.\nfunction formatPhone(phonenum) {\n05.\nvar regexObj = /^(?:\\+?1[-. ]?)?(?:\\(?([0-9]{3})\\)?[-. ]?)?([0-9]{3})[-. ]?([0-9]{4})$/;\n06.\nif (regexObj.test(phonenum)) {\n07.\nvar parts = phonenum.match(regexObj);\n08.\nvar phone = \"\";\n09.\nif (parts[1]) { phone += \"+1 (\" + parts[1] + \") \"; }\n10.\nphone += parts[2] + \"-\" + parts[3];\n11.\nreturn phone;\n12.\n}\n13.\nelse {\n14.\n//invalid phone number\n15.\nreturn phonenum;\n16.\n}\n17.\n}\n18."
+
+====================
+
+"mock-out":"A K malhotra\nR T Ponting\nP S Pooni"
+"out":"A K malhotra\nR T Ponting\nS R Tendulkar"
+"mock-in":"Aditya Krishna malhotra\nRicky Thomas Ponting\nParampal Singh Pooni"
+"in":"Aditya Krishna malhotra\nRicky Thomas Ponting\nSachin Ramesh Tendulkar"
+
+====================
+
+"mock-out":"24th June\n22nd June"
+"out":"23rd June"
+"mock-in":"June 24\nJune 22"
+"in":"June 23"
+
+====================
+
+"mock-out":"June the 24th\nApril the 22nd"
+"out":"June the 23rd"
+"mock-in":"June 24\nApril 22"
+"in":"June 23"
+
+====================
+
+"mock-out":"Madhur Mali.k.\nSumit Gulwan.i.\nFirst Las.t.\nDarren Gehrin.g."
+"out":"Rohit Sing.h."
+"mock-in":"Madhur Malik\nSumit gaurav\nFirst Last\nDarren Gehring"
+"in":"Rohit Singh"
+
+====================
+
+"mock-out":"Thursday, June 24th 2010\nFriday, April 5th 1985"
+"out":"Wednesday, June 23rd 2010"
+"mock-in":"Thursday June 24th 2010\nFriday April 5th 1985"
+"in":"Wednesday June 23rd 2010"
+
+====================
+
+"mock-out":"D. Blei (1)\nM. Jordan (2)\nM. Jordan (2)\nD. Klein (1)\nP. Liang (1)"
+"out":"D. Blei (1)\nM. Jordan (2)\nM. Jordan (2)\nD. Klein (3)\nD. Klein (3)\nP. Liang (1)\nD. Klein (3)\nA. Roberts (1)"
+"mock-in":"D. Blei\nM. Jordan\nM. Jordan\nD. Klein\nP. Liang"
+"in":"D. Blei\nM. Jordan\nM. Jordan\nD. Klein\nD. Klein\nP. Liang\nD. Klein\nA. Roberts"

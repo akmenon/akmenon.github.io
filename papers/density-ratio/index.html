@@ -1,0 +1,193 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<link rel="stylesheet" type="text/css" href="../../style.css"/>
+<title>Homepage of Aditya Krishna Menon</title>
+</head>
+
+<body>
+
+<div id="content">
+
+<br>
+<h2>Code for <i>Linking losses for density ratio and class-probability estimation</i>, <i>ICML</i> 2016</h2>
+
+The aim of <a href="https://www.dropbox.com/s/ful5qqb0jtu6s03/code_density_ratio_icml16.zip?dl=0">this MATLAB code</a> is to replicate the tables of results and figures from the paper <a href="density-ratio-paper.pdf"><i>Linking losses for density ratio and class-probability estimation</i></a>, appearing in <i>ICML</i> 2016.
+<br><br>
+Unzipping the code should reveal four subfolders:
+<ul>	
+	<li> <tt>weight_function/</tt>: weight function experiments (Sec 8.1).	
+	<li> <tt>covariate_shift/</tt>: covariate shift experiments (Sec 8.2).
+	<li> <tt>rtb/</tt>: ranking the best experiments (Sec 8.3).
+	<li> <tt>helper/</tt>: miscellaneous helper files (see below).
+</ul>
+We describe how to run the experiments for each of Sections 8.1 -- 8.3.
+
+
+<!-- ======================================== -->
+<h3>Weight function analysis</h3>
+
+For the weight function analysis, in the <tt>weight_function</tt> folder, simply run:
+<br>
+<br>
+<div class="codebox">
+	<code>
+	>> loss_regret_script;
+	</code>
+</div>
+
+<br>
+
+You should see an output such as:
+<br>
+<br>
+<div class="codebox">
+	<code>
+>> loss_regret_script;<br>
+reg = 0.3614 [lambda = 10^-8, gamma = 0; 1.8 secs]<br>
+max regret = 0.3614 [gamma = 0, lambda = 10^-8]<br>
+<br>
+reg = 0.3821 [lambda = 10^-8, gamma = 0; 1.5 secs]<br>
+max regret = 0.3821 [gamma = 0, lambda = 10^-8]<br>
+<br>
+reg = 0.5460 [lambda = 10^-8, gamma = 0; 1.1 secs]<br>
+max regret = 0.5460 [gamma = 0, lambda = 10^-8]<br>
+</code>
+</div>
+<br>
+A plot mimicking Figure 1 of the paper should also be displayed.
+
+
+<!-- ======================================== -->
+<h3>Covariate shift adaptation</h3>
+
+For the covariate shift experiments on the <tt>poly</tt> dataset, in the <tt>covariate_shift</tt> folder, simply run:
+<br>
+<br>
+<div class="codebox">
+	<code>
+	>> poly_script;
+	</code>
+</div>
+<br>
+
+The script will go through each of the losses considered in Sec 8.2, and train a kernel model to estimate the density ratio.
+The NMSE on the test sample is reported.
+You should see output that mimics Table 2(a), such as:
+<br>
+<br>
+<div class="codebox">
+	<code>
+             Uniform & 1.2723 $\pm$ 0.0302 \\<br>
+               KLIEP & 0.6916 $\pm$ 0.0136 \\<br>
+                LSIF & 0.7742 $\pm$ 0.0217 \\<br>
+               uLSIF & 0.7038 $\pm$ 0.0102 \\<br>
+               ...
+    </code>
+</div>
+<br><br>
+
+For the experiments on the <tt>amazon</tt> dataset, in the <tt>covariate_shift</tt> folder, simply run:
+<br>
+<br>
+<div class="codebox">
+	<code>
+	>> amazon_script;
+	</code>
+</div>
+<br>
+
+The script will go through each of the losses considered in Sec 8.2, and train a kernel model to estimate the density ratio.
+The pairwise disagreement on the test sample is reported.
+Following the generation of the feature mappings (after TF-IDF and SVD projection), you should see output that mimics Table 2(b), such as:
+<br>
+<br>
+<div class="codebox">
+	<code>
+generating data trial #doing svd...done<br>
+...
+<br>
+             Uniform & 0.1582 $\pm$ 0.0018<br>
+               KLIEP & 0.1500 $\pm$ 0.0018<br>
+                LSIF & 0.1500 $\pm$ 0.0019<br>
+    </code>
+</div>
+<br>
+Note that the file <tt>amazon.mat</tt> contains the processed Amazon data as provided <a href="http://www.cse.wustl.edu/~mchen/code/mSDA.tar">here</a>.
+
+
+<!-- ======================================== -->
+<h3>Ranking the best</h3>
+
+For the ranking the best experiments, in the <tt>rtb</tt> folder, simply run:
+<br>
+<br>
+<div class="codebox">
+	<code>
+	>> rtb_script;
+	</code>
+</div>
+
+<br>
+
+The display window will then fill with the results of cross-validation and training each of the methods on each of the datasets. The script proceeds by taking each dataset and then each method in turn. The script will output, for each train-test split, the performance of a method according to all the performance criteria listed in Appendix H. Sample output:
+
+<br>
+<br>
+<div class="codebox">
+	<code>
+= Dataset german [n = 1000, d = 24] =<br>
+unknown proper_logistic<br>
+unknown proper_p-classification<br>
+unknown proper_lsif<br>
+	fold 1	2	3	4	5	<br>
+Proper_Logistic	0.7845	0.0346	0.1827	0.5188	0.0000	0.6000	(0.0 secs; lambda 1.953125e-03, pPush 4, lPush 4)<br>
+	fold 1	2	3	4	5	<br>
+Proper_Logistic	0.7936	0.0342	0.1815	0.5876	0.0100	0.6000	(0.0 secs; lambda 2.441406e-04, pPush 4, lPush 4)<br>
+	fold 1	2	3	4	5	<br>
+Proper_Logistic	0.8011	0.0436	0.1911	0.6632	0.0490	0.8000	(0.0 secs; lambda 1.220703e-04, pPush 4, lPush 4)<br>
+...
+<br>
+	</code>
+</div>
+<br>
+
+Once the script is completed, it will output the LaTeX source for Table 5 in the appendix.
+<b>Be warned that this script is likely to take a long time.</b>
+<br><br>
+
+During the course of this script, we will save, for each trial, the results of cross-validation as well as the final predictions. These can be used subsequently to either skip cross-validation and just perform learning, or to skip both and just produce formatted tables of results. To just print out the results of a previous run, change
+
+<br>
+<br>
+<div class="codebox">
+	<code>
+	PRINT_ALL = 1;
+	<br>
+	</code>
+</div>
+<br>
+in Line 42 of <tt>rtb_script.m</tt>.
+<br>
+
+
+<!-- ======================================== -->
+<h3>Third-party libraries</h3>
+
+The code relies on certain third-party MATLAB code for various operations.
+For convenience, the code is included in the ZIP file as part of the <tt>helper</tt> folder.
+The libraries are:
+<ul>
+	<li> <tt><a href="http://au.mathworks.com/matlabcentral/fileexchange/24093-cprintf-display-formatted-colored-text-in-the-command-window">cprintf</a></tt>: print colour text
+	<li> <tt><a href="http://www.cs.ubc.ca/~schmidtm/Software/minFunc.html">minFunc</a></tt>: LBFGS optimisation
+	<li> <tt><a href="https://www.csie.ntu.edu.tw/~cjlin/liblinear">liblinear</a></tt>: LibLinear (<b>note</b>: you may need to <tt>make</tt> binaries for your architecture.)
+	<li> <tt><a href="https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/weights/liblinear-weights-2.01.zip">liblinear-weights</a></tt>: LibLinear with weights (<b>note</b>: you may need to <tt>make</tt> binaries for your architecture.)
+	<li> <tt><a href="http://matlabdatamining.blogspot.com.au/2007/01/model-performance-measurement.html">sampleError</a></tt>: computes the AUC of a scorer
+	<li> <tt><a href="https://dl.dropboxusercontent.com/u/78736641/blog/tfidf2.m">tfidf2</a></tt>: computes a TF-IDF matrix
+</ul>
+
+</div>
+
+</body>
+
+</html>

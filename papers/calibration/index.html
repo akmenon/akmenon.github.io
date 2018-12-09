@@ -1,0 +1,91 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<link rel="stylesheet" type="text/css" href="../../style.css"/>
+<title>Homepage of Aditya Krishna Menon</title>
+</head>
+
+<body>
+
+<div id="content">
+
+<h2>Code for isotonic regression</h2>
+
+For a binary classification task, suppose we have a model that produces real-valued scores for the training and test set. The aim of <a href=code-calibration.zip>this MATLAB code</a> is to convert the test scores into meaningful probability estimates. This is done by performing isotonic regression of the training scores with respect to the training labels, and interpolating.
+<br>
+<br>
+
+The included functions in the code are:
+<ul>
+	<li> <tt>testCalibration</tt>, a sample script that calibrates the outputs of linear regression
+	<li> <tt>calibrateScores</tt>, which performs calibration of a set of test scores by performing an isotonic fit for a set of training scores and labels
+	<li> <tt>isotonic_regression</tt>, the raw PAV algorithm implementation from <a href=http://www.imsv.unibe.ch/content/staff/personalhomepages/duembgen/software/isotonicregression/index_eng.html>here</a>
+</ul>
+
+<br>
+
+<h3>Example usage</h3>
+
+Suppose we have a training set of 10 instances. We have a model that produces the following list of scores <tt>s</tt>, where the corresponding binary labels are in <tt>y</tt>:
+<br>
+<br>
+<div class="codebox">
+	<code>
+	>> s = [ -1 -0.5 0 0.1 0.2 0.45 0.55 0.8 0.9 1 ];
+	<br>
+	>> y = [ 0 0 1 0 1 1 1 0 1 1 ];
+	</code>
+</div>
+
+<br>
+
+We can convert the scores to probability estimates using isotonic regression.
+<br>
+<br>
+<div class="codebox">
+	<code>
+	>> sCal = calibrateScores(s, s, y);<br>
+	>> disp(sCal);<br>
+	...<br>
+	>> plot(s, sCal, 'bo-');<br>
+	</code>
+</div>
+
+<br>
+
+We can further use the resulting isotonic fit to calibrate a set of test scores. This will perform linear interpolation by default.
+<br>
+<br>
+<div class="codebox">
+	<code>
+	>> sTest = [ -2 -0.25 0 0.5 2 ];<br>
+	>> sTestCal = calibrateScores(sTest, s, y);<br>
+	>> disp(sTestCal);<br>
+	...<br>
+	>> plot(s, sCal, 'bo-', sTest, sTestCal, 'ro-');<br>
+	</code>
+</div>
+
+<br><br>
+
+<h3>Detailed descriptions</h3>
+
+Sample output on calling <tt>testCalibration</tt>:
+
+<br><br>
+
+<div class="codebox">
+	<code>
+	>> testCalibration();
+	</code>
+</div>
+
+<br>
+
+The function <tt>calibrateScores</tt> has three options for the <tt>tieBreak</tt> parameter.
+
+</div>
+
+</body>
+
+</html>

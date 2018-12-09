@@ -1,0 +1,168 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<link rel="stylesheet" type="text/css" href="../../style.css"/>
+<title>Homepage of Aditya Krishna Menon</title>
+</head>
+
+<body>
+
+<div id="content">
+
+<h2>Code for <i>Learning from Corrupted Binary Labels via Class-Probability Estimation</i>, <i>ICML</i> 2015</h2>
+
+The aim of <a href="https://www.dropbox.com/s/govst857dwf6275/code_ccn_icml15.zip?dl=0">this MATLAB code</a> is to replicate the tables of results and figures from the paper <i>Learning from Corrupted Binary Labels via Class-Probability Estimation</i>, appearing in <i>ICML</i> 2015.
+<br><br>
+The code comprises a main driver script, <tt>ccn_uci_script.m</tt>, and several additional files organised into the following subfolders:
+<ul>
+
+	<li> <tt>data_processing/</tt>: scripts to generate and load data.
+	<li> <tt>datasets/</tt>: MAT files for UCI datasets used in the paper.
+	<li> <tt>evaluation/</tt>: evaluation of AUC, BER, et cetera of a candidate predictor.
+	<li> <tt>helper/</tt>: miscellaneous helper scripts, for flipping labels, converting labels to { 0, 1 }, et cetera.
+	<li> <tt>learning/</tt>: scripts to perform cross-validation, estimate noise rates, et cetera.
+	<li> <tt>libraries/</tt>: some third party libraries (see below).	
+	<li> <tt>printing/</tt>: printing LaTeX tables of results.
+	<li> <tt>setup/</tt>: setting up various enums.
+	<li> <tt>visualisation/</tt>: producing violin plots of results.
+
+</ul>
+
+
+<br>
+
+<h3>Performing cross-validation and learning</h3>
+
+To perform learning on each of the datasets, simply run
+
+<br>
+<br>
+<div class="codebox">
+	<code>
+	>> ccn_uci_script;
+	</code>
+</div>
+
+<br>
+
+The display window will then fill with the results of cross-validation and training each of the methods on each of the datasets, using previously saved optimal parameters. The output also attempts to give some estimate of when the particular set of trials for a given noise setting will finish. Sample output:
+
+<br>
+<br>
+<div class="codebox">
+	<code>
+<br>
+*** overwriting saved results ***
+<br>
+housing
+<br>
+                                               1-AUC (%)	     BER (%)	ERR_{max} (%)	ERR_{oracle} (%)
+<br>                                               
+[1] optimal lambda = 10^-8, sigma = 10^Inf, [ETA = 18-May-2015 12:07:54]
+<br>
+...
+<br>
+[100] optimal lambda = 10^-8, sigma = 10^Inf, [ETA = 18-May-2015 11:56:44]
+<br>
+<font color="blue">& ($\rhoPlus, \rhoMinus$) = ($0.0, 0.0$) & 14.48 $\pm$ 0.00 & 10.94 $\pm$ 0.00 & 19.80 $\pm$ 0.00 & 4.95 $\pm$ 0.00 \\ </font>
+<br><br>
+[1] optimal lambda = 10^-2, sigma = 10^Inf, [ETA = 18-May-2015 12:08:06]
+<br>
+...
+<br>
+[100] optimal lambda = 10^-2, sigma = 10^Inf, [ETA = 18-May-2015 11:59:27]
+<br>
+<font color="blue">& ($\rhoPlus, \rhoMinus$) = ($0.0, 0.1$) & 26.23 $\pm$ 0.71 & 29.99 $\pm$ 0.79 & 19.25 $\pm$ 0.96 & 5.11 $\pm$ 0.06 \\ </font>
+<br><br>
+...
+ <br>
+	</code>
+</div>
+<br><br>
+
+In the above, final results that are output for each noise trial correspond to those in Table 6 of the Supplementary Material.<br><br>
+<b>Be warned that this script is likely to take a long time.</b> You may wish to reduce the number of noise trials by changing <tt>settings.NOISE_TRIALS</tt> on Line 79 from <tt>100</tt> to some smaller number.
+<br><br>
+
+During the course of this script, we will save, for each trial, the results of cross-validation as well as the final predictions. These can be used subsequently to either skip cross-validation and just perform learning, or to skip both and just produce formatted tables of results.
+
+<br><br>
+
+<h3>Performing learning only</h3>
+
+Once cross-validation has been completed for a particular dataset and noise rate, when rerunning the script, one may wish to simply use the previously stored cross-validation parameters. To do so, simply run
+<br>
+<br>
+<div class="codebox">
+	<code>
+	>> ccn_uci_script('run_with_saved_params');
+	</code>
+</div>
+<br>
+and re-run the script. 
+<br>
+<br>
+
+
+<h3>Generating tables of results</h3>
+
+Once you have saved the predictions from each method, to replicate the mini-table of results from the body of the paper, simply run:
+<br>
+<br>
+<div class="codebox">
+	<code>
+	>> ccn_uci_script('print_mini_table');
+	</code>
+</div>
+
+<br>
+
+To generate the full tables of results from the Supplementary Material, simply run:<br>
+<br>
+<div class="codebox">
+	<code>
+	>> ccn_uci_script('print_full_table');
+	</code>
+</div>
+<br>
+<br>
+
+
+<h3>Producing violin plots</h3>
+
+Once learning is completed, and the results saved, to generate the violin plots, simply run:<br>
+<br>
+<div class="codebox">
+	<code>
+	ccn_uci_script('plot_only');
+	</code>
+</div>
+<br>
+
+
+
+<h3>Detailed description</h3>
+
+The basic operation of the script is that <tt>ccn_uci_main_driver()</tt> loops over all combinations of datasets and noise rates. For each noise rate, in <tt>ccn_uci_main_backseat()</tt>, we consider a number of trials wherein the training labels are randomly flipped at the appropriate rate. In <tt>ccn_uci_learner_body()</tt>, we run an appropriate learner (by default a neural network) on the resulting data, and use the range of the output probabilities to estimate the noise rates. These are then used for prediction on the test set, with the results evaluated and saved in <tt>ccn_uci_perf_saver()</tt>.
+<br><br>
+
+
+<h3>Third-party libraries</h3>
+
+The code relies on certain third-party MATLAB code for various operations.
+For convenience, the code is included in the ZIP file.
+The libraries are:
+<ul>
+	<li> <tt><a href="http://au.mathworks.com/matlabcentral/fileexchange/24093-cprintf-display-formatted-colored-text-in-the-command-window">cprintf</a></tt>: print colour text
+	<li> <tt><a href="http://www.mathworks.com.au/matlabcentral/fileexchange/23629-export-fig">export_fig</a></tt>: export figures to PDF
+	<li> <tt><a href="http://www.cs.ubc.ca/~schmidtm/Software/minFunc.html">minFunc</a></tt>: LBFGS optimisation
+	<li> <tt><a href="http://au.mathworks.com/matlabcentral/fileexchange/45134-violin-plot-based-on-kernel-density-estimation">violin</a></tt>: violin plots
+	<li> <tt><a href="http://www.mathworks.com/matlabcentral/fileexchange/25471-maximize">maximizeFig</a></tt>: maximise a new figure
+	<li> <tt><a href="http://matlabdatamining.blogspot.com.au/2007/01/model-performance-measurement.html">sampleError</a></tt>: computes the AUC of a scorer
+</ul>
+
+</div>
+
+</body>
+
+</html>

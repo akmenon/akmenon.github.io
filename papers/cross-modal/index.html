@@ -1,0 +1,131 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<link rel="stylesheet" type="text/css" href="../../style.css"/>
+<title>Homepage of Aditya Krishna Menon</title>
+</head>
+
+<body>
+
+<div id="content">
+
+<h2>Code for <i>Cross-Modal Retrieval: A Pairwise Classification Approach</i>, <i>SDM</i> 2015</h2>
+
+The aim of <a href="https://www.dropbox.com/s/jcw4jm4ebho6bc8/code_cross_modal.zip?dl=0">this MATLAB code</a> is to replicate the tables of results and figures from the paper <i>Cross-Modal Retrieval: A Pairwise Classification Approach</i>, appearing in <i>SDM</i> 2015.
+<br><br>
+The code comprises a main driver script, <tt>main.m</tt>, and several additional files organised into the following subfolders:
+<ul>
+
+	<li> <tt>data/</tt>: MAT files for the datasets used in the paper.
+	<li> <tt>helper/</tt>: miscellaneous helper scripts, to do with creating train-test splits, constructing the cross-product of various parameters for tuning, et cetera.
+	<li> <tt>learners/</tt>: implementations of all the learning methods used in the paper, such as CCA, the cross-product approach, and so on.
+	<li> <tt>libraries/</tt>: certain third-party code, such as for optimisation. (Details are provided below.)
+	<li> <tt>plotting/</tt>: scripts for plotting PR curves.
+	<li> <tt>results//</tt>: saved optimal parameters for each method on each of the datasets.
+	<li> <tt>retrieval/</tt>: code for performing and assessing retrieval on a given dataset. (Details provided below.)
+
+</ul>
+
+
+<br>
+<br>
+
+
+<h3>Example usage</h3>
+
+To replicate the table of results from the paper, simply unzip the code, and run:
+<br>
+<br>
+<div class="codebox">
+	<code>
+	>> main;
+	</code>
+</div>
+
+<br>
+
+The display window will then fill with the results of training each of the methods on each of the datasets, using previously saved optimal parameters. Sample output:
+
+<br>
+<br>
+<div class="codebox">
+	<code>
+[[Pascal]] <br>
+performing svd...done [1.7209 secs] <br>
+ <br>
+=== [ Random ] === <br>
+MAP = 0.0652 	 0.0652 <br>
+ <br>
+=== [ Linear regression ] === <br>
+MAP = 0.1317 	 0.1069 <br>
+ <br>
+=== [ CCA ] === <br>
+MAP = 0.1681 	 0.1422 <br>
+ <br>
+=== [ CMML ] === <br>
+MAP = 0.1802 	 0.1431 <br>
+ <br>
+...
+ <br>
+	</code>
+</div>
+
+<br>
+
+Additionally, the script will produce PR curves for all three datasets.
+
+<br><br>
+
+In order to replicate the results of the case study, you must first download the full image and text of the Wikipedia dataset from <a href="http://www.svcl.ucsd.edu/projects/crossmodal/">here</a>. (This file is ~1.4 GB.) Once this is done, unzip the contents in the <tt>libraries</tt> subfolder: this should create a new folder called <tt>wikipedia_dataset</tt>. At this stage, you may simply run:<br>
+<br>
+<div class="codebox">
+	<code>
+case_study;
+	</code>
+</div>
+
+<br>
+
+This script performs 4 image-to-text and text-to-image queries. It displays figures showing the corresponding query and result images for both regimes, for both the cross-product and CCA methods. The <i>filenames</i> of the corresponding query and result texts are reported in the console.
+
+<br><br>
+
+<h3>Detailed descriptions</h3>
+
+The provided code builds upon that provided by the project pages for the <a href=http://www.svcl.ucsd.edu/~josecp/files/xmodal_acmmm10.zip>MMM '10 paper of Rasiwasia et al.</a> (reference [15] in our paper), and the <a href=http://www.svcl.ucsd.edu/~josecp/files/ris_cvpr12.zip>CVPR '12 paper of Costa Pereira and Vasconcelos</a> (reference [13] in our paper). In detail, the following subfolders are taken from these sources:
+<ul>
+
+	<li> <tt>data/</tt>: this mirrors the contents of the <tt>data/</tt> subfolder of <tt>ris_cvpr12.zip</tt>
+	<li> <tt>retrieval/xmodal_acmm10/</tt>: this mirrors the contents of the <tt>code/</tt> subfolder of <tt>xmodal_acmm10.zip</tt>, with one change: in the file <tt>retrieval.m</tt>, we have modified the call to <tt>calc_distance</tt> to call instead <tt>generalised_calc_distance</tt>. This is to allow for usage of the dot-product "metric" for retrieval.
+
+</ul>
+
+In addition, we rely on the following external libraries, copies of which are provided in the <tt>libraries/</tt> subfolder:
+
+<ul>
+
+	<li> <tt>minFunc</tt>: this is used to perform L-BFGS minimisation of several objective functions.
+	<li> <tt>liblinear-3.94</tt>: this is used to train logistic regression for the SCM method.
+
+</ul>
+
+<br>
+
+As noted above, the script <tt>main.m</tt> used previously saved optimal parameters. Should you wish to search for these optimal parameters, simply change line 40 to read
+<br>
+<br>
+<div class="codebox">
+	<code>
+	TUNE = 1;
+	</code>
+</div>
+
+<br>
+
+
+
+</div>
+
+</body>
+
+</html>
