@@ -1,0 +1,491 @@
+\documentclass[fontsize=11pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{lmodern}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage[svgnames]{xcolor}  % Colours by their 'svgnames'
+\usepackage[margin=0.75in]{geometry}
+  \textheight=700px
+\usepackage{url}
+\usepackage[normalem]{ulem}
+
+\usepackage{wasysym,marvosym,fontawesome}
+
+\usepackage{newtxtext}
+\usepackage{lmodern} % Allow arbitrary font sizes
+\usepackage{textcomp}
+
+%% Define a new 'modern' style for the url package that will use a smaller font.
+\makeatletter
+\def\url@modernstyle{
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{}}}
+\makeatother
+\urlstyle{modern} %% And use the newly defined style.
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%\renewcommand{\familydefault}{\sfdefault}
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{                 % Change font of \section command
+  \large\usefont{OT1}{phv}{b}{n}%   % bch-b-n: CharterBT-Bold font
+  \sectionrule{0pt}{0pt}{-5pt}{1pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}      % Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}   % Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+    \LARGE \usefont{OT1}{phv}{b}{n}
+    %\hfill
+    \begin{center}
+        #1
+    \end{center}
+    %\par
+    \normalsize \normalfont}
+
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+    \large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+    \par \normalsize \normalfont}
+
+%\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+\newcommand{\NewPart}[1]{\section*{#1}}
+
+\newcommand{\PersonalEntry}[2]{
+    \noindent\hangindent=2em\hangafter=0 % Indentation
+    \parbox{\spacebox}{                  % Box to align text
+    \textit{#1}}                      % Entry name (birth, address, etc.)
+    \hspace{1.5em} #2 \par}              % Entry value
+
+\newcommand{\SkillsEntry}[2]{                % Same as \PersonalEntry
+    \noindent\hangindent=2em\hangafter=0 % Indentation
+    \parbox{\spacebox}{                  % Box to align text
+    \textit{#1}}                    % Entry name (birth, address, etc.)
+    \hspace{1.5em} #2 \par}              % Entry value
+
+\newcommand{\AwardsEntry}[2]{                % Same as \PersonalEntry
+    \noindent\hangindent=2em\hangafter=0 % Indentation
+    \parbox{\spacebox}{                  % Box to align text
+    \textit{#1}}                    % Entry name (birth, address, etc.)
+    \hspace{1.5em} #2 \par}              % Entry value
+
+\newcommand{\EducationEntry}[4]{
+    \noindent \textbf{#1}
+    \textit{#3}
+    \hfill      % Study
+    \colorbox{White}{
+      \parbox{9em}{
+      \hfill\color{Black}#2}} \par  % Duration
+    %\noindent \textit{#3} \par        % School
+    \noindent\hangindent=2em\hangafter=0 \small #4 % Description
+    \normalsize \par}
+
+\newcommand{\WorkEntry}[4]{       % Same as \EducationEntry
+    \noindent
+    \textbf{#1}
+    \textit{#3} %\par        % Company
+    \hfill      % Jobname
+    \colorbox{White}{%
+      \parbox{9em}{%
+      \hfill\color{Black}#2}} \par   % Duration
+        %\noindent \textit{#3} \par        % Company
+    \noindent\hangindent=2em\hangafter=0 \small #4 % Description
+    \normalsize \par}
+
+\newcommand{\ProjectEntry}[4]{         % Similar to \EducationEntry
+    \noindent \textbf{#1} \noindent {#2} {#3} \par
+    \noindent \small #4 % Description
+    \normalsize \par}
+
+\newcommand{\AwardEntry}[4]{         % Similar to \EducationEntry
+    \noindent \textbf{#1} \noindent \textit{#2} \hfill {#3} \par
+    \noindent \small #4 % Description
+    \normalsize \par}
+    \begin{document}
+    
+\MyName{Aditya Krishna Menon}
+{\par
+\begin{center}
+    % {\footnotesize{\footnotesize\phone}\ +61 439 761 969}
+    % $\ $
+    % {\footnotesize\tt{\footnotesize\Letter}\ aditya.menon@anu.edu.au}
+    % $\ $
+    % {\footnotesize\tt{\footnotesize\faGlobe}\ \url{http://users.cecs.anu.edu.au/~akmenon/}} \\    
+    % {\footnotesize\tt{\footnotesize\faGraduationCap}\ \url{http://scholar.google.com.au/citations?user=li4mEfcAAAAJ}}
+    {\small{\small\faMapMarker}\ New York, NY}
+    %$\ $
+    %{\small{\small\phone}\ +1 646 262 0466}
+    $\ $
+    {\small\tt{\small\Letter}\ adityakmenon@google.com}
+\end{center}
+\par}
+
+%\bigskip
+%{\small \hfill }
+
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Experience}{}
+
+\WorkEntry
+{Staff Research Scientist}
+{Nov 2020 -- Present}
+{Google}{\vspace{-\baselineskip}}
+\WorkEntry
+{Senior Research Scientist}
+{Sep 2018 -- Oct 2020}
+{Google}
+{%
+\begin{itemize} \itemsep -4pt
+    \item Working on large-scale classification and deep information retrieval
+\end{itemize}
+}
+
+\WorkEntry
+{Honorary Senior Lecturer}
+{Jul 2018 -- Aug 2021}
+{Australian National University}{\vspace{-\baselineskip}}
+\WorkEntry
+{Fellow}
+{Jan 2018 -- Jul 2018}
+{Australian National University}
+% \WorkEntry
+% {Honorary Lecturer}
+% {May 2016 -- Jan 2018}
+% {Australian National University}{\vspace{-\baselineskip}}
+% \WorkEntry
+% {Adjunct Research Fellow}
+% {May 2013 -- May 2016}
+% {Australian National University}
+{%
+\begin{itemize} \itemsep -1pt
+    \item Analysing different means of imposing ``fairness'' constraints on classifiers, and their resulting tradeoffs 
+
+    \item Designing algorithms to predict popularity of content on social media, e.g., videos on YouTube
+
+    \item Performing academic duties, including co-supervision of two PhD students
+\end{itemize}
+}
+
+\WorkEntry
+{Senior Research Scientist}
+{Jul 2016 -- Dec 2017}
+{CSIRO Data61}
+{
+\begin{itemize} \itemsep -1pt
+        \item
+            Published research on theoretical \& applied machine learning topics, e.g., Bregman divergences, point processes, recommender systems
+
+        \item
+            Led machine learning for industrial projects on {transport congestion management} and {border security}
+
+        \item
+            Performed academic duties at the Australian National University, including co-supervision of two PhD students
+\end{itemize}
+}
+
+\WorkEntry
+{Researcher}
+{May 2013 -- Jun 2016}
+{National ICT Australia (NICTA)}
+{
+\begin{itemize} \itemsep -1pt
+        \item
+            Published research on theoretical \& applied machine learning topics, e.g., bipartite ranking, label noise, recommender systems
+
+        \item
+            Involved in machine learning for industrial projects on {solar energy forecasting} and urban mobility
+
+        \item
+            Performed academic duties at the Australian National University, including co-supervision of two PhD students, and lecturing
+\end{itemize}
+}
+
+\WorkEntry
+{Data Scientist Intern}
+{Jun 2012 -- Sep 2012}
+{LinkedIn}
+{
+\begin{itemize} \itemsep -1pt
+        \item Worked on end-to-end system for using machine learning to automate search log analysis
+\end{itemize}
+}
+
+\WorkEntry
+{Research Intern}
+{Jun 2011 -- Sep 2011}
+{Microsoft Research New England}
+{
+\begin{itemize} \itemsep -1pt
+        \item Worked on using machine learning to automatically infer user's intent for repetitive text processing tasks
+        %\item Culminated in an ICML paper.
+\end{itemize}
+}
+
+\WorkEntry
+{Research Intern}
+{Jun 2010 -- Sep 2010}
+{Yahoo! Labs Bangalore}
+{
+\begin{itemize} \itemsep -1pt
+        \item Worked on estimating the clickthrough rate of ads on webpages using collaborative filtering
+        %\item Culminated in a KDD paper.    
+\end{itemize}
+}
+
+
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
+
+\EducationEntry
+{PhD in Computer Science}
+%{Sep 2007 -- Mar 2013}
+{Mar 2013}
+{University of California, San Diego}
+{
+%\hspace{-2pt}Degree conferred March 23rd, 2013 \\
+\hspace{-2pt}\emph{Thesis title}: Latent feature models for dyadic prediction \\
+\emph{Supervisor}: Charles Elkan
+}
+
+\vskip0.25\baselineskip
+
+% \EducationEntry
+% {CPhil in Computer Science}
+% {Sep 2007 -- Jun 2011}
+% {University of California, San Diego}
+% {
+% }
+
+% \vskip-0.5\baselineskip
+
+% \EducationEntry
+% {MS in Computer Science}
+% {Sep 2007 -- Jun 2009}
+% {University of California, San Diego}
+% {
+% }
+
+% \vskip-0.5\baselineskip
+
+\EducationEntry
+{BSc (Advanced) Honours in Computer Science}
+%{Mar 2003 -- Nov 2006}
+%{Mar 2003 -- May 2007}
+{May 2007}
+{The University of Sydney}
+{
+%\hspace{-2pt}Degree conferred May 25th, 2007 \\
+\hspace{-2pt}First Class Honours, University Medal, \& Allan Bromley Prize for best thesis in Computer Science \\
+\emph{Thesis title}: Random projections and applications to dimensionality reduction \\
+\emph{Supervisor}: Sanjay Chawla
+}
+
+
+%%% Awards
+%%% ------------------------------------------------------------
+\NewPart{Awards}{}
+
+% \AwardEntry
+% {Outstanding Reviewer}
+% {International Conference on Machine Learning}
+% {2018}
+% {Awarded for ...}
+
+\AwardEntry
+{Best Technical Contribution Award}
+{Conference on Fairness, Accountability, and Transparency}
+{2018}
+%{Awarded for ...}
+
+\AwardEntry
+{Research Excellence Award}
+{Intelligent Transport Systems Australia}
+{2014 -- 2015}
+    {Awarded to Advanced Data Analytics in Transport team}
+
+\AwardEntry{Student Travel Award}
+{International Conference on Data Mining}
+{2010}
+
+\AwardEntry{Jacobs Fellowship}
+{University of California, San Diego}
+{2007 -- 2009}
+%{Prestigious fellowship awarded to incoming PhD students}
+
+\AwardEntry{University Medal}
+{The University of Sydney}
+{2007}
+
+\AwardEntry{Allan Bromley Prize}
+{The University of Sydney}
+{2007}
+%{Awarded for best honours thesis}
+
+\AwardEntry{Continuing Undergraduate Scholarship}
+{The University of Sydney}
+{2004 -- 2006}
+
+\AwardEntry{Talented Student Program}
+{The University of Sydney}
+{2003 -- 2005}
+
+% \AwardEntry{Farrand Science Scholarship}
+% {The University of Sydney}
+% {2003}
+
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Research Interests}{}
+
+\noindent
+Weakly-supervised learning (e.g., learning from label noise, positive and unlabelled learning) %\\
+
+\noindent
+Classification with real-world constraints (e.g., class imbalance, fairness) %\\
+
+\noindent
+Matrix factorisation \& applications (e.g., collaborative filtering, link prediction) %\\
+
+
+\vskip0.5\baselineskip
+
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Selected Industrial Research Projects}{}
+
+\WorkEntry
+{Inverse problems for road traffic}
+{Aug 2013 - Dec 2014}
+{NICTA and Transport for NSW}
+{
+\begin{itemize} 
+    \itemsep-0.1\baselineskip
+    \item Worked with a diverse team including transportation scientists and research engineers             
+    \item Developed learning algorithms to solve an inverse problem central to transport science
+    \item Implemented algorithms in {\tt python} and {\tt MATLAB}, and engaged with engineers to integrate into live demos
+    \item Work culminated in team receiving 2014 \& 2015 Intelligent Transport Systems Research award, and publication in top transport journal
+\end{itemize}
+}
+
+\WorkEntry
+{Loss functions for solar energy forecasting}
+{Jun 2013 - Jul 2016}
+{NICTA and Australian Renewable Energy Agency}
+{
+\begin{itemize}
+    \itemsep-0.1\baselineskip
+    \item Worked on designing performance measures for forecasting of energy output from distributed solar panels
+    \item Demonstrated viability of measures from class-imbalance literature to measure detection rate of ``ramp'' events
+    \item Engaged with and presented findings to stakeholders in industry and government
+    %\item work culminated in publication in leading photovoltaic conference
+    \item Project was positively received by sponsoring government agency, and awarded additional funds to continue research
+\end{itemize}
+}
+
+\WorkEntry
+{Anomaly detection for border protection}
+{Jan 2017 - Mar 2017}
+{CSIRO Data61 and Unisys}
+{
+\begin{itemize}
+    \itemsep-0.1\baselineskip
+    \item Worked to enhance Unisys' border risk-assessment platform
+    \item Designed machine learning algorithms for detecting anomalies in cargo and passenger data
+    \item Set overall modelling and implementation strategy, and oversaw work of research engineer
+    \item Work culminated in continued engagement with client, and favourable media coverage
+\end{itemize}
+}
+
+
+% %%% Skills
+% %%% ------------------------------------------------------------
+\NewPart{Teaching Experience}{}
+
+\WorkEntry
+{Lecturer}
+{Jul -- Aug 2013 -- 2016}
+{Australian National University}
+{
+    COMP2610/COMP6261: Information Theory
+}
+
+
+\WorkEntry
+{Teaching assistant}
+{Jan -- Mar 2009 -- 2012}
+{University of California, San Diego}
+{
+    COMP101: Algorithms; COMP250A: Probabilistic Reasoning and Decision-Making; COMP250B: Learning
+}
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Programming Languages}{}
+
+\emph{Proficient}: {{\tt python} + scientific toolkit ({\tt numpy}, {\tt scipy}, {\tt sklearn})},
+{{\tt MATLAB}}
+
+\noindent\emph{Familiar}: \,\ {\tt C}, {\tt C++}, {\tt Java}
+
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Professional Service}{}
+
+\noindent
+Program Committee member for 
+ICML 2012--2019; 
+NIPS 2011, 2015--2019; 
+AAAI 2012, 2015--2019; 
+AISTATS 2016, 2018, 2020--2023;
+IJCAI 2016, 2018;
+KDD 2011--2012; 
+CIKM 2013; 
+ACML 2014--2015
+
+\medskip
+
+\noindent
+Senior Program Committee (Area Chair) member for 
+IJCAI 2017, 
+AAAI 2019, 
+ICML 2021--2022, 
+NeurIPS 2020--2022, 
+ICLR 2020--2023, 
+ACML 2020--2021
+
+\medskip
+
+\noindent
+Reviewer for Journal of Machine Learning Research, Machine Learning, Data Mining and Knowledge Discovery, Biometrika, Transactions on Pattern Analysis and Machine Intelligence, Artificial Intelligence
+
+\medskip
+
+\noindent
+Workshops co-chair for ACML 2022
+
+\medskip
+
+\noindent
+Recognised as Outstanding Reviewer for ICML 2018, 2019 and NeurIPS 2018
+
+\medskip
+
+\noindent
+Recognised as Outstanding Senior Program Committee member for AAAI 2019
+
+%%%
+
+\end{document}

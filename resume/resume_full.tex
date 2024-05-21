@@ -1,0 +1,1074 @@
+\documentclass[fontsize=11pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{lmodern}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage[svgnames]{xcolor}  % Colours by their 'svgnames'
+\usepackage[margin=0.75in]{geometry}
+  \textheight=700px
+\usepackage{url}
+\usepackage[normalem]{ulem}
+
+\usepackage{wasysym,marvosym,fontawesome}
+
+\usepackage{newtxtext}
+\usepackage{lmodern} % Allow arbitrary font sizes
+\usepackage{textcomp}
+
+%% Define a new 'modern' style for the url package that will use a smaller font.
+\makeatletter
+\def\url@modernstyle{
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{}}}
+\makeatother
+\urlstyle{modern} %% And use the newly defined style.
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%\renewcommand{\familydefault}{\sfdefault}
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{                 % Change font of \section command
+  \large\usefont{OT1}{phv}{b}{n}%   % bch-b-n: CharterBT-Bold font
+  \sectionrule{0pt}{0pt}{-5pt}{1pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}      % Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}   % Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+    \LARGE \usefont{OT1}{phv}{b}{n}
+    %\hfill
+    \begin{center}
+        #1
+    \end{center}
+    %\par
+    \normalsize \normalfont}
+
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+    \large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+    \par \normalsize \normalfont}
+
+%\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+\newcommand{\NewPart}[1]{\section*{#1}}
+
+\newcommand{\PersonalEntry}[2]{
+    \noindent\hangindent=2em\hangafter=0 % Indentation
+    \parbox{\spacebox}{                  % Box to align text
+    \textit{#1}}                      % Entry name (birth, address, etc.)
+    \hspace{1.5em} #2 \par}              % Entry value
+
+\newcommand{\SkillsEntry}[2]{                % Same as \PersonalEntry
+    \noindent\hangindent=2em\hangafter=0 % Indentation
+    \parbox{\spacebox}{                  % Box to align text
+    \textit{#1}}                    % Entry name (birth, address, etc.)
+    \hspace{1.5em} #2 \par}              % Entry value
+
+\newcommand{\AwardsEntry}[2]{                % Same as \PersonalEntry
+    \noindent\hangindent=2em\hangafter=0 % Indentation
+    \parbox{\spacebox}{                  % Box to align text
+    \textit{#1}}                    % Entry name (birth, address, etc.)
+    \hspace{1.5em} #2 \par}              % Entry value
+
+\newcommand{\EducationEntry}[4]{
+    \noindent \textbf{#1}
+    \textit{#3}
+    \hfill      % Study
+    \colorbox{White}{
+      \parbox{9em}{
+      \hfill\color{Black}#2}} \par  % Duration
+    %\noindent \textit{#3} \par        % School
+    \noindent\hangindent=2em\hangafter=0 \small #4 % Description
+    \normalsize \par}
+
+\newcommand{\WorkEntry}[4]{       % Same as \EducationEntry
+    \noindent
+    \textbf{#1}
+    \textit{#3} %\par        % Company
+    \hfill      % Jobname
+    \colorbox{White}{%
+      \parbox{9em}{%
+      \hfill\color{Black}#2}} \par   % Duration
+        %\noindent \textit{#3} \par        % Company
+    \noindent\hangindent=2em\hangafter=0 \small #4 % Description
+    \normalsize \par}
+
+\newcommand{\ProjectEntry}[4]{         % Similar to \EducationEntry
+    \noindent \textbf{#1} \noindent {#2} {#3} \par
+    \noindent \small #4 % Description
+    \normalsize \par}
+
+\newcommand{\AwardEntry}[4]{         % Similar to \EducationEntry
+    \noindent \textbf{#1} \noindent \textit{#2} \hfill {#3} \par
+    \noindent \small #4 % Description
+    \normalsize \par}
+    \begin{document}
+    
+\MyName{Aditya Krishna Menon}
+{\par
+\begin{center}
+    % {\footnotesize{\footnotesize\phone}\ +61 439 761 969}
+    % $\ $
+    % {\footnotesize\tt{\footnotesize\Letter}\ aditya.menon@anu.edu.au}
+    % $\ $
+    % {\footnotesize\tt{\footnotesize\faGlobe}\ \url{http://users.cecs.anu.edu.au/~akmenon/}} \\    
+    % {\footnotesize\tt{\footnotesize\faGraduationCap}\ \url{http://scholar.google.com.au/citations?user=li4mEfcAAAAJ}}
+    {\small{\small\faMapMarker}\ New York, NY}
+    %$\ $
+    %{\small{\small\phone}\ +1 646 262 0466}
+    $\ $
+    {\small\tt{\small\Letter}\ adityakmenon@google.com}
+\end{center}
+\par}
+
+%\bigskip
+%{\small \hfill }
+
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Experience}{}
+
+\WorkEntry
+{Staff Research Scientist}
+{Nov 2020 -- Present}
+{Google}{\vspace{-\baselineskip}}
+\WorkEntry
+{Senior Research Scientist}
+{Sep 2018 -- Oct 2020}
+{Google}
+{%
+\begin{itemize} \itemsep -4pt
+    \item Working on large-scale classification and ranking
+\end{itemize}
+}
+
+\WorkEntry
+{Honorary Senior Lecturer}
+{Jul 2018 -- Aug 2021}
+{Australian National University}{\vspace{-\baselineskip}}
+\WorkEntry
+{Fellow}
+{Jan 2018 -- Jul 2018}
+{Australian National University}
+% \WorkEntry
+% {Honorary Lecturer}
+% {May 2016 -- Jan 2018}
+% {Australian National University}{\vspace{-\baselineskip}}
+% \WorkEntry
+% {Adjunct Research Fellow}
+% {May 2013 -- May 2016}
+% {Australian National University}
+{%
+\begin{itemize} \itemsep -1pt
+    \item Analysing different means of imposing ``fairness'' constraints on classifiers, and their resulting tradeoffs 
+
+    \item Designing algorithms to predict popularity of content on social media, e.g., videos on YouTube
+
+    \item Performing academic duties, including co-supervision of two PhD students
+\end{itemize}
+}
+
+\WorkEntry
+{Senior Research Scientist}
+{Jul 2016 -- Dec 2017}
+{CSIRO Data61}
+{
+\begin{itemize} \itemsep -1pt
+        \item
+            Published research on theoretical \& applied machine learning topics, e.g., Bregman divergences, point processes, recommender systems
+
+        \item
+            Led machine learning for industrial projects on {transport congestion management} and {border security}
+
+        \item
+            Performed academic duties at the Australian National University, including co-supervision of two PhD students
+\end{itemize}
+}
+
+\WorkEntry
+{Researcher}
+{May 2013 -- Jun 2016}
+{National ICT Australia (NICTA)}
+{
+\begin{itemize} \itemsep -1pt
+        \item
+            Published research on theoretical \& applied machine learning topics, e.g., bipartite ranking, label noise, recommender systems
+
+        \item
+            Involved in machine learning for industrial projects on {solar energy forecasting} and urban mobility
+
+        \item
+            Performed academic duties at the Australian National University, including co-supervision of two PhD students, and lecturing
+\end{itemize}
+}
+
+\WorkEntry
+{Data Scientist Intern}
+{Jun 2012 -- Sep 2012}
+{LinkedIn}
+{
+\begin{itemize} \itemsep -1pt
+        \item Worked on end-to-end system for using machine learning to automate search log analysis
+\end{itemize}
+}
+
+\WorkEntry
+{Research Intern}
+{Jun 2011 -- Sep 2011}
+{Microsoft Research New England}
+{
+\begin{itemize} \itemsep -1pt
+        \item Worked on using machine learning to automatically infer user's intent for repetitive text processing tasks
+        %\item Culminated in an ICML paper.
+\end{itemize}
+}
+
+\WorkEntry
+{Research Intern}
+{Jun 2010 -- Sep 2010}
+{Yahoo! Labs Bangalore}
+{
+\begin{itemize} \itemsep -1pt
+        \item Worked on estimating the clickthrough rate of ads on webpages using collaborative filtering
+        %\item Culminated in a KDD paper.    
+\end{itemize}
+}
+
+
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
+
+\EducationEntry
+{PhD in Computer Science}
+%{Sep 2007 -- Mar 2013}
+{Mar 2013}
+{University of California, San Diego}
+{
+%\hspace{-2pt}Degree conferred March 23rd, 2013 \\
+\hspace{-2pt}\emph{Thesis title}: Latent feature models for dyadic prediction \\
+\emph{Supervisor}: Charles Elkan
+}
+
+\vskip0.25\baselineskip
+
+% \EducationEntry
+% {CPhil in Computer Science}
+% {Sep 2007 -- Jun 2011}
+% {University of California, San Diego}
+% {
+% }
+
+% \vskip-0.5\baselineskip
+
+% \EducationEntry
+% {MS in Computer Science}
+% {Sep 2007 -- Jun 2009}
+% {University of California, San Diego}
+% {
+% }
+
+% \vskip-0.5\baselineskip
+
+\EducationEntry
+{BSc (Advanced) Honours in Computer Science}
+%{Mar 2003 -- Nov 2006}
+%{Mar 2003 -- May 2007}
+{May 2007}
+{The University of Sydney}
+{
+%\hspace{-2pt}Degree conferred May 25th, 2007 \\
+\hspace{-2pt}First Class Honours, University Medal, \& Allan Bromley Prize for best thesis in Computer Science \\
+\emph{Thesis title}: Random projections and applications to dimensionality reduction \\
+\emph{Supervisor}: Sanjay Chawla
+}
+
+
+%%% Awards
+%%% ------------------------------------------------------------
+\NewPart{Awards}{}
+
+% \AwardEntry
+% {Outstanding Reviewer}
+% {International Conference on Machine Learning}
+% {2018}
+% {Awarded for ...}
+
+\AwardEntry
+{Best Technical Contribution Award}
+{Conference on Fairness, Accountability, and Transparency}
+{2018}
+%{Awarded for ...}
+
+\AwardEntry
+{Research Excellence Award}
+{Intelligent Transport Systems Australia}
+{2014 -- 2015}
+    {Awarded to Advanced Data Analytics in Transport team}
+
+\AwardEntry{Student Travel Award}
+{International Conference on Data Mining}
+{2010}
+
+\AwardEntry{Jacobs Fellowship}
+{University of California, San Diego}
+{2007 -- 2009}
+%{Prestigious fellowship awarded to incoming PhD students}
+
+\AwardEntry{University Medal}
+{The University of Sydney}
+{2007}
+
+\AwardEntry{Allan Bromley Prize}
+{The University of Sydney}
+{2007}
+%{Awarded for best honours thesis}
+
+\AwardEntry{Continuing Undergraduate Scholarship}
+{The University of Sydney}
+{2004 -- 2006}
+
+\AwardEntry{Talented Student Program}
+{The University of Sydney}
+{2003 -- 2005}
+
+% \AwardEntry{Farrand Science Scholarship}
+% {The University of Sydney}
+% {2003}
+
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Research Interests}{}
+
+\noindent
+Weakly-supervised learning (e.g., learning from label noise, positive and unlabelled learning) %\\
+
+\noindent
+Classification with real-world constraints (e.g., class imbalance, fairness) %\\
+
+\noindent
+Matrix factorisation \& applications (e.g., collaborative filtering, link prediction) %\\
+
+
+
+%%%
+\NewPart{Selected Academic Research Publications}{}
+
+    \ProjectEntry
+    {The cost of fairness in binary classification.}
+    {Aditya Krishna Menon and Robert C. Williamson.}
+    {In \emph{Conference on Fairness, Accountability, and Transparency (\textbf{FAT})}, 2018. 
+    \uline{{Best Technical Contribution.}}
+    }
+    {{
+    \color{gray}
+    \indent
+    Explicates how the inherent tradeoff between accuracy and fairness depends on the alignment of the distributions for each task.
+    To achieve this, we show that %two popular measures of fairness are intimately connected to cost-sensitive losses, and that
+    the Bayes-optimal fairness-aware classifiers involve \emph{instance-dependent} thresholding of the class-probability.
+    }}
+
+\vskip0.5\baselineskip
+
+    % \ProjectEntry
+    % {Making deep neural networks robust to label noise: a loss correction approach.}
+    % {Giorgio Patrini, Alessandro Rozza, Aditya Krishna Menon, Richard Nock, Lizhen Qu.}
+    % {In \emph{Computer Vision and Pattern Recognition (\textbf{CVPR})}, 2017.
+    % \uline{{36 citations.}}}
+    % {{
+    % \color{gray} 
+    % \indent
+    % Shows that when the input labels to a deep network are subject to random noise, we can estimate the noise rate and subsequently re-weight our loss function to account for uncertainty in the provided labels. This yields a simple, architecture-independent robustification procedure.
+    % }}
+
+% \vskip0.5\baselineskip
+
+%   \ProjectEntry
+%   {Bipartite ranking: a risk-theoretic perspective.}
+%   {Aditya Krishna Menon and and Robert C. Williamson.}
+%   {In \emph{Journal of Machine Learning Research (\textbf{JMLR})}, 2016.}
+%   {{
+%   \color{gray}
+%   \indent
+%   Analyses the bipartite ranking problem in terms of its underlying statistical risk.
+%   This is used to show that certain surrogates to the AUC will recover the correct (Bayes-optimal) solution, and that one can design surrogate losses to emphasise accuracy at the head of the ranked list.
+%   }}
+
+% \
+
+%     \ProjectEntry
+%     {A scaled Bregman theorem with applications.}
+%     {Richard Nock, Aditya Krishna Menon and Cheng Soon Ong.}
+%     {In \emph{Advances in Neural Processing Systems (\textbf{NIPS})}, 2016.}
+%     {{
+%     \color{gray}
+%     \indent
+%     Establishes a formal reduction between the density ratio and class-probability estimation problems. This is done via a novel identity for Bregman divergences, and justifies using methods like logistic regression to estimate covariate shift levels between train and test sets.
+%     }}
+
+% \
+
+%     \ProjectEntry
+%     {Linking losses for density ratio and class-probability estimation.}
+%     {Aditya Krishna Menon and Cheng Soon Ong.}
+%     {In \emph{International Conference on Machine Learning (\textbf{ICML})}, 2016.}
+%     {{
+%     \color{gray}
+%     \indent
+%     Establishes a formal reduction between the density ratio and class-probability estimation problems. This is done via a novel identity for Bregman divergences, and justifies using methods like logistic regression to estimate covariate shift levels between train and test sets.
+%     }}
+
+% \vskip0.5\baselineskip
+
+%   \ProjectEntry{Learning with symmetric label noise: The importance of being unhinged.}
+% Brendan van Rooyen, Aditya Krishna Menon and and Robert C. Williamson.
+% In \emph{Advances in Neural Information Processing Systems (\textbf{NIPS})}, 2015.
+%   %{\color{blue}{14 citations}}
+%   \\
+%   {\color{gray} Shows that a simple convex loss is provably robust to symmetric label noise, and established connections of the same to highly regularised SVMs.
+%   }
+
+    \ProjectEntry
+    {Learning from corrupted binary labels via class-probability estimation.}
+    {Aditya Krishna Menon, Brendan van Rooyen, Cheng Soon Ong and Robert C. Williamson.}
+    {In \emph{International Conference on Machine Learning (\textbf{ICML})}, 2015.
+    %\uline{{41 citations.}}
+    }
+    {{\color{gray}
+    \indent
+    Shows that when binary labels are corrupted with noise, the noise rate can be inferred from class-probability estimates, with no access to clean samples. This is done by relating the clean and noisy class-probabilities, generalising existing results for special cases.
+    }}
+
+\vskip0.5\baselineskip
+
+    \ProjectEntry
+    {AutoRec: autoencoders meet collaborative filtering.}
+    {Suvash Sedhain, Aditya Krishna Menon, Scott Sanner, Lexing Xie.}
+    {In \emph{International Conference on World Wide Web (\textbf{WWW})}, 2015.
+    %\uline{{113 citations.}}
+    }
+    {{
+    \color{gray}
+    \indent    
+    Introduces a new means of predicting user ratings for content, wherein a non-linear autoencoder is applied to each row of the rating matrix. This simple approach was shown to outperform matrix factorisation, which has long been the \emph{de-facto} approach to collaborative filtering.
+    }}
+
+\vskip0.5\baselineskip
+
+    % \ProjectEntry{Bayes-optimal scorers for bipartite ranking.}
+    % {Aditya Krishna Menon and Robert C. Williamson.}
+    % {In \emph{Conference on Learning Theory (\textbf{COLT})}, 2014.}
+    % {{
+    % \color{gray}
+    % \indent
+    % Explicates a subtlety
+    % in using surrogate losses for bipartite ranking,
+    % owing to an implicit restriction on the function class.
+    % Establishes that for a broad class of surrogates,
+    % we nonetheless have consistency and surrogate regret bounds via
+    % a reduction to pairwise classification.
+    % }}
+
+    \ProjectEntry
+    {Response prediction using collaborative filtering with hierarchies and side-information.}
+    {Aditya Krishna Menon, Krishna-Prasad Chitrapura, Sachin Garg, Deepak Agarwal, and Nagaraj Kota.}
+    {In \emph{Knowledge Discovery \& Data Mining (\textbf{KDD})}, 2011.
+    %\uline{{110 citations.}}
+    }
+    {{
+    \color{gray}
+    \indent
+    Re-casts the problem of predicting clickthrough rates of ads as one of ``recommending'' ads to webpages, thereby allowing the use of techniques developed for collaborative filtering.
+    This approach significantly improves performance over existing approaches.
+    }}    
+
+\vskip0.5\baselineskip
+
+    \ProjectEntry
+    {Link prediction via matrix factorization.}
+    {Aditya Krishna Menon and Charles Elkan.}
+    {In \emph{Machine Learning and Knowledge Discovery in Databases}, 2011.
+    %\uline{{342 citations.}}
+    }
+    {{
+    \color{gray}
+    \indent
+    Proposes a novel means of predicting link formation in graphs, by observing the similarity between this problem and collaborative filtering.
+    }}
+
+
+\vskip0.5\baselineskip
+
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Selected Industrial Research Projects}{}
+
+\WorkEntry
+{Inverse problems for road traffic}
+{Aug 2013 - Dec 2014}
+{NICTA and Transport for NSW}
+{
+\begin{itemize} 
+    \itemsep-0.1\baselineskip
+    \item Worked with a diverse team including transportation scientists and research engineers             
+    \item Developed learning algorithms to solve an inverse problem central to transport science
+    \item Implemented algorithms in {\tt python} and {\tt MATLAB}, and engaged with engineers to integrate into live demos
+    \item Work culminated in team receiving 2014 \& 2015 Intelligent Transport Systems Research award, and publication in top transport journal
+\end{itemize}
+}
+
+\WorkEntry
+{Loss functions for solar energy forecasting}
+{Jun 2013 - Jul 2016}
+{NICTA and Australian Renewable Energy Agency}
+{
+\begin{itemize}
+    \itemsep-0.1\baselineskip
+    \item Worked on designing performance measures for forecasting of energy output from distributed solar panels
+    \item Demonstrated viability of measures from class-imbalance literature to measure detection rate of ``ramp'' events
+    \item Engaged with and presented findings to stakeholders in industry and government
+    %\item work culminated in publication in leading photovoltaic conference
+    \item Project was positively received by sponsoring government agency, and awarded additional funds to continue research
+\end{itemize}
+}
+
+\WorkEntry
+{Anomaly detection for border protection}
+{Jan 2017 - Mar 2017}
+{CSIRO Data61 and Unisys}
+{
+\begin{itemize}
+    \itemsep-0.1\baselineskip
+    \item Worked to enhance Unisys' border risk-assessment platform
+    \item Designed machine learning algorithms for detecting anomalies in cargo and passenger data
+    \item Set overall modelling and implementation strategy, and oversaw work of research engineer
+    \item Work culminated in continued engagement with client, and favourable media coverage
+\end{itemize}
+}
+
+
+% %%% Skills
+% %%% ------------------------------------------------------------
+\NewPart{Teaching Experience}{}
+
+\WorkEntry
+{Lecturer}
+{Jul -- Aug 2013 -- 2016}
+{Australian National University}
+{
+    COMP2610/COMP6261: Information Theory
+}
+
+
+\WorkEntry
+{Teaching assistant}
+{Jan -- Mar 2009 -- 2012}
+{University of California, San Diego}
+{
+    COMP101: Algorithms; COMP250A: Probabilistic Reasoning and Decision-Making; COMP250B: Learning
+}
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Programming Languages}{}
+
+\emph{Proficient}: {{\tt python} + scientific toolkit ({\tt numpy}, {\tt scipy}, {\tt sklearn})},
+{{\tt MATLAB}}
+
+\noindent\emph{Familiar}: \,\ {\tt C}, {\tt C++}, {\tt Java}
+
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Professional Service}{}
+
+\noindent
+Program Committee member for 
+ICML 2012--2019; 
+NIPS 2011, 2015--2019; 
+AAAI 2012, 2015--2019; 
+AISTATS 2016, 2018;
+IJCAI 2016, 2018; 
+KDD 2011--2012; 
+CIKM 2013; 
+ACML 2014--2015
+
+\medskip
+
+\noindent
+Senior Program Committee (Area Chair) member for 
+IJCAI 2017, 
+AAAI 2019, 
+ICML 2021--2023, 
+NeurIPS 2020--2022, 
+ICLR 2020--2023, 
+ACML 2020--2022
+
+\medskip
+
+\noindent
+Reviewer for Journal of Machine Learning Research, Machine Learning, Data Mining and Knowledge Discovery, Biometrika, Transactions on Pattern Analysis and Machine Intelligence
+
+\medskip
+
+\noindent
+Recognised as Outstanding Reviewer for ICML 2018, 2019 and NeurIPS 2018
+
+\medskip
+
+\noindent
+Recognised as Outstanding Senior Program Committee member for AAAI 2019
+
+%%%
+\NewPart{Full List of Academic Research Publications}{}
+
+\ProjectEntry
+{Language model cascades: token-level uncertainty and beyond.}
+{Neha Gupta, Harikrishna Narasimhan, Wittawat Jitkrittum, Ankit Singh Rawat, Aditya Krishna Menon, and Sanjiv Kumar.}
+{In International Conference on Learning Representations (ICLR), 2024.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Learning to reject meets long-tail learning.}
+{Harikrishna Narasimhan, Aditya Krishna Menon, Wittawat Jitkrittum, Neha Gupta, and Sanjiv Kumar}
+{In International Conference on Learning Representations (ICLR), 2024.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Plugin estimators for selective classification with out-of-distribution detection.}
+{Harikrishna Narasimhan, Aditya Krishna Menon, Wittawat Jitkrittum, and Sanjiv Kumar.}
+{In International Conference on Learning Representations (ICLR), 2024.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{DistillSpec: improving speculative decoding via knowledge distillation.}
+{Yongchao Zhou, Kaifeng Lyu, Ankit Singh Rawat, Aditya Krishna Menon, Afshin Rostamizadeh, Sanjiv Kumar, Jean-François Kagy, and Rishabh Agarwal.}
+{In International Conference on Learning Representations (ICLR), 2024.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Think before you speak: training language models with pause tokens.}
+{Sachin Goyal, Ziwei Ji, Ankit Singh Rawat, Aditya Krishna Menon, Sanjiv Kumar, and Vaishnavh Nagarajan.}
+{In International Conference on Learning Representations (ICLR), 2024.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{The importance of feature preprocessing for differentially private linear optimization.}
+{Ziteng Sun, Ananda Theertha Suresh, and Aditya Krishna Menon.}
+{In International Conference on Learning Representations (ICLR), 2024.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{What do larger image classifiers memorise?}
+{Michal Lukasik, Vaishnavh Nagarajan, Ankit Singh Rawat, Aditya Krishna Menon, and Sanjiv Kumar.}
+{In Transactions of Machine Learning Research (TMLR), 2024.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{When does confidence-based cascade deferral suffice?}
+{Wittawat Jitkrittum, Neha Gupta, Aditya Krishna Menon, Harikrishna Narasimhan, Ankit Singh Rawat, and Sanjiv Kumar.}
+{In Advances in Neural Information Processing Systems (NeurIPS), 2023.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{On student-teacher deviations in distillation: does it pay to disobey?}
+{Vaishnavh Nagarajan, Aditya Krishna Menon, Srinadh Bhojanapalli, Hossein Mobahi, and Sanjiv Kumar.}
+{In Advances in Neural Information Processing Systems (NeurIPS), 2023.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{ResMem: Learn what you can and memorize the rest.}
+{Zitong Yang, Michal Lukasik, Vaishnavh Nagarajan, Zonglin Li, Ankit Singh Rawat, Manzil Zaheer, Aditya Krishna Menon, and Sanjiv Kumar.}
+{In Advances in Neural Information Processing Systems (NeurIPS), 2023.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Robust distillation for worst-class performance: on the interplay between teacher and student objectives.}
+{Serena Wang, Harikrishna Narasimhan, Yichen Zhou, Sara Hooker, Michal Lukasik, and Aditya Krishna Menon.}
+{In Uncertainty in Artificial Intelligence (UAI), 2023.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Supervision complexity and its role in knowledge distillation.}
+{Hrayr Harutyunyan, Ankit Singh Rawat, Aditya Krishna Menon, Seungyeon Kim, and Sanjiv Kumar.}
+{In International Conference on Learning Representations (ICLR), 2023.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Post-hoc estimators for learning to defer to an expert.}
+{Harikrishna Narasimhan, Wittawat Jitkrittum, Aditya Krishna Menon, Ankit Singh Rawat, and Sanjiv Kumar.}
+{In Advances in Neural Information Processing Systems (NeurIPS), 2022.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Teacher's pet: understanding and mitigating biases in distillation.}
+{Michal Lukasik, Srinadh Bhojanapalli, Aditya Krishna Menon, and Sanjiv Kumar.}
+{In Transactions of Machine Learning Research (TMLR), 2022.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Interval-censored Hawkes processes.}
+{Marian-Andrei Rizoiu, Alexander Soen, Shidi Li, Pio Calderon, Leanne J. Dong, Aditya Krishna Menon, and Lexing Xie.}
+{In Journal of Machine Learning Research (JMLR), 2022.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{In defense of dual-encoders for neural ranking.}
+{Aditya Krishna Menon, Sadeep Jayasumana, Ankit Singh Rawat, Seungyeon Kim, Sashank J. Reddi, and Sanjiv Kumar.}
+{In International Conference on Machine Learning (ICML), 2022.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Training over-parameterized models with non-decomposable objectives.}
+{Harikrishna Narasimhan and Aditya Krishna Menon.}
+{In Advances in Neural Information Processing Systems (NeurIPS), 2021.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Disentangling sampling and labeling bias for learning in large-output spaces.}
+{Ankit Singh Rawat, Aditya Krishna Menon, Wittawat Jitkrittum, Sadeep Jayasumana, Felix X. Yu, Sashank Reddi, and Sanjiv Kumar.}
+{In International Conference on Machine Learning (ICML), 2021.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{A statistical perspective on distillation.}
+{Aditya Krishna Menon, Ankit Singh Rawat, Sashank J. Reddi, Seungyeon Kim, and Sanjiv Kumar.}
+{In International Conference on Machine Learning (ICML), 2021.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{RankDistil: knowledge distillation for ranking.}
+{Sashank Reddi, Rama Kumar Pasumarthi, Aditya Krishna Menon, Ankit Singh Rawat, Felix Yu, Seungyeon Kim, Andreas Veit, and Sanjiv Kumar.}
+{In Artificial Intelligence and Statistics (AISTATS), 2021.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Coping with label shift via distributionally robust optimisation.}
+{Jingzhao Zhang, Aditya Krishna Menon, Andreas Veit, Srinadh Bhojanapalli, Sanjiv Kumar, and Suvrit Sra.}
+{In International Conference on Learning Representations (ICLR), 2021.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Overparameterisation and worst-case generalisation: friend or foe?}
+{Aditya Krishna Menon, Ankit Singh Rawat, and Sanjiv Kumar.}
+{In International Conference on Learning Representations (ICLR), 2021.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Long-tail learning via logit adjustment.}
+{Aditya Krishna Menon, Sadeep Jayasumana, Ankit Singh Rawat, Himanshu Jain, Andreas Veit, and Sanjiv Kumar.}
+{In International Conference on Learning Representations (ICLR), 2021.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Robust large-margin Learning in hyperbolic space.}
+{Melanie Weber, Manzil Zaheer, Ankit Singh Rawat, Aditya Krishna Menon, and Sanjiv Kumar.}
+{In Advances in Neural Information Processing Systems (NeurIPS), 2020.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Semantic label smoothing for sequence to sequence problems.}
+{Michal Lukasik, Himanshu Jain, Aditya Krishna Menon, Seungyeon Kim, Srinadh Bhojanapalli, Felix Yu and Sanjiv Kumar.}
+{In Empirical Methods in Natural Language Processing (EMNLP), 2020.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{SupMMD: a sentence importance model for extractive summarization using maximum mean discrepancy.}
+{Umanga Bista, Alexander Patrick Mathews, Aditya Krishna Menon, and Lexing Xie.}
+{In Empirical Methods in Natural Language Processing Findings (EMNLP Findings), 2020.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Does label smoothing mitigate label noise?}
+{Michal Lukasik, Srinadh Bhojanapalli, Aditya Krishna Menon, and Sanjiv Kumar.}
+{In International Conference on Machine Learning (ICML), 2020.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Supervised learning: no loss no cry.}
+{Richard Nock and Aditya Krishna Menon.}
+{In International Conference on Machine Learning (ICML), 2020.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Federated learning with only positive labels.}
+{Felix X. Yu, Ankit Singh Rawat, Aditya Krishna Menon, and Sanjiv Kumar.}
+{In International Conference on Machine Learning (ICML), 2020.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Can gradient clipping mitigate label noise?}
+{Aditya Krishna Menon, Ankit Singh Rawat, Sashank J. Reddi, and Sanjiv Kumar.}
+{In International Conference on Learning Representations (ICLR), Addis Ababa 2020.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Noise-tolerant fair classification.}
+{Alexandre Louis Lamy, Ziyuan Zhong, Aditya Krishna Menon, and Nakul Verma.}
+{In Advances in Neural Information Processing Systems (NeurIPS), Vancouver, 2019.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Multilabel reductions: what is my loss optimising?}
+{Aditya Krishna Menon, Ankit Singh Rawat, Sashank J. Reddi, and Sanjiv Kumar.}
+{In Advances in Neural Information Processing Systems (NeurIPS), Vancouver, 2019.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Fairness risk measures.}
+{Robert C. Williamson and Aditya Krishna Menon.}
+{In International Conference on Machine Learning (ICML), Long Beach, 2019.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Complementary-label learning for arbitrary losses and models.}
+{Takashi Ishida, Gang Niu, Aditya Krishna Menon, and Masashi Sugiyama.}
+{In International Conference on Machine Learning (ICML), Long Beach, 2019.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Monge blunts Bayes: hardness results for adversarial training.}
+{Zac Cranko, Aditya Krishna Menon, Richard Nock, Cheng-Soon Ong, Zhan Shi, and Christian Walder.}
+{In International Conference on Machine Learning (ICML), Long Beach, 2019.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{On the minimal supervision for training any binary classifier from only unlabeled data.}
+{Nan Lu, Gang Niu, Aditya Krishna Menon and Masashi Sugiyama.}
+{In International Conference on Learning Representations (ICLR), New Orleans, 2019.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Comparative document collection via classification.}
+{Umanga Bista, Alexander Mathews, Minjeong Shin, Aditya Krishna Menon and Lexing Xie.}
+{In AAAI Conference on Artificial Intelligence (AAAI), Honolulu, 2019.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{The risk of trivial solutions in bipartite top ranking}
+{Aditya Krishna Menon.}
+{In Machine Learning, Volume 108, Issue 4, 2019.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Learning from binary labels with instance-dependent corruption. }
+{Aditya Krishna Menon, Brendan van Rooyen, and Nagarajan Natarajan.}
+{In Machine Learning, 2018.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{The cost of fairness in binary classification. }
+{Aditya Krishna Menon and Robert C. Williamson.}
+{In Conference on Fairness, Accountability, and Transparency (FAT), New York City, 2018.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Proper losses for nonlinear Hawkes processes. }
+{Aditya Krishna Menon and Young Lee.}
+{In AAAI Conference on Artificial Intelligence (AAAI), New Orleans, 2018.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{f-GANs in an information geometric nutshell. }
+{Richard Nock, Zac Cranko, Aditya Krishna Menon, Lizhen Qu and Robert C. Williamson.}
+{In Advances in Neural Information Processing Systems (NIPS), Los Angeles, 2017.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Predicting short-term public transport demand via inhomogeneous Poisson processes. }
+{Aditya Krishna Menon and Young Lee.}
+{In International Conference on Information and Knowledge Management (CIKM), Singapore, 2017.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Revisiting revisits in trajectory recommendation. }
+{Aditya Krishna Menon, Dawei Chen, Lexing Xie and Cheng Soon Ong.}
+{In RecSys Workshop on Recommender Systems for Citizens (CitRec), Como, 2017.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Robust, deep and inductive anomaly detection. }
+{Raghavendra Chalapathy, Aditya Krishna Menon and Sanjay Chawla.}
+{In European Conference on Machine Learning (ECML/PKDD), Skopje, 2017.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Making deep neural networks robust to label noise: a loss correction approach. }
+{Giorgio Patrini, Alessandro Rozza, Aditya Krishna Menon, Richard Nock, Lizhen Qu.}
+{In Computer Vision and Pattern Recognition (CVPR), Honolulu, 2017.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Low-rank linear cold-start recommendation from social data. }
+{Suvash Sedhain, Aditya Krishna Menon, Scott Sanner, Lexing Xie, and Darius Braziunas.}
+{In AAAI Conference on Artificial Intelligence (AAAI), San Francisco, 2017.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Bipartite ranking: a risk-theoretic perspective. }
+{Aditya Krishna Menon and Robert C. Williamson.}
+{In Journal of Machine Learning Research (JMLR), Volume 17, Issue 195. 2016.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{A scaled Bregman theorem with applications. }
+{Richard Nock, Aditya Krishna Menon and Cheng Soon Ong.}
+{In Advances in Neural Information Processing Systems (NIPS), Barcelona, 2016.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Linking losses for density ratio and class-probability estimation. }
+{Aditya Krishna Menon and Cheng Soon Ong.}
+{In International Conference on Machine Learning (ICML), New York City, 2016.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Practical linear models for large-scale one-class collaborative filtering.}
+{Suvash Sedhain, Hung Bui, Jaya Kawale, Nikos Vlassis, Branislav Kveton, Aditya Krishna Menon, Trung Bui and Scott Sanner.}
+{In International Joint Conference on Artificial Intelligence (IJCAI), New York City, 2016.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{On the effectiveness of linear models for one-class collaborative filtering.}
+{Suvash Sedhain, Aditya Krishna Menon, Scott Sanner and Darius Braziunas.}
+{In AAAI Conference on Artificial Intelligence (AAAI), Phoenix, 2016.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Learning with symmetric label noise: the importance of being unhinged.}
+{Brendan van Rooyen, Aditya Krishna Menon and Robert C. Williamson.}
+{In Advances in Neural Processing Systems (NIPS), Montreal, 2015.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Fine-grained OD estimation with automated zoning and sparsity regularisation.}
+{Aditya Krishna Menon, Chen Cai, Weihong Wang, Tao Wen and Fang Chen.}
+{In Transportation Research Part B: Methodological, Volume 80, October 2015, Pages 150-172.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Learning from corrupted binary labels via class-probability estimation.}
+{Aditya Krishna Menon, Brendan van Rooyen, Cheng Soon Ong and Robert C. Williamson.}
+{In International Conference on Machine Learning (ICML), Lille, 2015.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{AutoRec: autoencoders meet collaborative filtering.}
+{Suvash Sedhain, Aditya Krishna Menon, Scott Sanner and Lexing Xie.}
+{In International World Wide Web Conference (WWW), Florence, 2015.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Cross-modal retrieval: a pairwise classification approach.}
+{Aditya Krishna Menon, Didi Surian and Sanjay Chawla.}
+{In SIAM Conference on Data Mining (SDM), Vancouver, 2015.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{An approach to sparse, fine-grained OD estimation.}
+{Aditya Krishna Menon, Chen Cai, Weihong Wang, Tao Wen and Fang Chen.}
+{In 94th Annual Meeting of the Transporation Research Board (TRB), Washington DC, 2015.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Bayes-optimal scorers for bipartite ranking.}
+{Aditya Krishna Menon and Robert C. Williamson.}
+{In Conference on Learning Theory (COLT), Barcelona, 2014.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Inappropriate access detection for electronic health records using collaborative filtering.}
+{Aditya Krishna Menon, Xiaoqian Jiang, Jihoon Kim, Lucila Ohno-Machado, and Jaideep Vaidya.}
+{In Machine Learning, Volume 95 Number 1, Special Issue on Machine Learning for Society, 2014.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{A colorful approach to text processing by example.}
+{Kuat Yessenov, Shubham Tulsiani, Aditya Krishna Menon, Robert C. Miller, Sumit Gulwani, Butler Lampson, and Adam Kalai.}
+{In ACM Symposium on User Interface Software and Technology (UIST), 2013.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Beam search algorithms for multilabel learning.}
+{Abhishek Kumar, Shankar Vembu, Aditya Krishna Menon, and Charles Elkan.}
+{In Machine Learning, 2013.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{On the statistical consistency of algorithms for binary classification under class imbalance.}
+{Aditya Krishna Menon, Harikrishna Narasimhan, Shivani Agarwal and Sanjay Chawla.}
+{In International Conference on Machine Learning (ICML), Atlanta, 2013.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{A machine learning framework for programming by example.}
+{Aditya Krishna Menon, Omer Tamuz, Sumit Gulwani, Butler Lampson, and Adam Tauman Kalai.}
+{In International Conference on Machine Learning (ICML), Atlanta, 2013.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Learning and inference in Probabilistic Classifier Chains with beam search.}
+{Abhishek Kumar, Shankar Vembu, Aditya Krishna Menon, and Charles Elkan.}
+{In Machine Learning and Knowledge Discovery in Databases - European Conference (ECML-PKDD), Proceedings Part I, 2012.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Doubly optimized calibrated Support Vector Machine (DOC-SVM): an algorithm for joint optimization of discrimination and calibration.}
+{Xiaoqian Jiang, Aditya Krishna Menon, Shuang Wang, Jihoon Kim, and Lucila Ohno-Machado.}
+{In PLoS ONE, 7(11): e48823, 2012.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Predicting accurate probabilities with a ranking loss.}
+{Aditya Krishna Menon, Xiaoqian Jiang, Shankar Vembu, Charles Elkan, and Lucila Ohno-Machado.}
+{In International Conference on Machine Learning (ICML), Edinburgh, 2012.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Link prediction via matrix factorization.}
+{Aditya Krishna Menon, Charles Elkan.}
+{In Machine Learning and Knowledge Discovery In Databases - European Conference, ECML-PKDD, Proceedings Part II, 2011.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Response prediction using collaborative filtering with hierarchies and side-information.}
+{Aditya Krishna Menon, Krishna-Prasad Chitrapura, Sachin Garg, Deepak Agarwal, and Nagaraj Kota.}
+{In Knowledge Discovery and Data Mining (KDD), San Diego, 2011.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Fast algorithms for approximating the singular value decomposition.}
+{Aditya Krishna Menon, Charles Elkan.}
+{In Transactions of Knowledge and Data Discovery: Special Issue on Large-Scale Data Mining (TKDD-LDMTA), 2010.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{A log-linear model with latent features for dyadic prediction.}
+{Aditya Krishna Menon, Charles Elkan.}
+{In International Conference on Data Mining (ICDM), Sydney, 2010.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{Predicting labels for dyadic data.}
+{Aditya Krishna Menon, Charles Elkan.}
+{In Data Mining and Knowledge Discovery: Special Issue on Papers from ECML-PKDD, Volume 21, Number 2, 2010.}
+{{\vspace{-0.5\baselineskip}}}
+
+\ProjectEntry
+{An incremental data-stream sketch using sparse random projections.}
+{Aditya Krishna Menon, Gia Vinh Anh Pham, Sanjay Chawla and Anastasios Viglas.}
+{In SIAM Conference on Data Mining (SDM), Minnesota, 2007.}
+
+
+\vskip0.5\baselineskip
+
+\end{document}
