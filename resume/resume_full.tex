@@ -1,8 +1,7 @@
-\documentclass[fontsize=11pt]{article}
+\documentclass{article}
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-%\usepackage{lmodern}
 \usepackage[protrusion=true,expansion=true]{microtype}
 \usepackage[svgnames]{xcolor}  % Colours by their 'svgnames'
 \usepackage[margin=0.75in]{geometry}
@@ -113,17 +112,12 @@
 \MyName{Aditya Krishna Menon}
 {\par
 \begin{center}
-    % {\footnotesize{\footnotesize\phone}\ +61 439 761 969}
-    % $\ $
-    % {\footnotesize\tt{\footnotesize\Letter}\ aditya.menon@anu.edu.au}
-    % $\ $
-    % {\footnotesize\tt{\footnotesize\faGlobe}\ \url{http://users.cecs.anu.edu.au/~akmenon/}} \\    
-    % {\footnotesize\tt{\footnotesize\faGraduationCap}\ \url{http://scholar.google.com.au/citations?user=li4mEfcAAAAJ}}
+    % {\footnotesize\tt{\footnotesize\faGlobe}\ \url{http://users.cecs.anu.edu.au/~akmenon/}} \\        
     {\small{\small\faMapMarker}\ New York, NY}
-    %$\ $
-    %{\small{\small\phone}\ +1 646 262 0466}
     $\ $
     {\small\tt{\small\Letter}\ adityakmenon@google.com}
+    $\ $
+    {\footnotesize\tt{\footnotesize\faGraduationCap}\ \url{http://scholar.google.com.au/citations?user=li4mEfcAAAAJ}}
 \end{center}
 \par}
 
@@ -350,34 +344,95 @@
 \NewPart{Research Interests}{}
 
 \noindent
-Weakly-supervised learning (e.g., learning from label noise, positive and unlabelled learning) %\\
+Efficient inference for large (language) models (e.g., knowledge distillation, model cascading)
 
 \noindent
-Classification with real-world constraints (e.g., class imbalance, fairness) %\\
+Retrieval and re-ranking (e.g., negative mining, loss function design)
 
 \noindent
-Matrix factorisation \& applications (e.g., collaborative filtering, link prediction) %\\
+Foundations of (weakly-)supervised learning (e.g. class-probability estimation, bipartite ranking)
 
+% \noindent
+% Weakly-supervised learning (e.g., learning from label noise, positive and unlabelled learning) %\\
+
+% \noindent
+% Classification with real-world constraints (e.g., class imbalance, fairness) %\\
+
+% \noindent
+% Matrix factorisation \& applications (e.g., collaborative filtering, link prediction) %\\
 
 
 %%%
 \NewPart{Selected Academic Research Publications}{}
 
     \ProjectEntry
-    {The cost of fairness in binary classification.}
-    {Aditya Krishna Menon and Robert C. Williamson.}
-    {In \emph{Conference on Fairness, Accountability, and Transparency (\textbf{FAT})}, 2018. 
-    \uline{{Best Technical Contribution.}}
-    }
+    {Post-hoc estimators for learning to defer to an expert.}
+    {Harikrishna Narasimhan, Wittawat Jitkrittum, Aditya Krishna Menon, Ankit Singh Rawat, and Sanjiv Kumar.}
+    {In \emph{Advances in Neural Information Processing Systems (\textbf{NeurIPS})}, 2022.}
     {{
     \color{gray}
     \indent
-    Explicates how the inherent tradeoff between accuracy and fairness depends on the alignment of the distributions for each task.
-    To achieve this, we show that %two popular measures of fairness are intimately connected to cost-sensitive losses, and that
-    the Bayes-optimal fairness-aware classifiers involve \emph{instance-dependent} thresholding of the class-probability.
+    Identifies a subtle issue wherein existing losses for learning to defer to an expert can underfit the training data.
+    Proposes two alternate approaches which involve post-hoc threshold adjustment, or minimisation of a suitable asymmetric margin loss.
     }}
 
 \vskip0.5\baselineskip
+
+    \ProjectEntry
+    {A statistical perspective on distillation.}
+    {Aditya Krishna Menon, Ankit Singh Rawat, Sashank J. Reddi, Seungyeon Kim, and Sanjiv Kumar.}
+    {In \emph{International Conference on Machine Learning (\textbf{ICML})}, 2021.}
+    {{
+    \color{gray}
+    \indent
+    Provides an explanation for why knowledge distillation can improve classifier performance, based on the classic bias-variance decomposition:
+    distillation increases bias but reduces variance (since the teacher model can provide smooth, if sometimes incorrect, supervision).
+    }}
+
+\vskip0.5\baselineskip
+
+    \ProjectEntry
+    {Long-tail learning via logit adjustment.}
+    {Aditya Krishna Menon, Sadeep Jayasumana, Ankit Singh Rawat, Himanshu Jain, Andreas Veit, and Sanjiv Kumar.}
+    {In \emph{International Conference on Learning Representations (\textbf{ICLR})}, 2021.}
+    {{
+    \color{gray}
+    \indent
+    Resurrects a classic threshold-adjustment approach to learning with label imbalance, 
+    and establishes an analogous approach to directly enforce this in the softmax cross-entropy.
+    This generalises several existing proposals in the literature, and performs well empirically.
+    }}
+
+\vskip0.5\baselineskip
+
+    \ProjectEntry
+    {Fairness risk measures.}
+    {Robert C. Williamson and Aditya Krishna Menon.}
+    {In \emph{International Conference on Machine Learning (\textbf{ICML})}, 2019.}
+    {{
+    \color{gray}
+    \indent
+    A new approach to fair classification, by connecting the problem to the literature on risk measures from finance.
+    This generalises some existing notions of fairness, and also yields a new convex objective based on the conditional value at risk (CVaR).
+    }}
+
+\vskip0.5\baselineskip
+
+    % \ProjectEntry
+    % {The cost of fairness in binary classification.}
+    % {Aditya Krishna Menon and Robert C. Williamson.}
+    % {In \emph{Conference on Fairness, Accountability, and Transparency (\textbf{FAT})}, 2018. 
+    % \uline{{Best Technical Contribution.}}
+    % }
+    % {{
+    % \color{gray}
+    % \indent
+    % Explicates how the inherent tradeoff between accuracy and fairness depends on the alignment of the distributions for each task.
+    % To achieve this, we show that %two popular measures of fairness are intimately connected to cost-sensitive losses, and that
+    % the Bayes-optimal fairness-aware classifiers involve \emph{instance-dependent} thresholding of the class-probability.
+    % }}
+
+% \vskip0.5\baselineskip
 
     % \ProjectEntry
     % {Making deep neural networks robust to label noise: a loss correction approach.}
@@ -417,52 +472,51 @@ Matrix factorisation \& applications (e.g., collaborative filtering, link predic
 
 % \
 
-%     \ProjectEntry
-%     {Linking losses for density ratio and class-probability estimation.}
-%     {Aditya Krishna Menon and Cheng Soon Ong.}
-%     {In \emph{International Conference on Machine Learning (\textbf{ICML})}, 2016.}
-%     {{
-%     \color{gray}
-%     \indent
-%     Establishes a formal reduction between the density ratio and class-probability estimation problems. This is done via a novel identity for Bregman divergences, and justifies using methods like logistic regression to estimate covariate shift levels between train and test sets.
-%     }}
+    \ProjectEntry
+    {Linking losses for density ratio and class-probability estimation.}
+    {Aditya Krishna Menon and Cheng Soon Ong.}
+    {In \emph{International Conference on Machine Learning (\textbf{ICML})}, 2016.}
+    {{
+    \color{gray}
+    \indent
+    A formal reduction between the density ratio and class-probability estimation problems. 
+    This is done via a novel identity for Bregman divergences, and justifies using methods like logistic regression to estimate covariate shift levels between train and test sets.
+    }}
 
 % \vskip0.5\baselineskip
 
-%   \ProjectEntry{Learning with symmetric label noise: The importance of being unhinged.}
-% Brendan van Rooyen, Aditya Krishna Menon and and Robert C. Williamson.
-% In \emph{Advances in Neural Information Processing Systems (\textbf{NIPS})}, 2015.
-%   %{\color{blue}{14 citations}}
-%   \\
-%   {\color{gray} Shows that a simple convex loss is provably robust to symmetric label noise, and established connections of the same to highly regularised SVMs.
-%   }
+%     \ProjectEntry{Learning with symmetric label noise: The importance of being unhinged.}
+%     Brendan van Rooyen, Aditya Krishna Menon and and Robert C. Williamson.
+%     In \emph{Advances in Neural Information Processing Systems (\textbf{NIPS})}, 2015.
+%     %{\color{blue}{14 citations}}
+%     \\
+%     {\color{gray} Shows that a simple convex loss is provably robust to symmetric label noise, and established connections of the same to highly regularised SVMs.
+%     }
 
-    \ProjectEntry
-    {Learning from corrupted binary labels via class-probability estimation.}
-    {Aditya Krishna Menon, Brendan van Rooyen, Cheng Soon Ong and Robert C. Williamson.}
-    {In \emph{International Conference on Machine Learning (\textbf{ICML})}, 2015.
-    %\uline{{41 citations.}}
-    }
-    {{\color{gray}
-    \indent
-    Shows that when binary labels are corrupted with noise, the noise rate can be inferred from class-probability estimates, with no access to clean samples. This is done by relating the clean and noisy class-probabilities, generalising existing results for special cases.
-    }}
+    % \ProjectEntry
+    % {Learning from corrupted binary labels via class-probability estimation.}
+    % {Aditya Krishna Menon, Brendan van Rooyen, Cheng Soon Ong and Robert C. Williamson.}
+    % {In \emph{International Conference on Machine Learning (\textbf{ICML})}, 2015.
+    % }
+    % {{\color{gray}
+    % \indent
+    % Shows that when binary labels are corrupted with noise, the noise rate can be inferred from class-probability estimates, with no access to clean samples. This is done by relating the clean and noisy class-probabilities, generalising existing results for special cases.
+    % }}
 
-\vskip0.5\baselineskip
+% \vskip0.5\baselineskip
 
-    \ProjectEntry
-    {AutoRec: autoencoders meet collaborative filtering.}
-    {Suvash Sedhain, Aditya Krishna Menon, Scott Sanner, Lexing Xie.}
-    {In \emph{International Conference on World Wide Web (\textbf{WWW})}, 2015.
-    %\uline{{113 citations.}}
-    }
-    {{
-    \color{gray}
-    \indent    
-    Introduces a new means of predicting user ratings for content, wherein a non-linear autoencoder is applied to each row of the rating matrix. This simple approach was shown to outperform matrix factorisation, which has long been the \emph{de-facto} approach to collaborative filtering.
-    }}
+%     \ProjectEntry
+%     {AutoRec: autoencoders meet collaborative filtering.}
+%     {Suvash Sedhain, Aditya Krishna Menon, Scott Sanner, Lexing Xie.}
+%     {In \emph{International Conference on World Wide Web (\textbf{WWW})}, 2015.
+%     }
+%     {{
+%     \color{gray}
+%     \indent    
+%     Introduces a new means of predicting user ratings for content, wherein a non-linear autoencoder is applied to each row of the rating matrix. This simple approach was shown to outperform matrix factorisation, which has long been the \emph{de-facto} approach to collaborative filtering.
+%     }}
 
-\vskip0.5\baselineskip
+% \vskip0.5\baselineskip
 
     % \ProjectEntry{Bayes-optimal scorers for bipartite ranking.}
     % {Aditya Krishna Menon and Robert C. Williamson.}
@@ -478,32 +532,30 @@ Matrix factorisation \& applications (e.g., collaborative filtering, link predic
     % a reduction to pairwise classification.
     % }}
 
-    \ProjectEntry
-    {Response prediction using collaborative filtering with hierarchies and side-information.}
-    {Aditya Krishna Menon, Krishna-Prasad Chitrapura, Sachin Garg, Deepak Agarwal, and Nagaraj Kota.}
-    {In \emph{Knowledge Discovery \& Data Mining (\textbf{KDD})}, 2011.
-    %\uline{{110 citations.}}
-    }
-    {{
-    \color{gray}
-    \indent
-    Re-casts the problem of predicting clickthrough rates of ads as one of ``recommending'' ads to webpages, thereby allowing the use of techniques developed for collaborative filtering.
-    This approach significantly improves performance over existing approaches.
-    }}    
+%     \ProjectEntry
+%     {Response prediction using collaborative filtering with hierarchies and side-information.}
+%     {Aditya Krishna Menon, Krishna-Prasad Chitrapura, Sachin Garg, Deepak Agarwal, and Nagaraj Kota.}
+%     {In \emph{Knowledge Discovery \& Data Mining (\textbf{KDD})}, 2011.
+%     }
+%     {{
+%     \color{gray}
+%     \indent
+%     Re-casts the problem of predicting clickthrough rates of ads as one of ``recommending'' ads to webpages, thereby allowing the use of techniques developed for collaborative filtering.
+%     This approach significantly improves performance over existing approaches.
+%     }}
 
-\vskip0.5\baselineskip
+% \vskip0.5\baselineskip
 
-    \ProjectEntry
-    {Link prediction via matrix factorization.}
-    {Aditya Krishna Menon and Charles Elkan.}
-    {In \emph{Machine Learning and Knowledge Discovery in Databases}, 2011.
-    %\uline{{342 citations.}}
-    }
-    {{
-    \color{gray}
-    \indent
-    Proposes a novel means of predicting link formation in graphs, by observing the similarity between this problem and collaborative filtering.
-    }}
+%     \ProjectEntry
+%     {Link prediction via matrix factorization.}
+%     {Aditya Krishna Menon and Charles Elkan.}
+%     {In \emph{Machine Learning and Knowledge Discovery in Databases}, 2011.
+%     }
+%     {{
+%     \color{gray}
+%     \indent
+%     Proposes a novel means of predicting link formation in graphs, by observing the similarity between this problem and collaborative filtering.
+%     }}
 
 
 \vskip0.5\baselineskip
@@ -514,6 +566,46 @@ Matrix factorisation \& applications (e.g., collaborative filtering, link predic
 \NewPart{Selected Industrial Research Projects}{}
 
 \WorkEntry
+{Efficient large (language) models}
+{December 2022 - now}
+{Google}
+{
+\begin{itemize}
+    \itemsep-0.1\baselineskip
+    \item Managed a team of research scientists working on improved training and inference efficiency of large (language) models
+    \item Developed and published new techniques on a range of topics, including knowledge distillation, model cascading, and efficient decoding
+    \item Launched solutions with partners in Gemini (n\'{e}e Bard), Search Generative Experience
+\end{itemize}
+}
+
+\WorkEntry
+{Deep retrieval and ranking}
+{Sep 2018 - present}
+{Google}
+{
+\begin{itemize}
+    \itemsep-0.1\baselineskip
+    \item Developed and oversaw research on improving large-scale neural retrieval and re-ranking
+    \item Developed and published new techniques on negative mining, knowledge distillation, and loss function design
+    \item Launched solutions with partners in Shopping, Ads, YouTube
+\end{itemize}
+}
+
+% \WorkEntry
+% {Loss functions for solar energy forecasting}
+% {Jun 2013 - Jul 2016}
+% {NICTA and Australian Renewable Energy Agency}
+% {
+% \begin{itemize}
+%     \itemsep-0.1\baselineskip
+%     \item Worked on designing performance measures for forecasting of energy output from distributed solar panels
+%     \item Demonstrated viability of measures from class-imbalance literature to measure detection rate of ``ramp'' events
+%     \item Engaged with and presented findings to stakeholders in industry and government
+%     \item Project was positively received by sponsoring government agency, and awarded additional funds to continue research
+% \end{itemize}
+% }
+
+\WorkEntry
 {Inverse problems for road traffic}
 {Aug 2013 - Dec 2014}
 {NICTA and Transport for NSW}
@@ -521,41 +613,26 @@ Matrix factorisation \& applications (e.g., collaborative filtering, link predic
 \begin{itemize} 
     \itemsep-0.1\baselineskip
     \item Worked with a diverse team including transportation scientists and research engineers             
-    \item Developed learning algorithms to solve an inverse problem central to transport science
-    \item Implemented algorithms in {\tt python} and {\tt MATLAB}, and engaged with engineers to integrate into live demos
+    \item Developed and implemented learning algorithms to solve an inverse problem central to transport science
+    % \item Implemented algorithms in {\tt python} and {\tt MATLAB}, and engaged with engineers to integrate into live demos
     \item Work culminated in team receiving 2014 \& 2015 Intelligent Transport Systems Research award, and publication in top transport journal
 \end{itemize}
 }
 
-\WorkEntry
-{Loss functions for solar energy forecasting}
-{Jun 2013 - Jul 2016}
-{NICTA and Australian Renewable Energy Agency}
-{
-\begin{itemize}
-    \itemsep-0.1\baselineskip
-    \item Worked on designing performance measures for forecasting of energy output from distributed solar panels
-    \item Demonstrated viability of measures from class-imbalance literature to measure detection rate of ``ramp'' events
-    \item Engaged with and presented findings to stakeholders in industry and government
-    %\item work culminated in publication in leading photovoltaic conference
-    \item Project was positively received by sponsoring government agency, and awarded additional funds to continue research
-\end{itemize}
-}
-
-\WorkEntry
-{Anomaly detection for border protection}
-{Jan 2017 - Mar 2017}
-{CSIRO Data61 and Unisys}
-{
-\begin{itemize}
-    \itemsep-0.1\baselineskip
-    \item Worked to enhance Unisys' border risk-assessment platform
-    \item Designed machine learning algorithms for detecting anomalies in cargo and passenger data
-    \item Set overall modelling and implementation strategy, and oversaw work of research engineer
-    \item Work culminated in continued engagement with client, and favourable media coverage
-\end{itemize}
-}
-
+% \WorkEntry
+% {Anomaly detection for border protection}
+% {Jan 2017 - Mar 2017}
+% {CSIRO Data61 and Unisys}
+% {
+% \begin{itemize}
+%     \itemsep-0.1\baselineskip
+%     \item Worked to enhance Unisys' border risk-assessment platform
+%     \item Designed machine learning algorithms for detecting anomalies in cargo and passenger data
+%     \item Set overall modelling and implementation strategy, and oversaw work of research engineer
+%     \item Work culminated in continued engagement with client, and favourable media coverage
+% \end{itemize}
+% }
+% }
 
 % %%% Skills
 % %%% ------------------------------------------------------------
