@@ -5,8 +5,8 @@ html {
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	font-size : 1.125em; /* 18 px */
-	background-color: #a0cfec;
-    color: #334155; /* Dark slate gray */
+	background-color: #e0f2fe;
+    color: #0f172a; /* Dark slate gray */
 	width: 75%;
 	margin: 0 auto;
     max-width: 800px; 
@@ -18,26 +18,27 @@ body {
 	text-decoration: none;
 }
 
+.header h1 {
+    font-size: 1.75em;
+    flex-grow: 1;
+    flex-basis: 290px;
+    text-align: left;
+    color: #0a192f; /* Very dark, rich navy blue */
+}
+
 h2 {
 	font-size: 1.5em;
 	font-weight: bold;
-    color: #0f172a; /* Very dark slate gray */
-	/* background: #a0c0ec; /* ebd6ff */	
-	/* border: 2px solid #ccc; */
-	/* padding-left: 8px; */
+    color: #1e3a8a;
 	padding-top: 3px;
 	padding-bottom: 1px;
 	letter-spacing: 1px;	
 }
 
-h3 {
-	color: #4e4e4e;
+h3 {	
 	font-size: 1.25em;
 	font-weight: bold;
-    color: #4e4e4e;    
-	/* background: #a0c0ec; /* #eed6ee; */
-	/* border: 2px dashed #ccc; */
-	/* padding-left: 8px; */
+    color: #334155; /* Muted slate blue-gray */
 	padding-top: 3px;
 	padding-bottom: 1px;
 	letter-spacing: 1px;	
@@ -115,16 +116,16 @@ h1:nth-child(2){
 .header nav a, header nav a:visited {
     text-decoration: none;
     font-weight: bold;
-    color: black;
-    font-size: 1.125em; /* 18 px */
-    padding: 0.625em; /* 10 px */
+    color: #1e3a8a; /* Deep blue to match headers */
+    font-size: 1.125em;
+    padding: 0.625em;
 }
 
 .header nav a:hover, header nav a:hover:visited {
     text-decoration: none;
     font-weight: bold;
-    color: purple;
-    font-size: 1.125em; /* 18 px */
+    color: #3b82f6; /* Bright, modern blue on hover */
+    font-size: 1.125em;
 }
 
 #liner {
@@ -137,21 +138,20 @@ h1:nth-child(2){
 
 /* The base style for the pill button */
 .pill {
-  background-color: #f0f4f8; /* Light grayish-blue background */
-  color: #334155;            /* Dark slate text color */
-  padding: 3px 10px;         /* Vertical and horizontal padding */
-  border-radius: 9999px;     /* Makes the edges fully rounded */
-  text-decoration: none;     /* Removes the default link underline */
-  font-size: 0.85em;         /* Makes the text slightly smaller */
-  margin-right: 6px;         /* Adds a small gap between adjacent pills */
-  display: inline-block;     /* Ensures the padding renders correctly */
-  transition: background-color 0.2s; /* Smooth fade when hovering */
+  background-color: #bfdbfe; /* Soft blue button */
+  color: #1e3a8a;            /* Deep blue text */
+  padding: 3px 10px;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-size: 0.85em;
+  margin-right: 6px;
+  display: inline-block;
+  transition: all 0.2s;
 }
 
-/* Make it darken slightly when hovered over */
 .pill:hover {
-  background-color: #cbd5e1; 
-  color: #0f172a;
+  background-color: #2563eb; /* Vibrant blue when you hover */
+  color: #ffffff;            /* Text turns white on hover */
 }
 
 /* --- Profile Section Layout --- */
