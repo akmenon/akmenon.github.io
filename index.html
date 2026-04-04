@@ -6,7 +6,11 @@
 <head>
 
   <link rel="stylesheet" type="text/css" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+
   <script src="scripts.js"></script>
+  <script src="link-conversion.js" defer></script>
 
   <meta charset="utf-8">
   <meta name="description" content="Aditya Krishna Menon - Research Scientist, Google">
@@ -40,10 +44,21 @@
     <div class="profile-container">
       <img src="pics/itsme_2018.png" class="profile-img" alt="What I look like"/>
       <div class="profile-text">
-          <strong>Research Scientist</strong>
+          <p>Research Scientist</p>
           <p>Google</p>
           <p>New York, NY</p>
-          <p>Email: <tt>adityakmenon</tt> followed by <tt>google.com</tt></p>
+          <!-- <p><a id="link-conversion" rel="nofollow, noindex" href="to-google/">Email</a></p> -->
+          <p>
+            <a id="link-conversion" rel="nofollow, noindex" href="to-google/"><i class="fa-solid fa-envelope"></i> Email</a>
+            &ensp;
+            <a href="https://scholar.google.com/citations?user=li4mEfcAAAAJ">
+              <i class="ai ai-google-scholar"></i> Scholar
+            </a>
+            &ensp;
+            <a href="resume/resume_full.pdf">
+              <i class="fa-solid fa-file-pdf"></i> CV
+            </a>
+        </p>
       </div>
     </div>
 
