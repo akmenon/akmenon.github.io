@@ -3,11 +3,15 @@ html {
 }
 
 body {
-	font: 1.5em Arial, Garamond, Trebuchet MS, Verdana, Lucida Grande, Tahoma;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	font-size : 1.125em; /* 18 px */
 	background-color: #a0cfec;
+    color: #334155; /* Dark slate gray */
 	width: 75%;
 	margin: 0 auto;
+    max-width: 800px; 
+    padding: 40px 20px; 
+    line-height: 1.6; 
 }
 
 .toggler {
@@ -15,9 +19,9 @@ body {
 }
 
 h2 {
-	font: 1.5em Arial, Garamond, Trebuchet MS, Verdana, Lucida Grande, Tahoma;	
 	font-size: 1.5em;
 	font-weight: bold;
+    color: #0f172a; /* Very dark slate gray */
 	/* background: #a0c0ec; /* ebd6ff */	
 	/* border: 2px solid #ccc; */
 	/* padding-left: 8px; */
@@ -27,10 +31,10 @@ h2 {
 }
 
 h3 {
-	font: 1.5em Arial, Garamond, Trebuchet MS, Verdana, Lucida Grande, Tahoma;	
 	color: #4e4e4e;
 	font-size: 1.25em;
 	font-weight: bold;
+    color: #4e4e4e;    
 	/* background: #a0c0ec; /* #eed6ee; */
 	/* border: 2px dashed #ccc; */
 	/* padding-left: 8px; */
@@ -129,4 +133,50 @@ h1:nth-child(2){
 
 #liner:target {
     display: block;
+}
+
+/* The base style for the pill button */
+.pill {
+  background-color: #f0f4f8; /* Light grayish-blue background */
+  color: #334155;            /* Dark slate text color */
+  padding: 3px 10px;         /* Vertical and horizontal padding */
+  border-radius: 9999px;     /* Makes the edges fully rounded */
+  text-decoration: none;     /* Removes the default link underline */
+  font-size: 0.85em;         /* Makes the text slightly smaller */
+  margin-right: 6px;         /* Adds a small gap between adjacent pills */
+  display: inline-block;     /* Ensures the padding renders correctly */
+  transition: background-color 0.2s; /* Smooth fade when hovering */
+}
+
+/* Make it darken slightly when hovered over */
+.pill:hover {
+  background-color: #cbd5e1; 
+  color: #0f172a;
+}
+
+/* --- Profile Section Layout --- */
+
+.profile-container {
+  display: flex;             /* Uses Flexbox to put items side-by-side */
+  align-items: center;       /* Centers the text vertically with the image */
+  gap: 30px;                 /* Creates a clean 30px space between image and text */
+  margin-bottom: 30px;
+}
+
+.profile-img {
+  width: 100%;
+  max-width: 207px;          /* Keeps your original image size */
+  border-radius: 8px;        /* Adds the slight rounded corners */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Optional: adds a very soft, modern shadow */
+}
+
+.profile-text p {
+  margin: 5px 0;             /* Tidy up the spacing between the text lines */
+}
+
+@media (max-width: 600px) {
+  .profile-container {
+    flex-direction: column;  /* Stacks the image on top of the text */
+    text-align: center;      /* Centers the text under the image */
+  }
 }
