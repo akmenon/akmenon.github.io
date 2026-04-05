@@ -7,7 +7,7 @@ body {
 	font-size : 1.125em; /* 18 px */
 	background-color: #e0f2fe;
     color: #0f172a; /* Dark slate gray */
-	width: 75%;
+	/*width: 75%;*/
 	margin: 0 auto;
     max-width: 800px; 
     padding: 40px 20px; 
@@ -111,6 +111,7 @@ h1:nth-child(2){
     display: flex;
     flex-wrap:wrap;
     list-style-type: none;
+    gap: 15px; /* <-- This adds the clean spacing between links */
 }
 
 .header nav a, header nav a:visited {
@@ -168,10 +169,31 @@ h1:nth-child(2){
   max-width: 207px;          /* Keeps your original image size */
   border-radius: 8px;        /* Adds the slight rounded corners */
   box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Optional: adds a very soft, modern shadow */
+  height: auto;
 }
 
 .profile-text p {
   margin: 5px 0;             /* Tidy up the spacing between the text lines */
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* Centers the links on mobile, but keeps them left-aligned on desktop */
+@media (max-width: 600px) {
+    .contact-links {
+        justify-content: center; 
+    }
+}
+
+/* Removes the underline for a cleaner look */
+.contact-links a {
+    text-decoration: none;
+    font-weight: bold;
 }
 
 @media (max-width: 600px) {
@@ -179,4 +201,31 @@ h1:nth-child(2){
     flex-direction: column;  /* Stacks the image on top of the text */
     text-align: center;      /* Centers the text under the image */
   }
+}
+
+@media (max-width: 768px) {
+  /* Shrinks the name, fixes the line gap, and forces it to sit above the links */
+  .header h1 {
+    font-size: 1.5em; 
+    line-height: 1.2; 
+    margin-bottom: 10px;
+    flex-basis: 100%; /* Forces the title to take up the full width */
+    text-align: center;
+  }
+  
+  /* Shrinks the navigation links slightly for mobile */
+  .header nav a, .header nav a:visited {
+    font-size: 1rem;
+    padding: 0.2em; /* Less padding so they fit better on small screens */
+  }
+
+  /* 1. Make the nav container take the full width */
+  .header nav {
+    width: 100%;
+  }
+
+  /* 2. Center the links inside it */
+  .header nav ul {
+    justify-content: center;
+  } 
 }
