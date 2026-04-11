@@ -7,11 +7,13 @@ body {
 	font-size : 1.125em; /* 18 px */
 	background-color: #e0f2fe;
     color: #0f172a; /* Dark slate gray */
-	/*width: 75%;*/
+    padding: 40px 20px; 
+    line-height: 1.6;     
+	/*
+    width: 75%;
 	margin: 0 auto;
     max-width: 800px; 
-    padding: 40px 20px; 
-    line-height: 1.6; 
+    */
 }
 
 .toggler {
@@ -86,9 +88,9 @@ h1:nth-child(2){
     padding-right: 1.5em; /* 20 px */
 }
 
-.wrapper{
+.wrapper, #content{
     width: 100%;
-    max-width: 1180px;
+    max-width: 800px;
     padding: 0 0px;
     margin: 0 auto;
 }
